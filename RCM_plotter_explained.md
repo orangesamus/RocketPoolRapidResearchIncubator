@@ -13,8 +13,8 @@ Here's an example below that uses the default inputs:\
 
 ## Deriving the equation for calculating new diverted Eth reward per minipool
 
-New diverted Eth reward per minipool will be **Y** and it is calculated by dividing the Total New Eth Diverted (**T~NED~**) by the Total number of Rpl-Staked (RS) Minipools (MP) (**Trs_mp**)
+New diverted Eth reward per minipool will be **Y** and it is calculated by dividing the Total New Eth Diverted (**Tned**) by the Total number of Rpl-Staked (RS) Minipools (MP) (**Trs_mp**)
 
 ```math
-Y = T~NED~
+Y = Tned/Trs_mp
 ```
