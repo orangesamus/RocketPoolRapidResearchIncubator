@@ -59,7 +59,7 @@ The x-axis on the first picture (on the left) ranges from 0% to 70% because of '
 |scenario 1|scenario 2|scenario 3|
 |:-:|:-:|:-:|
 |c=7%, e=7%, j=14%|c=5%, e=5%, j=10%|c=3%, e=3%, j=6%|
-|![Default](/plots/defaultInputs.png)|![10PercentLST](/plots/LSTFee_10Percent.png)|[6PercentLST](/plots/LSTFee_6Percent.png)|\
+|![Default](/plots/defaultInputs.png)|![10PercentLST](/plots/LSTFee_10Percent.png)|![6PercentLST](/plots/LSTFee_6Percent.png)|\
 
 **Conclusion**: If fees were compressed to provide a more competitive rETH product to LST holders, it would cut into the RCM of all RocketPool minipools. This is true for any protocol though, including Lido. Rocket Pool can add a new angle of competition by allowing for various degrees of speculation on the RPL token to earn outsized Eth Rewards with this proposal.
 
