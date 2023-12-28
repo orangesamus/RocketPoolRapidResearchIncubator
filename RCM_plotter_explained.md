@@ -79,7 +79,7 @@ The Equations above can be used to calculate the current LEB RCM (no new diverte
 EthRewardsBeforeDivertedCommission = (EthBond+RplBond)*ethAPR*currLEB\_RCM
 ```
 
-Next, the diverted Eth commission reward per minipool is calculated using the equation below (explanation of the equation can be found [here](#deriving-the-equation-for-calculating--per-minipool)):
+Next, the diverted Eth commission reward per minipool is calculated using the equation below (explanation of the equation can be found [here](#deriving-the-equation-for-calculating-newdivertedcommissionreward-per-minipool)):
 
 ```math
 \displaylines{
@@ -94,8 +94,9 @@ Finally, the proposed new RCM can be calculated by adding the original Eth rewar
 ```math
 propLEB\_RCM = (EthRewardsBeforeDivertedCommission+NewDivertedCommissionReward)/soloStakeEthRewards
 ```
+\
 
-### Deriving the equation for calculating $`NewDivertedCommissionReward`$ per minipool
+### Deriving the equation for calculating NewDivertedCommissionReward per minipool
 
 _Some abbreviations that will be used: Eth-Only = EO, RPL-Staked = RS, Minipools = MP, Node Operator = NO_
 
