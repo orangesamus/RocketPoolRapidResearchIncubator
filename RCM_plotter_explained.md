@@ -9,7 +9,44 @@ X-axis is the percentage of Eth Only Node operator bond out of total Node operat
 Here's an example below that uses the default inputs:\
 ![Default Inputs](/plots/defaultInputs.png)
 
----
+## Calculations Explained
+Equations from Lido's napkin math:
+```
+RC_generic = Bond + (32 - Bond) * MaxFee
+RC_csm = Bond * (1 - LidoStakingFee) + 32 * MaxFee
+RC_alt = BondETH + (32 - BondETH) * MaxFee + BondALT * K
+RPL_StakingAPR_in_ETH = (1 + RPL_StakingAPR) * C_parity - 1
+C_parity = (1 + ETH_inflation) / (1 + RPL_inflation)
+RPL_StakingAPR = RPL_inflation * RPL_inflation_allocation_to_stakers / RPL_staked_percent
+K = RPL_StakingAPR_in_ETH / ETH_StakingAPR
+```
+
+The Equations above can be used to calculate the RCM before accounting for new diverted Eth commission. The total Eth value before the new diverted Eth commission is calculated by multiplying the total Eth value of the Bond by the solo staking Eth APR, and then multiplying that by the corresponding RCM as shown below:
+
+```math
+EthRewardsBeforeDivertedCommission = (EthBond+RplBond)*ethAPR*originalRCM
+```
+
+Next, the diverted Eth commission reward per minipool is calculated using the equation below (explanation of the equation can be found in the "Deriving the equation..." section at the end):
+
+```math
+NewDivertedCommissionReward = \frac{32*\frac{x}{1-x}*R_{EO\_CB}*EthSoloStakerAPR*\%CommissionDiverted}{(1+R_{RS\_CB})}
+```
+
+Finally, the new RCM can be calculated by adding the original Eth rewards with the new diverted Eth commission rewards, and dividing that sum by the solo staking Eth rewards
+
+```math
+newRCM = (EthRewardsBeforeDivertedCommission+NewDivertedCommissionReward)/soloStakeEthRewards
+```
+
+## Example Scenarios
+Input variables that affect diverted Eth Commission per Minipool:
+
+| Variable | Ranges For Input Values | Notes |
+| -------- | ----------------------- | ----- |
+|$`R_{EOB\_RSB}`$| 0%<= x <100%|Ratio of Eth-only bond over Rpl-staked bond; can be input as x% Eth-only bond and ratio can be calculated with equation: x/(1-x)
+
+
 
 ## Deriving the equation for calculating new diverted Eth reward per minipool
 
