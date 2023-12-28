@@ -1,6 +1,6 @@
 ## Summary:
 
-The python script [RCM_plotter.py](/RCM_plotter.py) allows you toggle various inputs and plot the resulting RCM's for comparison. The foundation for the calculations comes from this comparison done by Lido: [Lido Research bond and staking fee napkin math](https://research.lido.fi/t/bond-and-staking-fee-napkin-math/5999), where their complete calculations are found [here](https://docs.google.com/spreadsheets/d/1L-jtZkMF2ixQrkPlV58ONoteq1UtuCpj50RDJ5B3v6w/edit#gid=0). A similar excel sheet that shows various calculations for this commission cut proposal can be found in this repository ([YieldComparisons.xlsx](/YieldComparisons.xlsx)), or it can be viewed on google sheets [here](https://docs.google.com/spreadsheets/d/12Q7qeI4TS-vMcviZIDuIwXO0p1UF5GUh/edit#gid=1728151719).
+The python script [RCM_plotter.py](/RCM_plotter.py) allows you to toggle various inputs and plot the resulting RCM's for comparison. The foundation for the calculations comes from this comparison done by Lido: [Lido Research bond and staking fee napkin math](https://research.lido.fi/t/bond-and-staking-fee-napkin-math/5999), where their complete calculations are found [here](https://docs.google.com/spreadsheets/d/1L-jtZkMF2ixQrkPlV58ONoteq1UtuCpj50RDJ5B3v6w/edit#gid=0). A similar excel sheet that shows various calculations for this commission cut proposal can be found in this repository ([YieldComparisons.xlsx](/YieldComparisons.xlsx)), or it can be viewed on google sheets [here](https://docs.google.com/spreadsheets/d/12Q7qeI4TS-vMcviZIDuIwXO0p1UF5GUh/edit#gid=1728151719).
 
 A simple summary of the plot is that the Y axis is RCM (rewarded capital multiplier), it’s the multiplier of how much more rewards you earn vs solo staking (solo staking y = 1), if earning twice as much rewards then y = 2… etc
 
@@ -61,7 +61,12 @@ The x-axis on the first picture (on the left) ranges from 0% to 70% because of '
 |c=7%, e=7%, j=14%|c=5%, e=5%, j=10%|c=3%, e=3%, j=6%|
 |![Default](/plots/defaultInputs.png)|![10PercentLST](/plots/LSTFee_10Percent.png)|![6PercentLST](/plots/LSTFee_6Percent.png)|\
 
-**Conclusion**: If fees were compressed to provide a more competitive rETH product to LST holders, it would cut into the RCM of all RocketPool minipools. This is true for any protocol though, including Lido. Rocket Pool can add a new angle of competition by allowing for various degrees of speculation on the RPL token to earn outsized Eth Rewards with this proposal.
+**Conclusion**: If fees were compressed to provide a more competitive rETH product to LST holders, it would cut into the RCM of all RocketPool minipools. This is true for any protocol though, including Lido. Rocket Pool can add a new angle of competition by allowing for various degrees of speculation on the RPL token to earn outsized Eth Rewards with this proposal. The theoretical value of RPL also decreases since a higher Eth-Only ratio is required to get the same RCM for LEB's with RPL. For example, if the previous plots were expanded to go to 90% instead of 70%:
+|scenario 1|scenario 2|scenario 3|
+|:-:|:-:|:-:|
+|c=7%, e=7%, j=14%|c=5%, e=5%, j=10%|c=3%, e=3%, j=6%|
+|![Default_X90](/plots/Default_X90.png)|![LST10_X90](/plots/LST10_X90.png)|![LST6_X90](/plots/LST6_X90.png)|\
+
 
 ## Calculations Explained
 ### Input Variables
