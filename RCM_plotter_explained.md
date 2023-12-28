@@ -27,14 +27,18 @@ $T_{NED}$ is calculated by:
 
 $$T_{NED} = C_{EO}*EthSoloStakerAPR*\%CommissionDiverted*Time$$
 
-and $T_{RS\_MP}$ is calculated by:
+and $`T_{RS\_MP}`$ is calculated by:
 
-$$T_{RS\_MP} = \frac{B_{RS}+C_{RS}}{32}$$
+```math
+T_{RS\_MP} = \frac{B_{RS}+C_{RS}}{32}
+```
 
-The Ratio of RS Created rETh / Bonded Eth will be called $R_{RS\_CB}$ therefore:
+The Ratio of RS Created rETh / Bonded Eth will be called $`R_{RS\_CB}`$ therefore:
 
-$$R_{RS\_CB} = \frac{C_{RS}}{B_{RS}}$$
-$$C_{RS} = R_{RS\_CB}*B_{RS}$$
+```math
+R_{RS\_CB} = \frac{C_{RS}}{B_{RS}}
+C_{RS} = R_{RS\_CB}*B_{RS}
+```
 
 Similarly, the Ratio of EO Created rETh / Bonded Eth will be called $R_{EO\_CB}$ therefore:
 
