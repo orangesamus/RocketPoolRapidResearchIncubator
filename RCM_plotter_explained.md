@@ -36,8 +36,8 @@ T_{RS\_MP} = \frac{B_{RS}+C_{RS}}{32}
 The Ratio of RS Created rETh / Bonded Eth will be called $`R_{RS\_CB}`$ therefore:
 
 ```math
-R_{RS\_CB} = \frac{C_{RS}}{B_{RS}} \\
-C_{RS} = R_{RS\_CB}*B_{RS}
+\displaylines{R_{RS\_CB} = \frac{C_{RS}}{B_{RS}} \\
+C_{RS} = R_{RS\_CB}*B_{RS}}
 ```
 
 Similarly, the Ratio of EO Created rETh / Bonded Eth will be called $R_{EO\_CB}$ therefore:
