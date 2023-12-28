@@ -48,7 +48,7 @@ Input variables that affect RCM of proposed LEB's that receive diverted Eth Comm
 
 | Variable | Ranges For Input Values | Notes |
 | -------- | ----------------------- | ----- |
-|$`\frac{x}{1-x} = R_{EOB\_RSB}`$| 0% <= x < 100%|Ratio of Eth-Only bond over Rpl-staked bond; can be input as x% Eth-Only bond and ratio can be calculated with equation: x/(1-x). Example: 1/3 Eth-Only Node Operator Bond = $`\frac{33.33%}{(1-33.33%)} = 0.5 |
+|$`\frac{x}{1-x} = R_{EOB\_RSB}`$| 0% <= x < 100%|Ratio of Eth-Only bond over Rpl-staked bond; can be input as x% Eth-Only bond and ratio can be calculated with equation: x/(1-x). Example: 1/3 Eth-Only Node Operator Bond = $`\frac{33.33%}{(1-33.33%)} = 0.5`$|
 |a = $`R_{EO\_CB}`$| 1 <= a <= 15 |Ratio of Eth-Only created Eth over Eth-Only bonded Eth. If Eth-Only minipools were all LEB4, a = 7 since LEB4 is 4 bonded Eth, 28 created Eth, 28/4 = 7. Range of 1 (EB16) to 15 (LEB2)|
 |b = $EthSoloStakerAPR$|2.5% <= b <= 5%| ultrasound.money website shows APR range from 2.5% to 5%, currently this value is close to 3%|
 |c = $`\%CommissionDiverted`$|0% <= c <= MaxLSTFee%|Commission cut % diverted from Eth-Only Node Operators to Rpl-staked Node Operators, where MaxLSTFee is the commission Fee charged to LST holders. Target 7% to be competitive with Lido CSM with 4Eth bond. If c = MaxLSTFee% Eth-Only Node Operators have no incentive to join since their RCM would be the same as a solo staker|
