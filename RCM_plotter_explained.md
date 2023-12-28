@@ -20,7 +20,6 @@ Start with the default inputs (explanation of inputs can be found [here](#input-
 |-|-|-|-|-|-|-|-|-|-|-|
 |\[0%...70%\]|7|3%|7%|2|7%|0%|5%|70%|46.19%|14%|
 
-\
 ![DefaultInputs](/plots/defaultInputs.png)
 
 
