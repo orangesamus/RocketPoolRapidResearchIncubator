@@ -36,7 +36,7 @@ The x-axis on the first picture (on the left) ranges from 0% to 70% because of '
 **Example 2**: The effects of adjusting the bond sizes ratios (default variables but change 'a' and 'd'):
 |scenario 1|scenario 2|scenario 3|
 |:-:|:-:|:-:|
-|a=3, d=7 (Eth-Only Bond raised to all LEB8, all Rpl-Staked LEB4)|a=7, d=2, default inputs (Eth-Only all LEB4, Rpl-Staked between EB16 and LEB8) |a=15, d=1 (Eth-Only Bond lowered to all LEB2, Rpl-Staked all EB16)|
+|a=3, d=7 (All Eth-Only Nodes are LEB8, all Rpl-Staked Nodes are LEB4)|a=7, d=2, default inputs (All Eth-Only Nodes are LEB4, Rpl-Staked Nodes are mixed between EB16 and LEB8) |a=15, d=1 (All Eth-Only Nodes are LEB2, All Rpl-Staked Nodes are EB16)|
 |![EOLEB8](/plots/EO_LEB8.png)|![Default](/plots/EO_LEB4_default.png)|![EOLEB2](/plots/EO_LEB2.png)|\
 
 **Conclusion**: In the equation to determine diverted commission, 'a' is a numerator, 'd' is a denominator. This makes sense intuitively: by lowering the Eth-Only Bond 'a', there is more commission diverted to Rpl-Staked node operators. This pot of commission is split among Rpl-Staked node operators though, and the larger 'd' is (the lower the Rpl-Staked Bond) the more minipools there are to split the commission into - so each minipool receives a smaller amount. Scenario 1 assumes all Rpl-Staked node operators are comfortable with high RPL exposure (LEB4), and Scenario 3 assumes all Rpl-Staked node operators want minimum RPL exposure (EB16)
@@ -51,7 +51,7 @@ The x-axis on the first picture (on the left) ranges from 0% to 70% because of '
 
 **Conclusion**: Removing RPL inflation impacts RCM of all minipools except Eth-Only, but the proposed LEB's that receive diverted commission could remain profitable especially as the percentage of Eth-Only Node Operator Bond increases.
 
-**Side Note**: The protocol is currently funded by 30% RPL inflation: This equates to ~1mill RPL a year. At a price of $30 per RPL that equates to ~$30mill a year. If 1.5% of diverted commission cut went to the protocol (example: 7% to Eth-Only Node Operators, 5.5% diverted to RPL-Staked Node Operators, 1.5% to protocol), and half of the existing Node Operator Bond converted to Eth-Only LEB4's, that would equate to ~536Eth or ~$1.3mill at an Eth price of $2400. You could also see how if the total number of new EthOnly Node Operators grew over time from new Node Operators this could be a sustainable mechanism to fund the protocol and remove RPL inflation.
+**Side Note**: The protocol is currently funded by 30% RPL inflation: This equates to ~1mill RPL a year. At a price of $30 per RPL that equates to ~$30mill a year. To get a simple reference point: if 1.5% of diverted commission cut went to the protocol (example: 7% to Eth-Only Node Operators, 5.5% diverted to RPL-Staked Node Operators, 1.5% to protocol), and half of the existing Node Operator Bond converted to Eth-Only LEB4's, that would equate to ~536Eth or ~$1.3mill at an Eth price of $2400. With the growth of the total number of new EthOnly Node Operators over time this commission could be a sustainable mechanism to fund the protocol and remove RPL inflation.
 
 <br/>
 
@@ -61,7 +61,7 @@ The x-axis on the first picture (on the left) ranges from 0% to 70% because of '
 |c=7%, e=7%, j=14%|c=5%, e=5%, j=10%|c=3%, e=3%, j=6%|
 |![Default](/plots/defaultInputs.png)|![10PercentLST](/plots/LSTFee_10Percent.png)|![6PercentLST](/plots/LSTFee_6Percent.png)|\
 
-**Conclusion**: If fees were compressed to provide a more competitive rETH product to LST holders, it would cut into the RCM of all RocketPool minipools. This is true for any protocol though, including Lido. Rocket Pool can add a new angle of competition by allowing for various degrees of speculation on the RPL token to earn outsized Eth Rewards with this proposal. The theoretical value of RPL also decreases since a higher Eth-Only ratio is required to get the same RCM for LEB's with RPL. For example, if the previous plots were expanded to go to 90% instead of 70%:
+**Conclusion**: If fees were compressed to provide a more competitive rETH product to LST holders, it would cut into the RCM of all RocketPool minipools. This is true for any protocol though, including Lido. Rocket Pool can add a new angle of competition by allowing for various degrees of speculation on the RPL token to earn outsized Eth Rewards with this proposal. The value of RPL theoretically would decrease though since a higher Eth-Only ratio is required to get the same RCM for LEB's with RPL. For example, if the previous plots were expanded to go to 90% instead of 70%:
 |scenario 1|scenario 2|scenario 3|
 |:-:|:-:|:-:|
 |c=7%, e=7%, j=14%|c=5%, e=5%, j=10%|c=3%, e=3%, j=6%|
