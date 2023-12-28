@@ -26,7 +26,8 @@ Example 1: The effects of adjusting the commission paid to Eth-Only Node Operato
 |scenario 1|scenario 2|scenario 3|
 |:-:|:-:|:-:|
 |c=3%, e=11%, more to Eth-Only|c=7%, e=7%, default inputs|c=11%, e=3%, more to Rpl-Staked|
-|![EOEarnMore](/plots/EthOnlyEarnMoreCommission.png)|![Default](/plots/defaultInputs.png)|![RSEarnMore](/plots/divertMoreCommissionToRPLStakedNO.png)|
+|![EOEarnMore](/plots/EthOnlyEarnMoreCommission.png)|![Default](/plots/defaultInputs.png)|![RSEarnMore](/plots/divertMoreCommissionToRPLStakedNO.png)|\
+
 Conclusion: propEthOnlyLEB4's RCM moves up and down based off it's commission 'e' (7% makes it competitive to Lido propCSM4), propLEB's RCMs scale higher based off commission diverted 'c'.
 
 ## Calculations Explained
