@@ -41,12 +41,14 @@ The x-axis on the first picture (on the left) ranges from 0% to 70% because of '
 
 **Conclusion**: In the equation to determine diverted commission, 'a' is a numerator, 'd' is a denominator. This makes sense intuitively: by lowering the Eth-Only Bond 'a', there is more commission diverted to Rpl-Staked node operators. This pot of commission is split among Rpl-Staked node operators though, and the larger 'd' is (the lower the Rpl-Staked Bond) the more minipools there are to split the commission into - so each minipool receives a smaller amount. Scenario 1 assumes all Rpl-Staked node operators are comfortable with high RPL exposure (LEB4), and Scenario 3 assumes all Rpl-Staked node operators want minimum RPL exposure (EB16)
 
+<br/>
+
 **Example 3**: The effects of removing RPL inflation (lowering it to 0%) (keep all input variables the same but change 'f'):
 |scenario 1|scenario 2|
 |:-:|:-:|
-|![Default](/plots/defaultInputs.png)|![EOLEB2](/plots/EO_LEB2.png)|\
+|![Default](/plots/defaultInputs.png)|![noRPLinflation](/plots/noRPLinflation.png)|\
 
-**Conclusion**: In the equation to determine diverted commission, 'a' is a numerator, 'd' is a denominator. This makes sense intuitively: by lowering the Eth-Only Bond 'a', there is more commission diverted to Rpl-Staked node operators. This pot of commission is split among Rpl-Staked node operators though, and the larger 'd' is (the lower the Rpl-Staked Bond) the more minipools there are to split the commission into - so each minipool receives a smaller amount. Scenario 1 assumes all Rpl-Staked node operators are comfortable with high RPL exposure (LEB4), and Scenario 3 assumes all Rpl-Staked node operators want minimum RPL exposure (EB16) 
+**Conclusion**: Removing RPL inflation impacts RCM of all minipools except Eth-Only, but the proposed LEB's that receive diverted commission could remain 
 
 ## Calculations Explained
 ### Input Variables
