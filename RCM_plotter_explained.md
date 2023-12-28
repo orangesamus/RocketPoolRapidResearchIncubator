@@ -22,6 +22,11 @@ Start with the default inputs (explanation of inputs can be found [here](#input-
 
 ![DefaultInputs](/plots/defaultInputs.png)
 
+The effects of adjusting the commission paid to Eth-Only Node Operators, vs diverted to Rpl-Staked Node Operators (keep all input variables the same but change 'c' and 'e'):
+|scenario 1|scenario 2|scenario 3|
+|c=7%,e=7%|c=3%,e=11%,more to Eth-Only|c=11%,e=3%,more to Rpl-Staked|
+|![Default](/plots/defaultInputs.png)|![EOEarnMore](/plots/EthOnlyEarnMoreCommission.png)|![RSEarnMore](/plots/divertMoreCommissionToRPLStakedNO.png)|
+
 
 ## Calculations Explained
 ### Input Variables
@@ -88,7 +93,7 @@ Finally, the proposed new RCM can be calculated by adding the original Eth rewar
 propLEB\_RCM = (EthRewardsBeforeDivertedCommission+NewDivertedCommissionReward)/soloStakeEthRewards
 ```
 
-### Deriving the equation for calculating $`NewDivertedCommissionReward`$` per minipool
+### Deriving the equation for calculating $`NewDivertedCommissionReward`$ per minipool
 
 _Some abbreviations that will be used: Eth-Only = EO, RPL-Staked = RS, Minipools = MP, Node Operator = NO_
 
