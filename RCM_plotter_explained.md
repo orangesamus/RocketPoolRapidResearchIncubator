@@ -15,10 +15,10 @@ Here's an example below that uses the default inputs:\
 
 _Some abbreviations that will be used: Eth-Only = EO, RPL-Staked = RS, Minipools = MP, Node Operator = NO_
 
-New diverted Eth reward per minipool ($Y$) is calculated by dividing the Total New Eth Diverted ($T_{NED}$) by the Total number of RS MPs ($T_{RS\_MP}$)
+New diverted Eth reward per minipool ($Y$) is calculated by dividing the Total New Eth Diverted ($T_{NED}$) by the Total number of RS MPs ($`T_{RS\_MP}`$)
 
 ```math
-Y = \frac{T_{NED}}{T_{RS\_MP}}$$
+Y = \frac{T_{NED}}{T_{RS\_MP}}
 ```
 
 The total amount of rETH created by EO MPs will be called $C_{EO}$, and the total amount of ETH bonded by EO MPs will be called $B_{EO}$ (Each LEB4 for example uses 4 bonded Eth to create 28 rETH, so 1 LEB4 contributes 4 to $B_{EO}$ and 28 to $C_{EO}$), similar variables are used for RS MPs ($C_{RS}$ and $B_{RS}$). Therefore,
