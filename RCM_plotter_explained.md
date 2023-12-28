@@ -6,9 +6,7 @@ A simple summary of the plot is that the Y axis is RCM (rewarded capital multipl
 
 X-axis is the percentage of Eth Only Node operator bond out of total Node operator bond (For 1/3 Eth Only bond x=33.33%, so the the remaining 2/3 is Rpl-Staked Node Operator Bond)
 
-The commission cut proposal explored here uses a simple distribution strategy of evenly dividing the total new ETH diverted from the commission cut by the total number of minipools (All minipools earn the same amount, so a lower LEB has higher RPL exposure but earns more ETH commissionn relative to the size of their bond).
-
-The x-axis ranges from 0% to 70% because of 'unbounded' APR on the top end, (if only 1 pool was Rpl-staked, that pool would earn diverted commission from all the other pools). So after ~70% it really picks up vertically and makes it hard to understand what is going on from 0%-70%.
+The commission cut proposal explored here uses a simple distribution strategy of evenly dividing the total new ETH diverted from the commission cut by the total number of minipools (All minipools earn the same amount, so a lower LEB has higher RPL exposure but earns more ETH commission relative to the size of their bond).
 
 ### Example Scenarios and Conclusions
 Start with the default inputs (explanation of inputs can be found [here](#input-variables)):
@@ -23,13 +21,15 @@ Start with the default inputs (explanation of inputs can be found [here](#input-
 
 The x-axis on the first picture (on the left) ranges from 0% to 70% because of 'unbounded' APR on the top end, (if only 1 pool was Rpl-staked, that pool would earn diverted commission from all the other pools). So after ~70% it really picks up vertically (see second picture on the right) and makes it hard to understand what is going on from 0%-70%.
 
-Example 1: The effects of adjusting the commission paid to Eth-Only Node Operators, vs diverted to Rpl-Staked Node Operators (keep all input variables the same but change 'c' and 'e'):
+\
+
+**Example 1**: The effects of adjusting the commission paid to Eth-Only Node Operators, vs diverted to Rpl-Staked Node Operators (keep all input variables the same but change 'c' and 'e'):
 |scenario 1|scenario 2|scenario 3|
 |:-:|:-:|:-:|
 |c=3%, e=11%, more to Eth-Only|c=7%, e=7%, default inputs|c=11%, e=3%, more to Rpl-Staked|
 |![EOEarnMore](/plots/EthOnlyEarnMoreCommission.png)|![Default](/plots/defaultInputs.png)|![RSEarnMore](/plots/divertMoreCommissionToRPLStakedNO.png)|\
 
-Conclusion: propEthOnlyLEB4's RCM moves up and down based off it's commission 'e' (7% makes it competitive to Lido propCSM4), propLEB's RCMs scale higher based off commission diverted 'c'.
+**Conclusion**: propEthOnlyLEB4's RCM moves up and down based off it's commission 'e' (7% makes it competitive to Lido propCSM4), propLEB's RCMs scale higher based off commission diverted 'c'.
 
 ## Calculations Explained
 ### Input Variables
