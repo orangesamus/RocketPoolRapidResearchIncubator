@@ -42,7 +42,7 @@ The Ratio of RS Created rETh / Bonded Eth will be called $`R_{RS\_CB}`$ therefor
 }
 ```
 
-Similarly, the Ratio of EO Created rETh / Bonded Eth will be called $R_{EO\_CB}$ therefore:
+Similarly, the Ratio of EO Created rETh / Bonded Eth will be called $`R_{EO\_CB}`$ therefore:
 
 ```math
 \displaylines{
@@ -57,23 +57,34 @@ With some substitutions:
 \displaylines{
     T_{RS\_MP} = \frac{B_{RS}+C_{RS}}{32} \\
     T_{RS\_MP} = \frac{B_{RS}+R_{RS\_CB}*B_{RS}}{32} \\
-    T_{RS\_MP} = \frac{B_{RS}*(1+R_{RS\_CB})}{32}
+    T_{RS\_MP} = \frac{B_{RS}*(1+R_{RS\_CB})}{32} \\
+    Y = \frac{T_{NED}}{T_{RS\_MP}} \\
+    Y = \frac{C_{EO}*EthSoloStakerAPR*\%CommissionDiverted*Time}{\frac{B_{RS}*(1+R_{RS\_CB})}{32}} \\
+    Y = 32*\frac{C_{EO}}{B_{RS}}*\frac{EthSoloStakerAPR*\%CommissionDiverted*Time}{(1+R_{RS\_CB})} \\
+    Y = 32*\frac{R_{EO\_CB}*B_{EO}}{B_{RS}}*\frac{EthSoloStakerAPR*\%CommissionDiverted*Time}{(1+R_{RS\_CB})}
 }
 ```
 
-$$Y = \frac{T_{NED}}{T_{RS\_MP}}$$
-$$Y = \frac{C_{EO}*EthSoloStakerAPR*\%CommissionDiverted*Time}{\frac{B_{RS}*(1+R_{RS\_CB})}{32}}$$
-$$Y = 32*\frac{C_{EO}}{B_{RS}}*\frac{EthSoloStakerAPR*\%CommissionDiverted*Time}{(1+R_{RS\_CB})}$$
-$$Y = 32*\frac{R_{EO\_CB}*B_{EO}}{B_{RS}}*\frac{EthSoloStakerAPR*\%CommissionDiverted*Time}{(1+R_{RS\_CB})}$$
+The ratio of total EO Node Operator Bond / total RS Node Operator Bond can be called $`R_{EOB\_RSB}`$ therefore:
 
-The ratio of total EO Node Operator Bond / total RS Node Operator Bond can be called $R_{EOB\_RSB}$ therefore:
-$$R_{EOB\_RSB} = \frac{B_{EO}}{B_{RS}}$$
+```math
+R_{EOB\_RSB} = \frac{B_{EO}}{B_{RS}}
+```
 
 Now, $Y$ can be simplified as:
-$$Y = \frac{32*R_{EO\_CB}*R_{EOB\_RSB}*EthSoloStakerAPR*\%CommissionDiverted*Time}{(1+R_{RS\_CB})}$$
 
-$R_{EOB\_RSB}$ can also be calculated by taking input $x$ where $x$% is the % of EO Bond out of total NO Bond (For example 1/3 EO Bond will equate to a ratio of 0.5). Therefore:
-$$R_{EOB\_RSB} = \frac{x}{1-x}$$
+```math
+Y = \frac{32*R_{EO\_CB}*R_{EOB\_RSB}*EthSoloStakerAPR*\%CommissionDiverted*Time}{(1+R_{RS\_CB})}
+```
+
+$`R_{EOB\_RSB}`$ can also be calculated by taking input $x$ where $x$% is the % of EO Bond out of total NO Bond (For example 1/3 EO Bond will equate to a ratio of 0.5). Therefore:
+
+```math
+R_{EOB\_RSB} = \frac{x}{1-x}
+```
 
 So the final equation for $Y$ for 1 year of time:
-$$Y = \frac{32*\frac{x}{1-x}*R_{EO\_CB}*EthSoloStakerAPR*\%CommissionDiverted}{(1+R_{RS\_CB})}$$
+
+```math
+Y = \frac{32*\frac{x}{1-x}*R_{EO\_CB}*EthSoloStakerAPR*\%CommissionDiverted}{(1+R_{RS\_CB})}
+```
