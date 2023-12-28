@@ -21,7 +21,7 @@ Start with the default inputs (explanation of inputs can be found [here](#input-
 
 The x-axis on the first picture (on the left) ranges from 0% to 70% because of 'unbounded' APR on the top end, (if only 1 pool was Rpl-staked, that pool would earn diverted commission from all the other pools). So after ~70% it really picks up vertically (see second picture on the right) and makes it hard to understand what is going on from 0%-70%.
 
-\
+<br/>
 
 **Example 1**: The effects of adjusting the commission paid to Eth-Only Node Operators, vs diverted to Rpl-Staked Node Operators (keep all input variables the same but change 'c' and 'e'):
 |scenario 1|scenario 2|scenario 3|
@@ -95,6 +95,7 @@ Finally, the proposed new RCM can be calculated by adding the original Eth rewar
 ```math
 propLEB\_RCM = (EthRewardsBeforeDivertedCommission+NewDivertedCommissionReward)/soloStakeEthRewards
 ```
+<br/>
 
 ### Deriving the equation for calculating NewDivertedCommissionReward per minipool
 
