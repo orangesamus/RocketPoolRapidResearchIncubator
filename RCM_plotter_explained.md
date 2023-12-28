@@ -36,19 +36,31 @@ T_{RS\_MP} = \frac{B_{RS}+C_{RS}}{32}
 The Ratio of RS Created rETh / Bonded Eth will be called $`R_{RS\_CB}`$ therefore:
 
 ```math
-\displaylines{R_{RS\_CB} = \frac{C_{RS}}{B_{RS}} \\
-C_{RS} = R_{RS\_CB}*B_{RS}}
+\displaylines{
+    R_{RS\_CB} = \frac{C_{RS}}{B_{RS}} \\
+    C_{RS} = R_{RS\_CB}*B_{RS}
+}
 ```
 
 Similarly, the Ratio of EO Created rETh / Bonded Eth will be called $R_{EO\_CB}$ therefore:
 
-$$R_{EO\_CB} = \frac{C_{EO}}{B_{EO}}$$
-$$C_{EO} = R_{EO\_CB}*B_{EO}$$
+```math
+\displaylines{
+    R_{EO\_CB} = \frac{C_{EO}}{B_{EO}} \\
+    C_{EO} = R_{EO\_CB}*B_{EO}
+}
+```
 
 With some substitutions:
-$$T_{RS\_MP} = \frac{B_{RS}+C_{RS}}{32}$$
-$$T_{RS\_MP} = \frac{B_{RS}+R_{RS\_CB}*B_{RS}}{32}$$
-$$T_{RS\_MP} = \frac{B_{RS}*(1+R_{RS\_CB})}{32}$$
+
+```math
+\displaylines{
+    T_{RS\_MP} = \frac{B_{RS}+C_{RS}}{32} \\
+    T_{RS\_MP} = \frac{B_{RS}+R_{RS\_CB}*B_{RS}}{32} \\
+    T_{RS\_MP} = \frac{B_{RS}*(1+R_{RS\_CB})}{32}
+}
+```
+
 $$Y = \frac{T_{NED}}{T_{RS\_MP}}$$
 $$Y = \frac{C_{EO}*EthSoloStakerAPR*\%CommissionDiverted*Time}{\frac{B_{RS}*(1+R_{RS\_CB})}{32}}$$
 $$Y = 32*\frac{C_{EO}}{B_{RS}}*\frac{EthSoloStakerAPR*\%CommissionDiverted*Time}{(1+R_{RS\_CB})}$$
