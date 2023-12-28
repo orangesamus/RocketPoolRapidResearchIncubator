@@ -48,7 +48,9 @@ The x-axis on the first picture (on the left) ranges from 0% to 70% because of '
 |:-:|:-:|
 |![Default](/plots/defaultInputs.png)|![noRPLinflation](/plots/noRPLinflation.png)|\
 
-**Conclusion**: Removing RPL inflation impacts RCM of all minipools except Eth-Only, but the proposed LEB's that receive diverted commission could remain 
+**Conclusion**: Removing RPL inflation impacts RCM of all minipools except Eth-Only, but the proposed LEB's that receive diverted commission could remain profitable especially as the percentage of Eth-Only Node Operator Bond increases.
+
+**Side Note**: The protocol is currently funded by 30% RPL inflation: This equates to ~1mill RPL a year. At a price of $30 per RPL that equates to ~$30mill a year. If 1.5% of diverted commission cut went to the protocol instead of RPL-Staked Node Operators, and half of the existing Node Operator Bond converted to Eth-Only LEB4's, that would equate to ~536Eth or ~$1.3mill at an Eth price of $2400. You could also see how if the total number of new EthOnly Node Operators grew over time from new Node Operators this could be a sustainable mechanism to fund the protocol and remove RPL inflation.
 
 ## Calculations Explained
 ### Input Variables
