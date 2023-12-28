@@ -21,32 +21,53 @@ RPL_StakingAPR = RPL_inflation * RPL_inflation_allocation_to_stakers / RPL_stake
 K = RPL_StakingAPR_in_ETH / ETH_StakingAPR
 ```
 
-The Equations above can be used to calculate the RCM before accounting for new diverted Eth commission. The total Eth value before the new diverted Eth commission is calculated by multiplying the total Eth value of the Bond by the solo staking Eth APR, and then multiplying that by the corresponding RCM as shown below:
+The Equations above can be used to calculate the current LEB RCM (no new diverted Eth commission). The total Eth value of the rewards is calculated by multiplying the total Eth value of the Bond by the solo staking Eth APR, and then multiplying that by the corresponding RCM as shown below:
 
 ```math
-EthRewardsBeforeDivertedCommission = (EthBond+RplBond)*ethAPR*originalRCM
+EthRewardsBeforeDivertedCommission = (EthBond+RplBond)*ethAPR*currLEB_RCM
 ```
 
 Next, the diverted Eth commission reward per minipool is calculated using the equation below (explanation of the equation can be found in the "Deriving the equation..." section at the end):
 
 ```math
-NewDivertedCommissionReward = \frac{32*\frac{x}{1-x}*R_{EO\_CB}*EthSoloStakerAPR*\%CommissionDiverted}{(1+R_{RS\_CB})}
+\displaylines{
+    NewDivertedCommissionReward = \frac{32*\frac{x}{1-x}*R_{EO\_CB}*EthSoloStakerAPR*\%CommissionDiverted}{(1+R_{RS\_CB})}
+    or
+    Y = \frac{32*\frac{x}{1-x}*a*b*c}{(1+d)}
+}
 ```
 
-Finally, the new RCM can be calculated by adding the original Eth rewards with the new diverted Eth commission rewards, and dividing that sum by the solo staking Eth rewards
+Finally, the proposed new RCM can be calculated by adding the original Eth rewards with the new diverted Eth commission rewards, and dividing that sum by the solo staking Eth rewards
 
 ```math
-newRCM = (EthRewardsBeforeDivertedCommission+NewDivertedCommissionReward)/soloStakeEthRewards
+propLEB_RCM = (EthRewardsBeforeDivertedCommission+NewDivertedCommissionReward)/soloStakeEthRewards
 ```
 
 ## Example Scenarios
-Input variables that affect diverted Eth Commission per Minipool:
+Input variables that affect RCM of proposed LEB's that receive diverted Eth Commission per Minipool:
 
 | Variable | Ranges For Input Values | Notes |
 | -------- | ----------------------- | ----- |
-|$`R_{EOB\_RSB}`$| 0%<= x <100%|Ratio of Eth-only bond over Rpl-staked bond; can be input as x% Eth-only bond and ratio can be calculated with equation: x/(1-x)
+|$`\frac{x}{1-x} = R_{EOB\_RSB}`$| 0% <= x < 100%|Ratio of Eth-Only bond over Rpl-staked bond; can be input as x% Eth-Only bond and ratio can be calculated with equation: x/(1-x). Example: 1/3 Eth-Only Node Operator Bond = $`\frac{33.33%}{(1-33.33%)} = 0.5 |
+|a = $`R_{EO\_CB}`$| 1 <= a <= 15 |Ratio of Eth-Only created Eth over Eth-Only bonded Eth. If Eth-Only minipools were all LEB4, a = 7 since LEB4 is 4 bonded Eth, 28 created Eth, 28/4 = 7. Range of 1 (EB16) to 15 (LEB2)|
+|b = $EthSoloStakerAPR$|2.5% <= b <= 5%| ultrasound.money website shows APR range from 2.5% to 5%, currently this value is close to 3%|
+|c = $`\%CommissionDiverted`$|0% <= c <= MaxLSTFee%|Commission cut % diverted from Eth-Only Node Operators to Rpl-staked Node Operators, where MaxLSTFee is the commission Fee charged to LST holders. Target 7% to be competitive with Lido CSM with 4Eth bond. If c = MaxLSTFee% Eth-Only Node Operators have no incentive to join since their RCM would be the same as a solo staker|
+|d = $`R_{RS\_CB}`$|1 <= d <= 15|Ratio of Rpl-staked created Eth over Rpl-staked bonded Eth. If all RPL-staked was LEB8 this would be: 3. Since some RPL-staked are still EB16, this number is between 1 and 3: currently close to 2 on rocketscan|
 
+Input variables that affect RCM of Eth-Only LEB's
+| Variable | Ranges For Input Values | Notes |
+| -------- | ----------------------- | ----- |
+| e = $`CommissionEthOnlyNO`$|0% <= e <= MaxLSTFee%|Commission paid to Eth-Only Node Operators. Target 7% to be competitive with Lido CSM with 4Eth bond. If c = 0% Eth-Only Node Operators have no incentive to join since their RCM would be the same as a solo staker.|
+|b = $EthSoloStakerAPR$|2.5% <= b <= 5%| Eth-Only LEB's are also impacted by this variable since it is the source of the yield|
 
+Input Variables that affect RCM of all LEB's except Eth-Only LEB's
+| Variable | Ranges For Input Values | Notes |
+| -------- | ----------------------- | ----- |
+|f = $`ethInflation`$|f = 0%|Eth is slightly deflationary but this could be rounded to 0% for simplification|
+|g = $`rplInflation`$|0% <= rplInflation <= 5%|Current RPL inflation rate is 5% but could be lowered to 0%|
+|h = $`rplInflationToStakers`$|0<= h = 100%|This is the % of RPL inflation that is being paid to RPL-Staked Node Operators. This number is currently 70% but could be changed in the future|
+|i = $`rplStakedPercent`$|0% <= i <= 100% |This number is currently ~46.19% but is growing steadily over time|
+|j = $`maxLSTFee`$|j = commissionCutDiverted + commissionEthOnlyNO|This is the fee/commission charged to LST holders on the Eth-Only created Eth. A cut of this commission could also be diverted to fund the protocol instead of relying on RPL inflation|
 
 ## Deriving the equation for calculating new diverted Eth reward per minipool
 
@@ -58,7 +79,7 @@ New diverted Eth reward per minipool ($Y$) is calculated by dividing Total New E
 Y = \frac{T_{NED}}{T_{RS\_MP}}
 ```
 
-The total amount of rETH created by EO MPs will be called $C_{EO}$, and the total amount of ETH bonded by EO MPs will be called $B_{EO}$ (Each LEB4 for example uses 4 bonded Eth to create 28 rETH, so 1 LEB4 contributes 4 to $B_{EO}$ and 28 to $C_{EO}$), similar variables are used for RS MPs ($C_{RS}$ and $B_{RS}$). Therefore,
+The total amount of ETH created by EO MPs will be called $C_{EO}$, and the total amount of ETH bonded by EO MPs will be called $B_{EO}$ (Each LEB4 for example uses 4 bonded Eth to create 28 ETH, so 1 LEB4 contributes 4 to $B_{EO}$ and 28 to $C_{EO}$), similar variables are used for RS MPs ($C_{RS}$ and $B_{RS}$). Therefore,
 
 $T_{NED}$ is calculated by:
 
@@ -72,7 +93,7 @@ and $`T_{RS\_MP}`$ is calculated by:
 T_{RS\_MP} = \frac{B_{RS}+C_{RS}}{32}
 ```
 
-The Ratio of RS Created rETh / Bonded Eth will be called $`R_{RS\_CB}`$ therefore:
+The Ratio of RS Created ETH / Bonded Eth will be called $`R_{RS\_CB}`$ therefore:
 
 ```math
 \displaylines{
@@ -81,7 +102,7 @@ The Ratio of RS Created rETh / Bonded Eth will be called $`R_{RS\_CB}`$ therefor
 }
 ```
 
-Similarly, the Ratio of EO Created rETh / Bonded Eth will be called $`R_{EO\_CB}`$ therefore:
+Similarly, the Ratio of EO Created ETH / Bonded Eth will be called $`R_{EO\_CB}`$ therefore:
 
 ```math
 \displaylines{
@@ -126,4 +147,9 @@ So the final equation for $Y$ for 1 year of time:
 
 ```math
 Y = \frac{32*\frac{x}{1-x}*R_{EO\_CB}*EthSoloStakerAPR*\%CommissionDiverted}{(1+R_{RS\_CB})}
+```
+
+With simplified variable names:
+```math
+Y = \frac{32*\frac{x}{1-x}*a*b*c}{(1+d)}
 ```
