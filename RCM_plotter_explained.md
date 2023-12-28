@@ -13,8 +13,49 @@ Here's an example below that uses the default inputs:\
 
 ## Deriving the equation for calculating new diverted Eth reward per minipool
 
-New diverted Eth reward per minipool will be **Y** and it is calculated by dividing the Total New Eth Diverted (**Tned**) by the Total number of Rpl-Staked (RS) Minipools (MP) (**Trs_mp**)
+_Some abbreviations that will be used: Eth-Only = EO, RPL-Staked = RS, Minipools = MP, Node Operator = NO_
 
-```math
-Y = \frac{T_{NED}}{T_{RS_MP}}
-```
+New diverted Eth reward per minipool ($Y$) is calculated by dividing the Total New Eth Diverted ($T_{NED}$) by the Total number of RS MPs ($T_{RS\_MP}$)
+
+$$Y = \frac{T_{NED}}{T_{RS\_MP}}$$
+
+The total amount of rETH created by EO MPs will be called $C_{EO}$, and the total amount of ETH bonded by EO MPs will be called $B_{EO}$ (Each LEB4 for example uses 4 bonded Eth to create 28 rETH, so 1 LEB4 contributes 4 to $B_{EO}$ and 28 to $C_{EO}$), similar variables are used for RS MPs ($C_{RS}$ and $B_{RS}$). Therefore,
+
+$T_{NED}$ is calculated by:
+
+$$T_{NED} = C_{EO}*EthSoloStakerAPR*\%CommissionDiverted*Time$$
+
+and $T_{RS\_MP}$ is calculated by:
+
+$$T_{RS\_MP} = \frac{B_{RS}+C_{RS}}{32}$$
+
+The Ratio of RS Created rETh / Bonded Eth will be called $R_{RS\_CB}$ therefore:
+
+$$R_{RS\_CB} = \frac{C_{RS}}{B_{RS}}$$
+$$C_{RS} = R_{RS\_CB}*B_{RS}$$
+
+Similarly, the Ratio of EO Created rETh / Bonded Eth will be called $R_{EO\_CB}$ therefore:
+
+$$R_{EO\_CB} = \frac{C_{EO}}{B_{EO}}$$
+$$C_{EO} = R_{EO\_CB}*B_{EO}$$
+
+With some substitutions:
+$$T_{RS\_MP} = \frac{B_{RS}+C_{RS}}{32}$$
+$$T_{RS\_MP} = \frac{B_{RS}+R_{RS\_CB}*B_{RS}}{32}$$
+$$T_{RS\_MP} = \frac{B_{RS}*(1+R_{RS\_CB})}{32}$$
+$$Y = \frac{T_{NED}}{T_{RS\_MP}}$$
+$$Y = \frac{C_{EO}*EthSoloStakerAPR*\%CommissionDiverted*Time}{\frac{B_{RS}*(1+R_{RS\_CB})}{32}}$$
+$$Y = 32*\frac{C_{EO}}{B_{RS}}*\frac{EthSoloStakerAPR*\%CommissionDiverted*Time}{(1+R_{RS\_CB})}$$
+$$Y = 32*\frac{R_{EO\_CB}*B_{EO}}{B_{RS}}*\frac{EthSoloStakerAPR*\%CommissionDiverted*Time}{(1+R_{RS\_CB})}$$
+
+The ratio of total EO Node Operator Bond / total RS Node Operator Bond can be called $R_{EOB\_RSB}$ therefore:
+$$R_{EOB\_RSB} = \frac{B_{EO}}{B_{RS}}$$
+
+Now, $Y$ can be simplified as:
+$$Y = \frac{32*R_{EO\_CB}*R_{EOB\_RSB}*EthSoloStakerAPR*\%CommissionDiverted*Time}{(1+R_{RS\_CB})}$$
+
+$R_{EOB\_RSB}$ can also be calculated by taking input $x$ where $x$% is the % of EO Bond out of total NO Bond (For example 1/3 EO Bond will equate to a ratio of 0.5). Therefore:
+$$R_{EOB\_RSB} = \frac{x}{1-x}$$
+
+So the final equation for $Y$ for 1 year of time:
+$$Y = \frac{32*\frac{x}{1-x}*R_{EO\_CB}*EthSoloStakerAPR*\%CommissionDiverted}{(1+R_{RS\_CB})}$$
