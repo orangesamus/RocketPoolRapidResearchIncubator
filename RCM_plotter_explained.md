@@ -9,7 +9,7 @@ X-axis is the percentage of Eth Only Node operator bond out of total Node operat
 The commission cut proposal explored here uses a simple distribution strategy of evenly dividing the total new ETH diverted from the commission cut by the total number of minipools (All minipools earn the same amount, so a lower LEB has higher RPL exposure but earns more ETH commission relative to the size of their bond).
 
 ### Example Scenarios and Conclusions
-Start with the default inputs (explanation of inputs can be found [here](#input-variables)):
+Start with the default input variables (explanation of inputs can be found [here](#input-variables)):
 |x|a|b|c|d|e|f|g|h|i|j|
 |-|-|-|-|-|-|-|-|-|-|-|
 |\[0%...70%\]|7|3%|7%|2|7%|0%|5%|70%|46.19%|14%|
@@ -23,7 +23,7 @@ The x-axis on the first picture (on the left) ranges from 0% to 70% because of '
 
 <br/>
 
-**Example 1**: The effects of adjusting the commission paid to Eth-Only Node Operators, vs diverted to Rpl-Staked Node Operators (keep all input variables the same but change 'c' and 'e'):
+**Example 1**: The effects of adjusting the commission paid to Eth-Only Node Operators, vs diverted to Rpl-Staked Node Operators (default variables but change 'c' and 'e'):
 |scenario 1|scenario 2|scenario 3|
 |:-:|:-:|:-:|
 |c=3%, e=11%, more to Eth-Only|c=7%, e=7%, default inputs|c=11%, e=3%, more to Rpl-Staked|
@@ -33,7 +33,7 @@ The x-axis on the first picture (on the left) ranges from 0% to 70% because of '
 
 <br/>
 
-**Example 2**: The effects of adjusting the bond sizes ratios (keep all input variables the same but change 'a' and 'd'):
+**Example 2**: The effects of adjusting the bond sizes ratios (default variables but change 'a' and 'd'):
 |scenario 1|scenario 2|scenario 3|
 |:-:|:-:|:-:|
 |a=3, d=7 (Eth-Only Bond raised to all LEB8, all Rpl-Staked LEB4)|a=7, d=2, default inputs (Eth-Only all LEB4, Rpl-Staked between EB16 and LEB8) |a=15, d=1 (Eth-Only Bond lowered to all LEB2, Rpl-Staked all EB16)|
@@ -43,14 +43,25 @@ The x-axis on the first picture (on the left) ranges from 0% to 70% because of '
 
 <br/>
 
-**Example 3**: The effects of removing RPL inflation (lowering it to 0%) (keep all input variables the same but change 'f'):
+**Example 3**: The effects of removing RPL inflation (lowering it to 0%) (default variables but change 'g', also changing 'g' to zero effectively removes the need to account for variables 'h' and 'i'):
 |scenario 1|scenario 2|
 |:-:|:-:|
+|g=5%, default inputs|g=0%, no RPL inflation|
 |![Default](/plots/defaultInputs.png)|![noRPLinflation](/plots/noRPLinflation.png)|\
 
 **Conclusion**: Removing RPL inflation impacts RCM of all minipools except Eth-Only, but the proposed LEB's that receive diverted commission could remain profitable especially as the percentage of Eth-Only Node Operator Bond increases.
 
-**Side Note**: The protocol is currently funded by 30% RPL inflation: This equates to ~1mill RPL a year. At a price of $30 per RPL that equates to ~$30mill a year. If 1.5% of diverted commission cut went to the protocol instead of RPL-Staked Node Operators, and half of the existing Node Operator Bond converted to Eth-Only LEB4's, that would equate to ~536Eth or ~$1.3mill at an Eth price of $2400. You could also see how if the total number of new EthOnly Node Operators grew over time from new Node Operators this could be a sustainable mechanism to fund the protocol and remove RPL inflation.
+**Side Note**: The protocol is currently funded by 30% RPL inflation: This equates to ~1mill RPL a year. At a price of $30 per RPL that equates to ~$30mill a year. If 1.5% of diverted commission cut went to the protocol (example: 7% to Eth-Only Node Operators, 5.5% diverted to RPL-Staked Node Operators, 1.5% to protocol), and half of the existing Node Operator Bond converted to Eth-Only LEB4's, that would equate to ~536Eth or ~$1.3mill at an Eth price of $2400. You could also see how if the total number of new EthOnly Node Operators grew over time from new Node Operators this could be a sustainable mechanism to fund the protocol and remove RPL inflation.
+
+<br/>
+
+**Example 4**: Fee compression, charge less fees in commission to LST holders (default variables but lower variables c, e, and j):
+|scenario 1|scenario 2|scenario 3|
+|:-:|:-:|:-:|
+|c=7%, e=7%, j=14%|c=5%, e=5%, j=10%|c=3%, e=3%, j=6%|
+|![Default](/plots/defaultInputs.png)|![10PercentLST](/plots/LSTFee_10Percent.png)|[6PercentLST](/plots/LSTFee_6Percent.png)|\
+
+**Conclusion**: If fees were compressed to provide a more competitive rETH product to LST holders, it would cut into the RCM of all RocketPool minipools. This is true for any protocol though, including Lido. Rocket Pool can add a new angle of competition by allowing for various degrees of speculation on the RPL token to earn outsized Eth Rewards with this proposal.
 
 ## Calculations Explained
 ### Input Variables
