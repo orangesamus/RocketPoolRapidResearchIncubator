@@ -15,7 +15,7 @@ Here's an example below that uses the default inputs:\
 
 _Some abbreviations that will be used: Eth-Only = EO, RPL-Staked = RS, Minipools = MP, Node Operator = NO_
 
-New diverted Eth reward per minipool ($Y$) is calculated by dividing the Total New Eth Diverted ($T_{NED}$) by the Total number of RS MPs ($`T_{RS\_MP}`$)
+New diverted Eth reward per minipool ($Y$) is calculated by dividing Total New Eth Diverted ($T_{NED}$) by Total number of RS MPs ($`T_{RS\_MP}`$)
 
 ```math
 Y = \frac{T_{NED}}{T_{RS\_MP}}
