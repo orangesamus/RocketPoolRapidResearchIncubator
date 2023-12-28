@@ -94,7 +94,6 @@ Finally, the proposed new RCM can be calculated by adding the original Eth rewar
 ```math
 propLEB\_RCM = (EthRewardsBeforeDivertedCommission+NewDivertedCommissionReward)/soloStakeEthRewards
 ```
-\
 
 ### Deriving the equation for calculating NewDivertedCommissionReward per minipool
 
