@@ -25,7 +25,9 @@ The total amount of rETH created by EO MPs will be called $C_{EO}$, and the tota
 
 $T_{NED}$ is calculated by:
 
-$$T_{NED} = C_{EO}*EthSoloStakerAPR*\%CommissionDiverted*Time$$
+```math
+T_{NED} = C_{EO}*EthSoloStakerAPR*\%CommissionDiverted*Time
+```
 
 and $`T_{RS\_MP}`$ is calculated by:
 
