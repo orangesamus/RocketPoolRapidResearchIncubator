@@ -12,7 +12,7 @@ The final analysis and conclusions can be found here:
 
 ### Files
 - [initialProposalSubmission.md](/initialProposalSubmission.md) is the initial written proposal submission that summarizes and brainstorms the ideas from a high level
-- [YieldComparisons.xlsx](/YieldComparisons.xlsx) includes some initial calculations done to compare the yields and commissions of solutions under various scenarios
+- [YieldComparisons.xlsx](/YieldComparisons.xlsx) includes some initial calculations done to compare the yields and commissions of solutions under various scenarios. Google sheets version can also be found [here](https://docs.google.com/spreadsheets/d/12Q7qeI4TS-vMcviZIDuIwXO0p1UF5GUh/edit#gid=1728151719)
 - [RCM_plotter.py](/RCM_plotter.py) is a script to plot out the scenarios for better visualization of the possibilities
 - [calculationsAndConclusions.md](/calculationsAndConclusions.md) explains how the script is setup and provides examples with analysis/conclusions
 - [plots](/plots/) includes example plots referenced in [calculationsAndConclusions.md](/calculationsAndConclusions.md)
