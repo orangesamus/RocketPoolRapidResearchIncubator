@@ -4,7 +4,7 @@ The python script [RCM_plotter.py](/RCM_plotter.py) allows you to toggle various
 
 A simple summary of the plot is that the Y axis is RCM (rewarded capital multiplier), it’s the multiplier of how much more rewards you earn vs solo staking (solo staking y = 1), if earning twice as much rewards then y = 2… etc
 
-X-axis is the percentage of Eth Only Node operator bond out of total Node operator bond (For 1/3 Eth Only bond x=33.33%, so the the remaining 2/3 is Rpl-Staked Node Operator Bond)
+X-axis is the percentage of Eth Only Node operator bond out of total Node operator bond (For 1/3 Eth Only bond x=33.33%, so the remaining 2/3 is Rpl-Staked Node Operator Bond)
 
 The commission cut proposal explored here uses a simple distribution strategy of evenly dividing the total new ETH diverted from the commission cut by the total number of minipools (All minipools earn the same amount, so a lower LEB has higher RPL exposure but earns more ETH commission relative to the size of their bond).
 
