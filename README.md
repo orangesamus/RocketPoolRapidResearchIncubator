@@ -11,7 +11,7 @@ The final analysis and conclusions can be found here:
 [calculationsAndConclusions.md](/calculationsAndConclusions.md)
 
 ### Files
-- [initialProposalSubmission.md](/initialProposalSubmission.md) is the initial written proposal submission that summarizes and brainstorms the ideas from a high level
+- [initialProposalSubmission.md](/initialProposalSubmission.md) is the initial written proposal submission that summarizes and brainstorms the ideas from a high level. [DistributionStrategies.md](/DistributionStrategies.md) is a minor follow up to help visualize example distribution strategies for the diverted yield to RPL staked minipools.
 - [YieldComparisons.xlsx](/YieldComparisons.xlsx) includes some initial calculations done to compare the yields and commissions of solutions under various scenarios. Google sheets version can also be found [here](https://docs.google.com/spreadsheets/d/12Q7qeI4TS-vMcviZIDuIwXO0p1UF5GUh/edit#gid=1728151719)
 - [RCM_plotter.py](/RCM_plotter.py) is a script to plot out the scenarios for better visualization of the possibilities
 - [calculationsAndConclusions.md](/calculationsAndConclusions.md) explains how the script is setup and provides examples with analysis/conclusions
