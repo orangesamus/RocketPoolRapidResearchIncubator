@@ -7,7 +7,7 @@ rewards are diverted to RPL staked minipools.
 
 As a simple example, start by offering new node operators the same product as Lido’s CSM: (4E bond, and 7.5% commission on the other 28E). For an rETH holder, the commission could remain at 14%, leaving 6.5% on the 28E per minipool to be diverted to RPL staked minipools.
 
-The final analysis and conclusions can be found here:
+Start by reading the proposal submission here: [initialProposalSubmission.md](/initialProposalSubmission.md). The first distribution strategy (smoothie pool methodology) was explored more thoroughly with conclusions and calculations found here:
 [calculationsAndConclusions.md](/calculationsAndConclusions.md)
 
 ### Files
