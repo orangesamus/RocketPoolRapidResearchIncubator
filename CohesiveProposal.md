@@ -26,7 +26,7 @@ Start with the pie chart on the left, transition to the chart on the right:
 ![StakedRPLtransition](/plots/StakedRPLtransition.png)
 
 Start with rewards curve x=12%, transition to increasing x until it is effectively meaningless:
-![rewardsCurveX](/plots/rewardsCurveX.png)
+![XrewardsCurveX](/plots/XrewardsCurve.png)
 
 Reason for the modification:
 - Traditionally Rocket Pool has married RPL speculation with Node Operation, and has constrained target profitability to be a narrow window:
@@ -40,7 +40,11 @@ Reason for the modification:
 Summary:
 - Individuals will be free to stake only ETH, only RPL, or any combination of the two.
 - Staking RPL unlocks a commission cut of Eth
-- Node Operation unlocks boosted commission cut of Eth, and access to RPL inflation
+- Node Operation unlocks a larger commission cut of Eth, and access to RPL inflation
+- Node Operators who also stake RPL unlock the largest commission cut of Eth, and access to RPL inflation
+
+A simple way to visualize eligibility for the different commission cuts (RPL Staked NO also earn the commission cuts from "All Staked RPL" and "All NO's"):
+![RewardsCategories](/plots/RewardsCategories.png)
 
 ### 3. Universal Variable Commission
 All new minipools are UVC. There are 3 major commission cut knobs to control:
