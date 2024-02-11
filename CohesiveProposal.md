@@ -55,7 +55,7 @@ If we start with the numbers above, we are not all that different from today. Al
 If Rocket Pool desperately needs more node operators, category 1 can be increased at the expense of category 2 or 3. As Rocket Pool approaches maturity near self-limiting, RPL can capture more value by increasing category 2 and then 3 at the expense of 1.
 
 ### 4. Protect rETH from underperforming Node Operators
-As we increase leverage by allowing 1.5LEBs with sublinear bonding, it becomes more critical to protect rETH from NO issues. Build off ArtDemocrat’s research with some modifications (some conetext found [here](https://dao.rocketpool.net/t/rapid-research-incubator-submission-reth-protection-through-rpl-rerouting-deflation/2599/4?u=samus)):
+As we increase leverage by allowing 1.5LEBs with sublinear bonding, it becomes more critical to protect rETH from NO issues. Build off ArtDemocrat’s research with some modifications (some context found [here](https://dao.rocketpool.net/t/rapid-research-incubator-submission-reth-protection-through-rpl-rerouting-deflation/2599/4?u=samus)):
 - No RPL burn
 
 Ways to penalize underperforming NO’s and make rETH whole (in the order shown below):
