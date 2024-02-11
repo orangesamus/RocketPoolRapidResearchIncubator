@@ -26,7 +26,7 @@ Start with the pie chart on the left, transition to the chart on the right:
 ![StakedRPLtransition](/plots/StakedRPLtransition.png)
 
 Start with rewards curve x=12%, transition to increasing x until it is effectively meaningless:
-![rewardsCurveX](/plots/RewardsCurveX.png)
+![rewardsCurveX](/plots/rewardsCurveX.png)
 
 Reason for the modification:
 - Traditionally Rocket Pool has married RPL speculation with Node Operation, and has constrained target profitability to be a narrow window:
