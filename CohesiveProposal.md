@@ -1,6 +1,6 @@
 ## Cohesive Proposal
 
-Combine ideas from 4 categories of submissions: \
+Combine ideas from 4 categories of submissions:
 1. Bond Reduction through sublinear bonding
 1.	Commission Cut diverted to RPL stakers
 1.	Universal Variable Commission
@@ -45,10 +45,10 @@ All new minipools are UVC. There are 3 major commission cut knobs to control:
 1.	“NO Staked RPL”
 1.	“All Staked RPL” 
 
-In general, we can start by leaving the rETH total commission cut fee (1+2+3) at 14%:
-- 1 (All NO’s) should have a fixed floor value to ensure base case profitability, even if you are an Eth Only Node Operator. For a simple example let’s call it 3%. 
-- 3 (All Staked RPL) should have a fixed floor value to ensure base case profitability, even if you are a pure RPL staker. For a simple example let’s call it 1%.
-- 2 (NO Staked RPL) that leaves 10% as the max amount that could go to NO Staked RPL.
+In general, we can start by leaving the rETH total commission cut fee (1+2+3) at **14%**:
+- 1 (All NO’s) should have a fixed floor value to ensure base case profitability, even if you are an Eth Only Node Operator. For a simple example let’s call it **3%**. 
+- 3 (All Staked RPL) should have a fixed floor value to ensure base case profitability, even if you are a pure RPL staker. For a simple example let’s call it **1%**.
+- 2 (NO Staked RPL) that leaves **10%** as the max amount that could go to NO Staked RPL.
 
 If we start with the numbers above, we are not all that different from today. All NO’s today are RPL staked Node Operators, therefore they have access to all 3 categories of commission cuts, adding up to 14% commission. Most of the commission cut (10%) goes to NO Staked RPL.
 
