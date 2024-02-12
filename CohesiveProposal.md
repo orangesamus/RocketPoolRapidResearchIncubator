@@ -160,7 +160,7 @@ As we increase leverage by allowing 1.5LEBs with sublinear bonding, it becomes m
 
 One simple example is that this "credit" can be continuously added to from the Eth rewards and Commission from running minipools.
 
-To calculate an example, pretend you were a solo staking Node Operator, and you approach Rocket Pool 32ETH. With sublinear bonding, you create 2 minipools. The total base case yield (ignoring RPL staking) you would earn in a year can be calculated with the equation belows
+To calculate an example, pretend you were a solo staking Node Operator, and you approach Rocket Pool 32ETH. With sublinear bonding, you create 2 LEB4 minipools and 16 LEB1.5 minipools. The total base case yield (ignoring RPL staking) you would earn in a year can be calculated with the equation belows
 
 ```math
 MinipoolYield = SoloStakingAPR*EthBond + SoloStakingAPR*(32-EthBond)*(AllNOCommissionCut)
@@ -219,8 +219,6 @@ In the above method, Staked RPL NO’s collectively lose ~some Eth, but gain ~so
 With this method, RPL acts as a buffer of collateral before the ETH Bond is affected, but under extreme scenarios a validator is ejected for falling under the minimum required Eth Bond
 
 </details>
-
-<br/>
 
 ### Acknowledgments
 
