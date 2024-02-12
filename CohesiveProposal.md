@@ -71,8 +71,8 @@ Following the example numbers listed above: All Node Operators will earn 4% comm
 StakedRPLCommissionCut = ax + by \\
 a = \frac{AllStakedRPLCommissionCut}{AllStakedRPLCommissionCut+NOStakedRPLCommissionCut} \\
 b = \frac{NOStakedRPLCommisisonCut}{AllStakedRPLCommissionCut+NOStakedRPLCommissionCut} \\
-x = Individual \"AllStakedRPL\" Weighting \\
-y = Individual \"NOStakedRPL\" Weighting
+x = Individual ``AllStakedRPL'' Weighting \\
+y = Individual ``NOStakedRPL'' Weighting
 }
 ```
 
