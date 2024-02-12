@@ -17,7 +17,7 @@ Mostly building off [direct_capture2](https://github.com/Valdorff/rp-thoughts/bl
 
 - Change RPL inflation rewards rewards to scale linearly with Node Operator borrowed Eth.
 - Split “Staked RPL” into two categories:
-  - “NO Staked RPL”: rewards curve suggested in Direct Capture 2 (scales with Borrowed Eth, therefore only accessible to Node Operators)
+  - “NO Staked RPL”: rewards curve suggested in Direct Capture 2 (scales with Borrowed Eth, therefore only accessible to Node Operators), see [here](#no-staked-rpl-rewards-curve)
   - “All Staked RPL”: method described in original Direct Capture (weighted per staked token, scales linearly) – independent from Node Operation duties, opening the market to allow pure RPL staking.
     - Note: “All Staked RPL” still applies to RPL staked by Node Operators
   - Transition: Start with ~Direct Capture2. Over time, transition to ~Direct Capture:
@@ -26,9 +26,15 @@ Mostly building off [direct_capture2](https://github.com/Valdorff/rp-thoughts/bl
 Transition visualized below: Start with the pie chart on the left, transition to the chart on the right:
 ![StakedRPLtransition](/plots/StakedRPLtransition.png)
 
+For reference:
+
+#### NO Staked RPL rewards curve ####:
+
+![direct2_curve](/plots/direct2_curve.png)
+
 <br/>
 
-Reason for the modification:
+**Reason for the modification:**
 
 - Traditionally Rocket Pool has married RPL speculation with Node Operation, and has constrained target profitability to be a narrow window:
   - Requiring a minimum RPL bond of 10% borrowed ETH
@@ -40,7 +46,7 @@ Reason for the modification:
 
 <br/>
 
-Summary:
+**Summary:**
 
 - Individuals will be free to stake only ETH, only RPL, or any combination of the two.
 - Staking RPL unlocks a commission cut of Eth
@@ -136,6 +142,8 @@ If Rocket Pool desperately needs more node operators, category 1 can be increase
 
 ### 4. Protect rETH from underperforming Node Operators
 
+**Introducing Credit Collateral:**
+
 As we increase leverage by allowing 1.5LEBs with sublinear bonding, it becomes more critical to protect rETH from NO issues. One way this can be accomplished is by allowing Node Operators to add ETH "credit" to their node balance in addition their ETH that is "staked" as bonds for minipools. The "credit" is not earning yield or commission since it isn't staked on the beacon chain or contributing to rETH supply, but it can act as a buffer of collateral to protect rETH from underperformance, and protect a Node Operator from being ejected by Rocket Pool for having too low of an Eth Bond.
 
 One simple example is that this "credit" can be continuously added to from the Eth rewards and Commission from running minipools.
@@ -160,6 +168,10 @@ This means if you start with 32 Eth, even as an Eth Only Node Operator, roughly 
 
 In this scenario, you could choose to "auto-credit" your rewards, where your rewards get sent to your "credit" balance, and once your "credit" balance exceeds 1.5ETH you can use your "credit" to create an additional LEB1.5 minipool.
 
+<br/>
+
+**Protecting rETH:**
+
 Here is where rETH protection also comes in: Building off ArtDemocrat’s research with some modifications (some context found [here](https://dao.rocketpool.net/t/rapid-research-incubator-submission-reth-protection-through-rpl-rerouting-deflation/2599/4?u=samus)):
 
 - No RPL burn
@@ -175,7 +187,7 @@ Rocket Pool has already implemented a simple version of a "credit" balance which
 
 Optional variations:
 
-- Eth rewards could be rerouted to make rETH whole before going to the underperforming Node Operator
+- Eth _rewards_ could be rerouted to make rETH whole before going to the underperforming Node Operator
 - Node Operators could have Rocket Pool convert their "credit" balance to rETH, so that they still earn some staking yield on their credit balance (this would probably have tax implications though to swap ETH for rETH, then back to ETH to stake as a bond for an additional LEB1.5)
 - Staked RPL could also be used as a form of collateral, penalizing underperfoming Node Operators could look like something below:
 
