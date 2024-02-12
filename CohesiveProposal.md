@@ -90,7 +90,7 @@ If we say SoloStakingAPR is 3%, and AllNOCommissionCut = 4%, your total yield co
 \displaylines{
 LEB8 = 0.03*4 + 0.03*28*0.04 \\
 LEB1.5 = 0.03*1.5 + 0.03*30.5*0.04 \\
-Total = 2*LEB8 + 16*LEB1.5 = ~1.61 Eth
+Total = 2*LEB8 + 16*LEB1.5 = \~1.61 Eth
 }
 ```
 
