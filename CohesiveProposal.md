@@ -23,10 +23,10 @@ Mostly building off [direct_capture2](https://github.com/Valdorff/rp-thoughts/bl
   - Transition: Start with ~Direct Capture2. Over time, transition to ~Direct Capture:
     - Start with Staked RPL yield mostly going to “NO Staked RPL”, and proportionally increase “All Staked RPL” and decrease “NO Staked RPL” until all of this yield goes to “All Staked RPL”
 
-Transition visualized below:
-
-Start with the pie chart on the left, transition to the chart on the right:
+Transition visualized below: Start with the pie chart on the left, transition to the chart on the right:
 ![StakedRPLtransition](/plots/StakedRPLtransition.png)
+
+<br/>
 
 Reason for the modification:
 
@@ -38,6 +38,8 @@ Reason for the modification:
   - To start with we are opening the market to RPL skeptics (allowing Eth Only Node Operators, and linearly increasing rewards for “NO Staked RPL” from RPL bonds of 0-12% borrowed ETH).
   - We also open the market to a wider range of RPL speculators by allowing pure RPL staking, and over time transition to giving a larger commission cut to “All Staked RPL”
 
+<br/>
+
 Summary:
 
 - Individuals will be free to stake only ETH, only RPL, or any combination of the two.
@@ -47,6 +49,8 @@ Summary:
 
 A simple way to visualize eligibility for the different commission cuts (RPL Staked NO also earn the commission cuts from "All Staked RPL" and "All NO's"):\
 ![RewardsCategories](/plots/RewardsCategories.png)
+
+<br/>
 
 ### 3. Universal Variable Commission
 
@@ -86,31 +90,45 @@ StakedRPLCommissionCut = 0.1x + 0.9y
 }
 ```
 
-So in the equations above, if you are a pure RPL staker with x RPL to stake, you would only earn from "AllStakedRPL" commission cut since "NOStakedRPL" commission cut depends on borrowed Eth and is therefore only eligble to NO's, (y variable = 0). You would earn:
+To see some example calculations check the collapsable section below:
 
-```math
-0.1*\frac{x}{Total RPL Stake Supply}
-```
-
-If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 12% borrowed ETH, following the rewards curve from DirectCapture2 you would earn:
-
-```math
-0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{1*MiniPoolCount}{TotalWeightOfNOStakedRPL}
-```
-
-If you only had an RPL collateral equivalent of 6% borrowed Eth, you would earn:
-
-```math
-0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{0.5*MiniPoolCount}{TotalWeightOfNOStakedRPL}
-```
-
-If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 15% borrowed ETH, following the rewards curve from DirectCapture2 you would earn:
-
-```math
-0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{1.2*MiniPoolCount}{TotalWeightOfNOStakedRPL}
-```
-
-"TotalWeightOfNOStakedRPL" is calculated by summing the weight of each individual NO, so that each NO earns their proportional weight of rewards.
+<details>
+  <summary>Example Calculations</summary>
+  
+  If you are a pure RPL staker with x RPL to stake, you would only earn from "AllStakedRPL" commission cut since "NOStakedRPL" commission cut depends on borrowed Eth and is therefore only eligble to NO's, (y variable = 0). You would earn:
+  
+  ```math
+  0.1*\frac{x}{Total RPL Stake Supply}
+  ```
+  
+  If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 12% borrowed ETH, following the rewards curve from DirectCapture2 you would earn:
+  
+  ```math
+  0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{1*MiniPoolCount}{TotalWeightOfNOStakedRPL}
+  ```
+  
+  If you only had an RPL collateral equivalent of 6% borrowed Eth, you would earn:
+  
+  ```math
+  0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{0.5*MiniPoolCount}{TotalWeightOfNOStakedRPL}
+  ```
+  
+  If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 15% borrowed ETH, following the rewards curve from DirectCapture2 you would earn:
+  
+  ```math
+  0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{1.2*MiniPoolCount}{TotalWeightOfNOStakedRPL}
+  ```
+  
+  If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 100% borrowed ETH, following the rewards curve from DirectCapture2 you would earn:
+  
+  ```math
+  0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{1.3*MiniPoolCount}{TotalWeightOfNOStakedRPL}
+  ```
+  
+  "TotalWeightOfNOStakedRPL" is calculated by summing the weight of each individual NO, so that each NO earns their proportional weight of rewards.
+  
+</details>
+<br/>
 
 **UVC/Adjusting variables:**
 
