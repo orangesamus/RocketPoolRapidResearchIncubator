@@ -197,17 +197,18 @@ With the description shown above, Node Operators can essentially "deleverage" so
 
 Rocket Pool has already implemented a simple version of a "credit" balance which was used in the most recent "Atlas" upgrade to assist Node Operators with converting their EB16's to LEB8's. This "credit" balance mechanism could be reused for LEB8 conversions to sublinear bonding, while also functioning as an additional layer of collateral should a Node Operator choose to somewhat deleverage their bonds at stake.
 
-Optional variations:
+<details>
+  <summary>Optional variations</summary>
 
 - Eth _rewards_ could be rerouted to make rETH whole before going to the underperforming Node Operator
 - Node Operators could have Rocket Pool convert their "credit" balance to rETH, so that they still earn some staking yield on their credit balance (this would probably have tax implications though to swap ETH for rETH, then back to ETH to stake as a bond for an additional LEB1.5)
 - Staked RPL could also be used as a form of collateral, penalizing underperfoming Node Operators could look like something below:
 
 1. Take from their ETH Rewards
-1. Take from their ETH (or rETH) Credit
-1. Take from their RPL Rewards
-1. Take from their RPL Bond
-1. Take from their ETH Bond
+2. Take from their ETH (or rETH) Credit
+3. Take from their RPL Rewards
+4. Take from their RPL Bond
+5. Take from their ETH Bond
 
 An additional optional variation: To prevent market impacts to selling RPL for ETH to make rETH whole, the method below could be used:
 
@@ -216,6 +217,10 @@ An additional optional variation: To prevent market impacts to selling RPL for E
 In the above method, Staked RPL NO’s collectively lose ~some Eth, but gain ~some equivalent amount of RPL for that rewards period
 
 With this method, RPL acts as a buffer of collateral before the ETH Bond is affected, but under extreme scenarios a validator is ejected for falling under the minimum required Eth Bond
+
+</details>
+
+<br/>
 
 ### Acknowledgments
 
