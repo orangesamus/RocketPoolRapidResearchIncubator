@@ -69,29 +69,50 @@ Following the example numbers listed above: All Node Operators will earn 4% comm
 ```math
 \displaylines{
 StakedRPLCommissionCut = ax + by \\
-StakedRPLCommissionCut = \frac{AllStakedRPLCommissionCut}{AllStakedRPLCommissionCut+NOStakedRPLCommissionCut}*{StakedRPLWeighting} + \frac{NOStakedRPLCommisisonCut}{AllStakedRPLCommissionCut+NOStakedRPLCommissionCut}*\frac{(DirectCapture2RewardsCurveWeighting)}{TotalWeightOfNOStakedRPL}
+a = \frac{AllStakedRPLCommissionCut}{AllStakedRPLCommissionCut+NOStakedRPLCommissionCut} \\
+b = \frac{NOStakedRPLCommisisonCut}{AllStakedRPLCommissionCut+NOStakedRPLCommissionCut} \\
+x = Individual "AllStakedRPL" Weighting \\
+y = Individual "NOStakedRPL" Weighting
 }
 ```
 
-So in the equations above, if you are a pure RPL staker with x RPL to stake, you would earn:
+With the example of 1% commission cut to AllStakedRPL, and 9% commission cut to NOStakedRPL:
 
 ```math
 \displaylines{
-\frac{1\%}{1\%+9\%} * \frac{x}{Total RPL Stake Supply} \\
+a = \frac{1\%}{1\%+9\%} = 0.1 \\
+b = \frac{9\%}{1\%+9\%} = 0.9 \\
+StakedRPLCommissionCut = 0.1x + 0.9y
+}
+```
+
+So in the equations above, if you are a pure RPL staker with x RPL to stake, you would only earn from "AllStakedRPL" commission cut since "NOStakedRPL" commission cut depends on borrowed Eth and is therefore only eligble to NO's, (y variable = 0). You would earn:
+
+```math
 0.1*\frac{x}{Total RPL Stake Supply}
-}
 ```
 
-In the equation above, as a pure RPL staker you would only earn from "AllStakedRPL" commission cut since "NOStakedRPL" commission cut depends on borrowed Eth and is therefore only eligble to NO's, (y variable = 0).
-
-If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 12% borrowed ETH, you would earn:
+If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 12% borrowed ETH, following the rewards curve from DirectCapture2 you would earn:
 
 ```math
-\displaylines{
-\frac{1\%}{1\%+9\%} * \frac{x}{Total RPL Stake Supply} + \frac{9\%}{1\%+9\%}*\frac{1*MiniPoolCount}{TotalWeightOfNOStakedRPL} \\
-0.1*\frac{x}{Total RPL Stake Supply} + 0.9*\frac{1*MiniPoolCount}{TotalWeightOfNOStakedRPL}
-}
+0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{1*MiniPoolCount}{TotalWeightOfNOStakedRPL}
 ```
+
+If you only had an RPL collateral equivalent of 6% borrowed Eth, you would earn:
+
+```math
+0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{0.5*MiniPoolCount}{TotalWeightOfNOStakedRPL}
+```
+
+If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 15% borrowed ETH, following the rewards curve from DirectCapture2 you would earn:
+
+```math
+0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{1.2*MiniPoolCount}{TotalWeightOfNOStakedRPL}
+```
+
+"TotalWeightOfNOStakedRPL" is calculated by summing the weight of each individual NO, so that each NO earns their proportional weight of rewards.
+
+**UVC/Adjusting variables:**
 
 If Rocket Pool desperately needs more node operators, category 1 can be increased at the expense of category 2 or 3 (this leads to a smaller total pot for "StakedRPLCommissionCut"). As Rocket Pool approaches maturity near self-limiting, RPL can capture more value by increasing category 2 and then 3 at the expense of 1 (increase total pot for "StakedRPLCommissionCut", and then also increase coefficient "a" at the expense of coefficient "b").
 
