@@ -65,8 +65,8 @@ For reference:
 - Node Operation unlocks a base commission cut of Eth, and access to RPL inflation
 - Node Operators who also stake RPL unlock a bonus commission cut of Eth
 
-A simple way to visualize eligibility for the different commission cuts (RPL Staked NO also earn the commission cuts from "All Staked RPL" and "All NO's"):\
-![RewardsCategories](/plots/RewardsCategories.png)
+A simple way to visualize eligibility for the different commission cuts, and the transition over time (RPL Staked NO also earn the commission cuts from "All Staked RPL" and "All NO's"):\
+![EligibilityTransition](/plots/EligibilityTransition.png)
 
 <br/>
 
