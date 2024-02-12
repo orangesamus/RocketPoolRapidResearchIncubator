@@ -64,13 +64,36 @@ In general, we can start by leaving the rETH total commission cut fee (1+2+3) at
 
 If we start with the numbers above, we are not all that different from today. All NO’s today are RPL staked Node Operators, therefore they have access to all 3 categories of commission cuts, adding up to 14% commission. Most of the commission cut (9%) goes exclusively to NO Staked RPL.
 
-Following the example numbers listed above: All Node Operators will earn 4% commisison, and the remaining 10% commission goes to a commission cut pot to be split among RPL stakers with an example equation below:
+Following the example numbers listed above: All Node Operators will earn 4% commisison, and the remaining 10% commission goes to a commission cut pot to be split among RPL stakers where each RPL staker can calculate their share with an example equation below:
 
 ```math
-Y = \frac{1\%}{1\%+9\%} * \frac{x RPL Staked}{Total RPL Stake Supply} + \frac{9\%}{1\%+9\%} * (rewardsCurve from Direct Capture2)
+\displayLines{
+StakedRPLCommissionCut = ax + by
+StakedRPLCommissionCut = \frac{AllStakedRPLCommissionCut}{AllStakedRPLCommissionCut+NOStakedRPLCommissionCut}*{StakedRPLWeighting} + \frac{NOStakedRPLCommisisonCut}{AllStakedRPLCommissionCut+NOStakedRPLCommissionCut}*\frac{(DirectCapture2RewardsCurveWeighting)}{TotalWeightOfNOStakedRPL}
+}
 ```
 
-If Rocket Pool desperately needs more node operators, category 1 can be increased at the expense of category 2 or 3. As Rocket Pool approaches maturity near self-limiting, RPL can capture more value by increasing category 2 and then 3 at the expense of 1.
+So in the equations above, if you are a pure RPL staker with x RPL to stake, you would earn:
+
+```math
+\displayLines{
+\frac{1\%}{1\%+9\%} * \frac{x}{Total RPL Stake Supply} \\
+0.1*\frac{x}{Total RPL Stake Supply}
+}
+```
+
+In the equation above, as a pure RPL staker you would only earn from "AllStakedRPL" commission cut since "NOStakedRPL" commission cut depends on borrowed Eth and is therefore only eligble to NO's, (y variable = 0).
+
+If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 12% borrowed ETH, you would earn:
+
+```math
+\displayLines{
+\frac{1\%}{1\%+9\%} * \frac{x}{Total RPL Stake Supply} + \frac{9\%}{1\%+9\%}*\frac{1*MiniPoolCount}{TotalWeightOfNOStakedRPL}\\
+0.1*\frac{x}{Total RPL Stake Supply} + 0.9*\frac{1*MiniPoolCount}{TotalWeightOfNOStakedRPL}
+}
+```
+
+If Rocket Pool desperately needs more node operators, category 1 can be increased at the expense of category 2 or 3 (this leads to a smaller total pot for "StakedRPLCommissionCut"). As Rocket Pool approaches maturity near self-limiting, RPL can capture more value by increasing category 2 and then 3 at the expense of 1 (increase total pot for "StakedRPLCommissionCut", and then also increase coefficient "a" at the expense of coefficient "b").
 
 ### 4. Protect rETH from underperforming Node Operators
 
