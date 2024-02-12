@@ -15,10 +15,10 @@ Defer to Valdorff’s recommendations here, using `Aggressive [alt]` from [bond_
 
 Mostly building off [direct_capture2](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/direct_capture2.md) and [direct_capture](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/direct_capture.md) proposals from Valdorff, with some modifications:
 
-- Change RPL inflation rewards rewards to scale linearly with Node Operator borrowed Eth.
+- Change RPL inflation rewards rewards to scale linearly with Node Operator borrowed Eth, see [here](#rpl-inflation-rewards-curve)
 - Split “Staked RPL” into two categories:
-  - “NO Staked RPL”: rewards curve suggested in Direct Capture 2 (scales with Borrowed Eth, therefore only accessible to Node Operators), see [here](#no-staked-rpl-rewards-curve)
-  - “All Staked RPL”: method described in original Direct Capture (weighted per staked token, scales linearly) – independent from Node Operation duties, opening the market to allow pure RPL staking.
+  - “NO Staked RPL”: rewards curve suggested in Direct Capture 2 (scales with Borrowed Eth and therefore only accessible to Node Operators, see [here](#no-staked-rpl-rewards-curve))
+  - “All Staked RPL”: method described in original Direct Capture (weighted per staked token and scales linearly, see [here](#all-staked-rpl-rewards-curve)) – independent from Node Operation duties, opening the market to allow pure RPL staking.
     - Note: “All Staked RPL” still applies to RPL staked by Node Operators
   - Transition: Start with ~Direct Capture2. Over time, transition to ~Direct Capture:
     - Start with Staked RPL yield mostly going to “NO Staked RPL”, and proportionally increase “All Staked RPL” and decrease “NO Staked RPL” until all of this yield goes to “All Staked RPL”
@@ -26,13 +26,25 @@ Mostly building off [direct_capture2](https://github.com/Valdorff/rp-thoughts/bl
 Transition visualized below: Start with the pie chart on the left, transition to the chart on the right:
 ![StakedRPLtransition](/plots/StakedRPLtransition.png)
 
+<br/>
+
 For reference:
+
+#### RPL Inflation rewards curve
+
+![AllStakedRPLRewards.png](/plots/AllStakedRPLRewards.png)
+
+<br/>
 
 #### NO Staked RPL rewards curve
 
 ![direct2_curve](/plots/direct2_curve.png)
 
 <br/>
+
+#### All Staked RPL rewards curve
+
+![AllStakedRPLRewards](/plots/AllStakedRPLRewards.png)
 
 **Reason for the modification:**
 
