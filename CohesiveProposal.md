@@ -58,7 +58,7 @@ If we start with the numbers above, we are not all that different from today. Al
 Following the example numbers listed above: All Node Operators will earn 4% commisison, and the remaining 10% commission goes to a commission cut pot to be split among RPL stakers with an example equation below:
 
 ```math
-Y = \frac{1%}{1%+9%} * \frac{x RPL Staked}{total RPL stake} + \frac{9%}{1%+9%} * (rewardsCurve from Direct Capture2)
+Y = \frac{1\%}{1\%+9\%} * \frac{x RPL Staked}{total RPL stake} + \frac{9\%}{1\%+9\%} * (rewardsCurve from Direct Capture2)
 ```
 
 If Rocket Pool desperately needs more node operators, category 1 can be increased at the expense of category 2 or 3. As Rocket Pool approaches maturity near self-limiting, RPL can capture more value by increasing category 2 and then 3 at the expense of 1.
