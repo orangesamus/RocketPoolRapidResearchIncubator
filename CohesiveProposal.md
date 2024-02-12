@@ -17,7 +17,7 @@ Mostly building off [direct_capture2](https://github.com/Valdorff/rp-thoughts/bl
 
 - Change RPL inflation rewards rewards to scale linearly with Node Operator borrowed Eth, see [here](#rpl-inflation-rewards-curve)
 - Split “Staked RPL” into two categories:
-  - “NO Staked RPL”: rewards curve suggested in Direct Capture 2 (scales with Borrowed Eth and therefore only accessible to Node Operators, see [here](#no-staked-rpl-rewards-curve))
+  - “NO Staked RPL”: rewards curve suggested in Direct Capture 2 (scales with _Borrowed Eth_ value of RPL Staked and therefore only accessible to Node Operators, see [here](#no-staked-rpl-rewards-curve))
   - “All Staked RPL”: method described in original Direct Capture (weighted per staked token and scales linearly, see [here](#all-staked-rpl-rewards-curve)) – independent from Node Operation duties, opening the market to allow pure RPL staking.
     - Note: “All Staked RPL” still applies to RPL staked by Node Operators
   - Transition: Start with ~Direct Capture2. Over time, transition to ~Direct Capture:
@@ -38,7 +38,7 @@ For reference:
 
 #### NO Staked RPL rewards curve
 
-![direct2_curve](/plots/direct2_curve.png)
+![DirectCapture2RewardsCurve](/plots/DirectCapture2RewardsCurve.png)
 
 <br/>
 
