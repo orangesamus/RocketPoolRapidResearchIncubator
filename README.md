@@ -1,7 +1,19 @@
-## Commission Cut Proposal
-This Repository contains a "Commission Cut" proposal submitted for the [Rapid Research Incubator](https://dao.rocketpool.net/t/options-forum-thread/). This repository is a consolidation of the thoughts and files from the DAO Forum post submission [DAO Forum post submission here](https://dao.rocketpool.net/t/rapid-research-incubator-submission-eth-only-minipools-divert-a-portion-of-commissions-to-rpl-staked-minipools/)
+## Rapid Research Incubator
 
-### Summary
+This Repository contains my original "Commission Cut" proposal submitted for the [Rapid Research Incubator](https://dao.rocketpool.net/t/options-forum-thread/), and also my "Cohesive" proposal that pulls from several Rapid Research Incubator submission ideas with some modifications as a follow up to [Next Steps](https://dao.rocketpool.net/t/rapid-research-review-next-steps/2709).
+
+### Cohesive Proposal Summary
+
+Combine ideas from 4 categories of submissions:
+
+1. Bond Reduction through sublinear bonding
+1. Commission Cut diverted to RPL stakers
+1. Universal Variable Commission
+1. Protect rETH from underperforming Node Operators
+   The full proposal can be found here: [CohesiveProposal](/CohesiveProposal.md)
+
+### Commission Cut Proposal Summary
+
 The summary of this idea is to introduce Eth only minipools, where a portion of their
 rewards are diverted to RPL staked minipools.
 
@@ -11,6 +23,8 @@ Start by reading the proposal submission here: [initialProposalSubmission.md](/i
 [calculationsAndConclusions.md](/calculationsAndConclusions.md)
 
 ### Files
+
+- [CohesiveProposal](/CohesiveProposal.md) is my suggested proposal for next steps that pulls from several Rapid Research Incubator submission ideas with some modifications
 - [initialProposalSubmission.md](/initialProposalSubmission.md) is the initial written proposal submission that summarizes and brainstorms the ideas from a high level. [DistributionStrategies.md](/DistributionStrategies.md) is a minor follow up to help visualize example distribution strategies for the diverted yield to RPL staked minipools.
 - [YieldComparisons.xlsx](/YieldComparisons.xlsx) includes some initial calculations done to compare the yields and commissions of solutions under various scenarios. Google sheets version can also be found [here](https://docs.google.com/spreadsheets/d/12Q7qeI4TS-vMcviZIDuIwXO0p1UF5GUh/edit#gid=1728151719)
 - [RCM_plotter.py](/RCM_plotter.py) is a script to plot out the scenarios for better visualization of the possibilities
