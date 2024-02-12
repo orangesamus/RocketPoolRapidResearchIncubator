@@ -28,7 +28,7 @@ Transition visualized below: Start with the pie chart on the left, transition to
 
 For reference:
 
-#### NO Staked RPL rewards curve ####:
+#### NO Staked RPL rewards curve
 
 ![direct2_curve](/plots/direct2_curve.png)
 
