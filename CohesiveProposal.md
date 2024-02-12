@@ -32,7 +32,7 @@ For reference:
 
 #### RPL Inflation rewards curve
 
-![AllStakedRPLRewards.png](/plots/AllStakedRPLRewards.png)
+![RPLinflationRewards.png](/plots/RPLinflationRewards.png)
 
 <br/>
 
