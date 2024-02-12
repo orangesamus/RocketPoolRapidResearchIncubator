@@ -38,7 +38,7 @@ For reference:
 
 #### NO Staked RPL rewards curve
 
-![DirectCapture2RewardsCurve](/plots/DirectCapture2RewardsCurve.png)
+![DC2RewardsCurve](/plots/DC2RewardsCurve.png)
 
 <br/>
 
