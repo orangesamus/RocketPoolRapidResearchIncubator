@@ -10,7 +10,8 @@ Combine ideas from 4 categories of submissions:
 1. Commission Cut diverted to RPL stakers
 1. Universal Variable Commission
 1. Protect rETH from underperforming Node Operators
-   The full proposal can be found here: [CohesiveProposal](/CohesiveProposal.md)
+
+The full proposal can be found here: [CohesiveProposal](/CohesiveProposal.md)
 
 ### Commission Cut Proposal Summary
 
