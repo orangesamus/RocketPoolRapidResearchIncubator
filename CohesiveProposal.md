@@ -85,7 +85,7 @@ In general, we can start by leaving the rETH total commission cut fee (1+2+3) at
 - 3 (All Staked RPL) should have a fixed floor value to ensure base case profitability, even if you are a pure RPL staker. For a simple example let’s call it **1%**.
 - 2 (NO Staked RPL) that leaves **9%** as the max amount that could go to NO Staked RPL.
 
-If we start with the numbers above, we are not all that different from today. All NO’s today are RPL staked NO's, and all staked RPL today is staked by NO's. That means all existing NO's would have access to all 3 categories of commission cuts. We are starting by restricting the commission cuts for the extremes (RPL only staking, and ETH only staking), and providing RPL Staked NO's with exclusive access to most of the commission cut (9%).
+If we start with the numbers above, we are not all that different from today. All NO’s today are RPL staked NO's, and all staked RPL today is staked by NO's. That means all existing NO's would have access to all 3 categories of commission cuts. We are opening two new markets with restricted commission cuts (RPL only staking, and ETH only staking), and providing RPL Staked NO's with exclusive access to most of the commission cut (9%).
 
 Following the example numbers listed above: All Node Operators will earn 4% commisison, and the remaining 10% commission goes to a commission cut pot to be split among RPL stakers where each RPL staker can calculate their share with an example equation below:
 
