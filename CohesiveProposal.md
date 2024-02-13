@@ -18,6 +18,7 @@ Mostly building off [direct_capture2](https://github.com/Valdorff/rp-thoughts/bl
 - Change RPL inflation rewards rewards to scale linearly with Node Operator borrowed Eth, see [here](#rpl-inflation-rewards-curve)
 - Split “Staked RPL” into two categories:
   - “NO Staked RPL”: rewards curve suggested in Direct Capture 2 (scales with _Borrowed Eth_ value of RPL Staked and therefore only accessible to Node Operators, see [here](#no-staked-rpl-rewards-curve))
+    - Note: "NO" is used throughout this proposal as an abbreviation for "Node Operator"
   - “All Staked RPL”: method described in original Direct Capture (weighted per staked token and scales linearly, see [here](#all-staked-rpl-rewards-curve)) – independent from Node Operation duties, opening the market to allow pure RPL staking.
     - Note: “All Staked RPL” still applies to RPL staked by Node Operators
   - Transition: Start with ~Direct Capture2. Over time, transition to ~Direct Capture:
@@ -84,7 +85,7 @@ In general, we can start by leaving the rETH total commission cut fee (1+2+3) at
 - 3 (All Staked RPL) should have a fixed floor value to ensure base case profitability, even if you are a pure RPL staker. For a simple example let’s call it **1%**.
 - 2 (NO Staked RPL) that leaves **9%** as the max amount that could go to NO Staked RPL.
 
-If we start with the numbers above, we are not all that different from today. All NO’s today are RPL staked Node Operators, therefore they have access to all 3 categories of commission cuts, adding up to 14% commission. Most of the commission cut (9%) goes exclusively to NO Staked RPL.
+If we start with the numbers above, we are not all that different from today. All NO’s today are RPL staked NO's, and all staked RPL today is staked by NO's. That means all existing NO's would have access to all 3 categories of commission cuts. We are starting by restricting the commission cuts for the extremes (RPL only staking, and ETH only staking), and providing RPL Staked NO's with exclusive access to most of the commission cut (9%).
 
 Following the example numbers listed above: All Node Operators will earn 4% commisison, and the remaining 10% commission goes to a commission cut pot to be split among RPL stakers where each RPL staker can calculate their share with an example equation below:
 
