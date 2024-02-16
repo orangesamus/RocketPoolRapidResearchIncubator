@@ -92,7 +92,8 @@ All new minipools are UVC. There are 3 major commission cut knobs to control:
 1. Node Operator Max Bonus Commission
 
 - In general, we can start by leaving the total rETH commission fee at **14%**
-- All Node Operators receive a base commission. According to [calculationsAndConclusions](/calculationsAndConclusions.md) and [YieldComparisons](/YieldComparisons.xlsx), a base commission of **7%** would be ~1.5x more profitable than solo staking (from bonded ETH yield + base commission alone). For reference, Lido's CSM suggested a setup that provided 1.5x more profitability than solo staking.
+- All Node Operators receive a base commission. According to [calculationsAndConclusions](/calculationsAndConclusions.md) and [YieldComparisons](/YieldComparisons.xlsx), a base commission of **7%** would be ~1.5x more profitable than solo staking for LEB4's (from bonded ETH yield + base commission alone). For reference, Lido's CSM suggested a setup that provided 1.5x more profitability than solo staking.
+  - Note that this does not account for sublinear bonding, which could allow the number **7%** listed above to be smaller and still more profitable due to increased commission
 - That leaves **7%** to be allocated between the Commission Cut Pot of ETH or Node Operator Bonus Commission. This means a fully RPL collateralized Node could earn 7% bonus commission, and an Eth Only Node Operator would earn 0% bonus commission.
   - For Eth Only Node Operators, or Nodes with RPL collateral values equivalent to less than 10% borrowed Eth, the remaining commission goes to the Commission Cut Pot to be distributed to RPL stakers.
 
