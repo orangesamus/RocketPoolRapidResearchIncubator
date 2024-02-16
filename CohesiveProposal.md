@@ -24,7 +24,7 @@ Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdo
 
 <br/>
 
-- Introduce "Base Commission" and "Bonus Commission" for Node Operators. "Base Commission" is paid to all Node Operators, while "Bonus Commission" eligibility is determined by RPL staked on a Node, with max bonus being a Staked RPL value equivalent to 10% borrowed Eth. See Bonus Commission Eligibility below:
+- Introduce "Base Commission" and "Bonus Commission" for Node Operators. "Base Commission" is paid to all Node Operators, while "Bonus Commission" eligibility is determined by RPL staked on a Node, with max bonus being a Staked RPL value equivalent to 10% borrowed Eth. See Bonus Commission Eligibility below ("NO" is an abbreviation for "Node Operator"):
 
 ![BonusCommissionEligibility](/plots/BonusCommissionEligibility.png)
 
@@ -45,6 +45,8 @@ To understand the dynamics of the Eth Revenue Stream, take 4 example participant
 
 The Eth Revenue would be distributed as shown below:
 ![BorrowedEthRevenue](/plots/BorrowedEthRevenue.png)
+
+<br/>
 
 **Reason for the modifications:**
 
@@ -77,83 +79,67 @@ The Eth Revenue would be distributed as shown below:
 
 All new minipools are UVC. There are 3 major commission cut knobs to control:
 
-1. “All NO’s”
-1. “NO Staked RPL”
-1. “All Staked RPL”
+1. Total rETH Commission Fee
+1. Node Operator Base Commission
+1. Node Operator Max Bonus Commission
 
-In general, we can start by leaving the rETH total commission cut fee (1+2+3) at **14%**:
+- In general, we can start by leaving the total rETH commission fee at **14%**
+- All Node Operators receive a base commission. According to [calculationsAndConclusions](/calculationsAndConclusions.md) and [YieldComparisons](/YieldComparisons.xlsx), a base commission of **7%** would be ~1.5x more profitable than solo staking (from bonded ETH yield + base commission alone). For reference, Lido's CSM suggested a setup that provided 1.5x more profitability than solo staking.
+- That leaves **7%** to be allocated between the Commission Cut Pot of ETH or Node Operator Bonus Commission. This means a fully RPL collateralized Node could earn 7% bonus commission, and an Eth Only Node Operator would earn 0% bonus commission.
+  - For Eth Only Node Operators, or Nodes with RPL collateral values equivalent to less than 10% borrowed Eth, the remaining commission goes to the Commission Cut Pot to be distributed to RPL stakers.
 
-- 1 (All NO’s) should have a fixed floor value to ensure base case profitability, even if you are an Eth Only Node Operator. For a simple example let’s call it **4%**.
-- 3 (All Staked RPL) should have a fixed floor value to ensure base case profitability, even if you are a pure RPL staker. For a simple example let’s call it **1%**.
-- 2 (NO Staked RPL) that leaves **9%** as the max amount that could go to NO Staked RPL.
+If we started by applying this proposal to our existing set of Node Operators today, very little would change with commissions. Most Node Operators today are "fully RPL collateralized" since they all put up a 10% RPL bond as a minimum requirement when spinning up new minipools. This would mean they would mostly all earn the full bonus commission + the base commission, adding up to a total commission of 14% (the same as it is today).
 
-If we start with the numbers above, we are not all that different from today. All NO’s today are RPL staked NO's, and all staked RPL today is staked by NO's. That means all existing NO's would have access to all 3 categories of commission cuts. We are opening two new markets with restricted commission cuts (RPL only staking, and ETH only staking), and providing RPL Staked NO's with exclusive access to most of the commission cut (9%).
+The effects of the changes would begin to materialize as many Node Operators might not "top up" their RPL collateral, and instead opt to give up some commission to the Commission Cut Pot. We would also expect a wave of new Node Operators to join who vary on the spectrum of desire for RPL speculation, ranging from zero RPL (Eth-Only) to somewhere inbetween RPL bond values of 0-10% borrowed ETH. These new Node Operators would be providing substantial amounts of ETH to the Commission Cut Pot to then be distributed to RPL stakers (both pure RPL stakers and Node Operators with RPL collateral).
 
-Following the example numbers listed above: All Node Operators will earn 4% commisison, and the remaining 10% commission goes to a commission cut pot to be split among RPL stakers where each RPL staker can calculate their share with an example equation below:
+**Market Based Variable Adjustment:**
+
+Rocket Pool has established itself as an Ethereum Aligned Protocol (See [RPIP17](https://github.com/rocket-pool/RPIPs/blob/main/RPIPs/RPIP-17.md), which the pDAO voted for with a passing vote of ~99.55% - see [results](https://snapshot.org/#/rocketpool-dao.eth/proposal/0x9e093dea49dee9d1b3e43dbb6e0d8735149c5fde6ef703620970129b81d0f7f8)), and here is where we can put our money where our mouth is. RPIP17 laid out a vision to soft limit at 22% market share, and hard limit at 33% market share in order to act in the best interest of Ethereum Health.
+
+UVC can be used to assist with implementation of these limits by enabling market based controls for the commission cut knobs. Focusing on knobs 2 and 3:
+
+1. Total rETH Commission Fee
+1. Node Operator Base Commission
+1. Node Operator Max Bonus Commission
+
+First, knob 3 (Node Operator Max Bonus Commission) can be determined by an inversely propotional linear scale from 0% market share to 22% market share. This can be demonstrated with examples below:
+
+- If Rocket Pool had a market share of 0%, then the Max Bonus Commission would equal 7% based on the previous example numbers. This is determined by:
 
 ```math
 \displaylines{
-StakedRPLCommissionCut = ax + by \\
-a = \frac{AllStakedRPLCommissionCut}{AllStakedRPLCommissionCut+NOStakedRPLCommissionCut} \\
-b = \frac{NOStakedRPLCommisisonCut}{AllStakedRPLCommissionCut+NOStakedRPLCommissionCut} \\
-x = Individual \,\, AllStakedRPL \,\, Weighting \\
-y = Individual \,\, NOStakedRPL \,\, Weighting
+  PotentialMaxBonus = Total rETH Commission Fee - Node Operator Base Commission \\
+  ActualMaxBonus = PotentialMaxBonus - \frac{MarketShare}{22%}*PotentialMaxBonus \\
+  ActualMaxBonus = (14%-7%) - \frac{0%}{22%}*(14-7%) = 7%
 }
 ```
 
-With the example of 1% commission cut to AllStakedRPL, and 9% commission cut to NOStakedRPL:
+- If Rocket Pool reaches 22% market share (or more), then Max Bonus Commission would equal 0%.
 
 ```math
 \displaylines{
-a = \frac{1\%}{1\%+9\%} = 0.1 \\
-b = \frac{9\%}{1\%+9\%} = 0.9 \\
-StakedRPLCommissionCut = 0.1x + 0.9y
+  ActualMaxBonus = (14%-7%) - \frac{22%}{22%}*(14-7%) = 0%
 }
 ```
 
-To see some example calculations check the collapsable section below:
+Second, knob 2 (Node Operator Base Commission) can be determined by an inversely propotional linear scale from 0% market share to 33% market share. The math here would be similar:
 
-<details>
-  <summary>Example Calculations</summary>
-  
-  If you are a pure RPL staker with x RPL to stake, you would only earn from "AllStakedRPL" commission cut since "NOStakedRPL" commission cut depends on borrowed Eth and is therefore only eligble to NO's, (y variable = 0). You would earn:
-  
-  ```math
-  0.1*\frac{x}{Total RPL Stake Supply}
-  ```
-  
-  If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 12% borrowed ETH, following the rewards curve from DirectCapture2 you would earn:
-  
-  ```math
-  0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{1*MiniPoolCount}{TotalWeightOfNOStakedRPL}
-  ```
-  
-  If you only had an RPL collateral equivalent of 6% borrowed Eth, you would earn:
-  
-  ```math
-  0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{0.5*MiniPoolCount}{TotalWeightOfNOStakedRPL}
-  ```
-  
-  If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 15% borrowed ETH, following the rewards curve from DirectCapture2 you would earn:
-  
-  ```math
-  0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{1.2*MiniPoolCount}{TotalWeightOfNOStakedRPL}
-  ```
-  
-  If you are a NO with x RPL at stake, leading to an RPL collateral equivalent to 100% borrowed ETH, following the rewards curve from DirectCapture2 you would earn:
-  
-  ```math
-  0.1* \frac{x}{Total RPL Stake Supply} + 0.9*\frac{1.3*MiniPoolCount}{TotalWeightOfNOStakedRPL}
-  ```
-  
-  "TotalWeightOfNOStakedRPL" is calculated by summing the weight of each individual NO, so that each NO earns their proportional weight of rewards.
-  
-</details>
-<br/>
+- If Rocket Pool had a market share of 0%, then the Base Commission would equal 7% based on the previous example numbers. This is determined by:
 
-**UVC/Adjusting variables:**
+```math
+\displaylines{
+  Actual Base = PotentialBase - \frac{MarketShare}{33%}*PotentialBase \\
+  Actual Base = 7% - \frac{0%}{33%}*(7%) = 7%
+}
+```
 
-If Rocket Pool desperately needs more node operators, category 1 can be increased at the expense of category 2 or 3 (this leads to a smaller total pot for "StakedRPLCommissionCut"). As Rocket Pool approaches maturity near self-limiting, RPL can capture more value by increasing category 2 and then 3 at the expense of 1 (increase total pot for "StakedRPLCommissionCut", and then also increase coefficient "a" at the expense of coefficient "b").
+- If Rocket Pool reaches a market share of 33%, then Base Commission would equal 0% based on the previous example numbers
+
+```math
+\displaylines{
+  Actual Base = 7% - \frac{33%}{33%}*(7%) = 0%
+}
+```
 
 ### 4. Protect rETH from underperforming Node Operators
 
