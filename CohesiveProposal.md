@@ -31,6 +31,7 @@ Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdo
 <br/>
 
 Total Protocol Revenue Streams are visualized below:
+
 ![RevenueStreams](/plots/RevenueStreams.png)
 
 <br/>
