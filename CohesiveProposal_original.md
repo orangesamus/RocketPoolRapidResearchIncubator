@@ -3,7 +3,7 @@
 Combine ideas from 4 categories of submissions:
 
 1. Bond Reduction through sublinear bonding
-1. Commission Cut Pot diverted to RPL stakers
+1. Commission Cut diverted to RPL stakers
 1. Universal Variable Commission
 1. Protect rETH from underperforming Node Operators
 
@@ -13,62 +13,61 @@ Defer to Valdorff’s recommendations here, using `Aggressive [alt]` from [bond_
 
 ### 2. Commission Cut:
 
-Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdorff's [direct_capture](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/direct_capture.md) with some modifications:
+Mostly building off [direct_capture2](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/direct_capture2.md) and [direct_capture](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/direct_capture.md) proposals from Valdorff, with some modifications:
 
-- Change RPL Inflation revenue distribution to scale linearly with Node Operator Borrowed Eth, see **RPL Inflation** below
-- Change ETH Commission Cut Pot revenue distribution to scale linearly with Staked RPL, see **ETH Commission Cut Pot** below
+- Change RPL inflation rewards rewards to scale linearly with Node Operator borrowed Eth, see [here](#rpl-inflation-rewards-curve)
+- Split “Staked RPL” into two categories:
+  - “NO Staked RPL”: rewards curve suggested in Direct Capture 2 (scales with _Borrowed Eth_ value of RPL Staked and therefore only accessible to Node Operators, see [here](#no-staked-rpl-rewards-curve))
+    - Note: "NO" is used throughout this proposal as an abbreviation for "Node Operator"
+  - “All Staked RPL”: method described in original Direct Capture (weighted per staked token and scales linearly, see [here](#all-staked-rpl-rewards-curve)) – independent from Node Operation duties, opening the market to allow pure RPL staking.
+    - Note: “All Staked RPL” still applies to RPL staked by Node Operators
+  - Transition: Start with ~Direct Capture2. Over time, transition to ~Direct Capture:
+    - Start with Staked RPL yield mostly going to “NO Staked RPL”, and proportionally increase “All Staked RPL” and decrease “NO Staked RPL” until all of this yield goes to “All Staked RPL”
 
-|RPL Inflation|ETH Commission Cut Pot|
-|-|-|
-|![RPLinflationRewards](/plots/RPLinflationRewards.png)|![EthCommissionCutRewards](/plots/EthCommissionCutRewards.png)|
-
-<br/>
-
-- Introduce "Base Commission" and "Bonus Commission" for Node Operators. "Base Commission" is paid to all Node Operators, while "Bonus Commission" eligibility is determined by RPL staked on a Node, with max bonus being an RPL Staked value equivalent to 10% borrowed Eth. See Bonus Commission Eligibility below:
-
-![BonusCommissionEligibility](/plots/BonusCommissionEligibility.png)
-
-<br/>
-
-Total Protocol Revenue Streams are visualized below:
-![RevenueStreams](/plots/RevenueStreams.png)
+Transition visualized below: Start with the pie chart on the left, transition to the chart on the right:
+![StakedRPLtransition](/plots/StakedRPLtransition.png)
 
 <br/>
 
-To understand the dynamics of the Eth Revenue Stream, take 4 example participants in order of most to least RPL bullishness. 
-1. Pure RPL Staker (Not Operating a Node)
-1. Node Operator A, fully RPL collateralized, earning all of the potential bonus commission
-1. Node Operator B, partially RPL collateralized, earning half of the potential bonus commission
-1. Node Operator C, no RPL staked (Eth Only), earning no bonus commission
+For reference:
 
-The Eth Revenue would be distributed as shown below:
-![BorrowedEthRevenue](/plots/BorrowedEthRevenue.png)
+#### RPL Inflation rewards curve
 
+![RPLinflationRewards.png](/plots/RPLinflationRewards.png)
 
-**Reason for the modifications:**
+<br/>
+
+#### NO Staked RPL rewards curve
+
+![DC2RewardsCurve](/plots/DC2RewardsCurve.png)
+
+<br/>
+
+#### All Staked RPL rewards curve
+
+![AllStakedRPLRewards](/plots/AllStakedRPLRewards.png)
+
+**Reason for the modification:**
 
 - Traditionally Rocket Pool has married RPL speculation with Node Operation, and has constrained target profitability to be a narrow window:
   - Requiring a minimum RPL bond of 10% borrowed ETH
   - Max effective RPL stake at 150% bonded ETH
   - Recently optimized even more narrowly for an RPL bond of 10-15% borrowed ETH with RPIP30.
-- This proposal provides a path to decoupling the RPL speculation from Node Operation and support the maximum number of participants in Rocket Pool. This is accomplished by:
-  - Opening the market to RPL skeptics (allowing Eth Only Node Operators, and linearly increasing bonus commission for Node Operators with RPL collaterals of 0-10% borrowed ETH).
-  - We also open the market to a wider range of RPL speculators by allowing pure RPL staking
-- The changes to the RPL Inflation Revenue Distribution introduces the "Rocket Pool Node Operator Flywheel" shown below:
-
-![RocketPoolNOflywheel](/plots/RocketPoolNOflywheel.png)
+- This proposal aims to smoothly transition toward decoupling RPL speculation from Node Operation and support the maximum number of participants in Rocket Pool
+  - To start with we are opening the market to RPL skeptics (allowing Eth Only Node Operators, and linearly increasing rewards for “NO Staked RPL” from RPL bonds of 0-12% borrowed ETH).
+  - We also open the market to a wider range of RPL speculators by allowing pure RPL staking, and over time transition to giving a larger commission cut to “All Staked RPL”
 
 <br/>
 
 **Summary:**
 
 - Individuals will be free to stake only ETH, only RPL, or any combination of the two.
-- Staking RPL unlocks access to the commission cut pot of Eth
-- Node Operation unlocks a base commission of Eth, and access to RPL inflation
-- Node Operators who also stake RPL unlock a bonus commission of Eth
-- Instead of 10% RPL Bond being the "minimum bond" requirement, it becomes the "max bonus". Examples:
-   - Your RPL collateral falls to 9%? No problem, you just get base commission + 90% of your potential bonus commission
-   - Don't like RPL and want to do Eth Only? No problem, you still get base commission
+- Staking RPL unlocks a commission cut of Eth
+- Node Operation unlocks a base commission cut of Eth, and access to RPL inflation
+- Node Operators who also stake RPL unlock a bonus commission cut of Eth
+
+A simple way to visualize eligibility for the different commission cuts, and the transition over time (RPL Staked NO also earn the commission cuts from "All Staked RPL" and "All NO's"):\
+![EligibilityTransition](/plots/EligibilityTransition.png)
 
 <br/>
 
