@@ -109,8 +109,8 @@ First, knob 3 (Node Operator Max Bonus Commission) can be determined by an inver
 ```math
 \displaylines{
   PotentialMaxBonus = Total rETH Commission Fee - Node Operator Base Commission \\
-  ActualMaxBonus = PotentialMaxBonus - \frac{MarketShare}{22%}*PotentialMaxBonus \\
-  ActualMaxBonus = (14%-7%) - \frac{0%}{22%}*(14-7%) = 7%
+  ActualMaxBonus = PotentialMaxBonus - \frac{MarketShare}{22\%}*PotentialMaxBonus \\
+  ActualMaxBonus = (14\%-7\%) - \frac{0\%}{22\%}*(14-7\%) = 7\%
 }
 ```
 
@@ -118,7 +118,7 @@ First, knob 3 (Node Operator Max Bonus Commission) can be determined by an inver
 
 ```math
 \displaylines{
-  ActualMaxBonus = (14%-7%) - \frac{22%}{22%}*(14-7%) = 0%
+  ActualMaxBonus = (14\%-7\%) - \frac{22\%}{22\%}*(14-7\%) = 0\%
 }
 ```
 
@@ -128,8 +128,8 @@ Second, knob 2 (Node Operator Base Commission) can be determined by an inversely
 
 ```math
 \displaylines{
-  Actual Base = PotentialBase - \frac{MarketShare}{33%}*PotentialBase \\
-  Actual Base = 7% - \frac{0%}{33%}*(7%) = 7%
+  Actual Base = PotentialBase - \frac{MarketShare}{33\%}*PotentialBase \\
+  Actual Base = 7\% - \frac{0\%}{33\%}*(7\%) = 7\%
 }
 ```
 
@@ -137,7 +137,7 @@ Second, knob 2 (Node Operator Base Commission) can be determined by an inversely
 
 ```math
 \displaylines{
-  Actual Base = 7% - \frac{33%}{33%}*(7%) = 0%
+  Actual Base = 7\% - \frac{33\%}{33\%}*(7\%) = 0\%
 }
 ```
 
