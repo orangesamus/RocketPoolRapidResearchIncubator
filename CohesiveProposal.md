@@ -161,7 +161,9 @@ The only two "manual" decisions then would be the "Total rETH Commission Fee", a
 
 - **The ideal cut a Node Operator will take at a 22% Market Share**
 - **The ideal total fee that rETH charges such that people are still willing to hold rETH**
-- **And the rest (Total Fee - Node Operator Fee can be captured by RPL)**
+- **And the rest (Total Fee - Node Operator Fee) can be captured by RPL**
+
+<br/>
 
 ### 4. Protect rETH from underperforming Node Operators
 
