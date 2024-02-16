@@ -15,10 +15,10 @@ Defer to Valdorff’s recommendations here, using `Aggressive [alt]` from [bond_
 
 ### 2. Commission Cut:
 
-Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdorff's [direct_capture](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/direct_capture.md) with some modifications:
+Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdorff's [direct_capture](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/direct_capture.md) with 4 main modifications:
 
-- Change RPL Inflation revenue distribution to scale linearly with Node Operator Borrowed Eth, see **RPL Inflation** below
-- Change ETH Commission Cut Pot revenue distribution to scale linearly with Staked RPL, see **ETH Commission Cut Pot** below
+1. Change RPL Inflation revenue distribution to scale linearly with Node Operator Borrowed Eth, see **RPL Inflation** below
+1. Change ETH Commission Cut Pot revenue distribution to scale linearly with Staked RPL, see **ETH Commission Cut Pot** below
 
 | RPL Inflation                                          | ETH Commission Cut Pot                                         |
 | ------------------------------------------------------ | -------------------------------------------------------------- |
@@ -26,15 +26,17 @@ Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdo
 
 <br/>
 
-- Introduce "Base Commission" and "Bonus Commission" for Node Operators. "Base Commission" is paid to all Node Operators, while "Bonus Commission" eligibility is determined by RPL staked on a Node, with max bonus being a Staked RPL value equivalent to 10% borrowed Eth. See Bonus Commission Eligibility below ("NO" is an abbreviation for "Node Operator"):
+3. Introduce "Base Commission" and "Bonus Commission" for Node Operators. "Base Commission" is paid to all Node Operators, while "Bonus Commission" eligibility is determined by RPL staked on a Node, with max bonus being a Staked RPL value equivalent to 10% borrowed Eth. See Bonus Commission Eligibility below ("NO" is an abbreviation for "Node Operator"):
 
 ![BonusCommissionEligibility](/plots/BonusCommissionEligibility.png)
 
 <br/>
 
-- Commission to Node Operators, and RPL Inflation to Node Operators will scale down to zero as Rocket Pool approaches soft limit of 22% market share, and hard limit of 33% market share. See [Market Based Variable Adjustment](#market-based-variable-adjustment) for more details
+4. Commission to Node Operators, and RPL Inflation to Node Operators will scale down to zero as Rocket Pool approaches soft limit of 22% market share, and hard limit of 33% market share. See [Market Based Variable Adjustment](#market-based-variable-adjustment) for more details
 
 <br/>
+
+#### Visualizing these changes:
 
 Total Protocol Revenue Streams are visualized below:
 
