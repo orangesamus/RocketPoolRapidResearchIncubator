@@ -77,7 +77,7 @@ The Eth Revenue would be distributed as shown below:
 - Staking RPL unlocks access to the commission cut pot of Eth
 - Node Operation unlocks a base commission of Eth, and access to RPL inflation
 - Node Operators who also stake RPL unlock a bonus commission of Eth
-- Instead of 10% RPL Bond being the "minimum bond" requirement, it becomes the "max bonus". Examples:
+- **Instead of 10% RPL Bond being the "minimum bond" requirement, it becomes the "max bonus".** Examples:
   - Your RPL collateral falls to 9%? No problem, you just get base commission + 90% of your potential bonus commission
   - Don't like RPL and want to do Eth Only? No problem, you still get base commission
 
