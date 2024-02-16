@@ -157,6 +157,12 @@ Lastly, RPL inflation could be treated the same way:
 
 The only two "manual" decisions then would be the "Total rETH Commission Fee", and the "Potential Base Commission" fee. I chose 14% and 7% here as a starting point, but I think more discussion could be had - and Rocket Pool may want to leave these temporarily flexible for manual intervention to maintain a competitive product and respond to competitors in the market.
 
+**Eventually there should be an equilbrium established by the market for:**
+
+- **The ideal cut a Node Operator will take at a 22% Market Share**
+- **The ideal total fee that rETH charges such that people are still willing to hold rETH**
+- **And the rest (Total Fee - Node Operator Fee can be captured by RPL)**
+
 ### 4. Protect rETH from underperforming Node Operators
 
 **Introducing Credit Collateral:**
