@@ -7,7 +7,7 @@ Combine ideas from 4 categories of submissions:
 1. Universal Variable Commission
 1. Protect rETH from underperforming Node Operators
 
-Where 1 and 2 are the top priorities, but 1 should be accompanied with 4, and 2 should be accompanied with 3. I would think 2 and 3 could be implemented first since they do not require
+Where 1 and 2 are the top priorities, but 1 should be accompanied with 4, and 2 should be accompanied with 3. I would think 2 and 3 could be implemented first since they do not require forced exits.
 
 ### 1. Bond Reduction
 
