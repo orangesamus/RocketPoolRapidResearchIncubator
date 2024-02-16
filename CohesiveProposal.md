@@ -7,6 +7,8 @@ Combine ideas from 4 categories of submissions:
 1. Universal Variable Commission
 1. Protect rETH from underperforming Node Operators
 
+Where 1 and 2 are the top priorities, but 1 should be accompanied with 4, and 2 should be accompanied with 3. I would think 2 and 3 could be implemented first since they do not require
+
 ### 1. Bond Reduction
 
 Defer to Valdorff’s recommendations here, using `Aggressive [alt]` from [bond_curves](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/bond_curves.md) (First two minipools are LEB4’s, thereafter allow LEB1.5s).
@@ -30,6 +32,10 @@ Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdo
 
 <br/>
 
+- Commission to Node Operators, and RPL Inflation to Node Operators will scale down to zero as Rocket Pool approaches soft limit of 22% market share, and hard limit of 33% market share. See [Market Based Variable Adjustment](#market-based-variable-adjustment) for more details
+
+<br/>
+
 Total Protocol Revenue Streams are visualized below:
 
 ![RevenueStreams](/plots/RevenueStreams.png)
@@ -39,9 +45,9 @@ Total Protocol Revenue Streams are visualized below:
 To understand the dynamics of the Eth Revenue Stream, take 4 example participants in order of most to least RPL bullishness.
 
 1. Pure RPL Staker (Not Operating a Node)
-1. Node Operator A, fully RPL collateralized, earning all of the potential bonus commission
-1. Node Operator B, partially RPL collateralized, earning half of the potential bonus commission
-1. Node Operator C, no RPL staked (Eth Only), earning no bonus commission
+2. Node Operator A, fully RPL collateralized, earning all of the potential bonus commission
+3. Node Operator B, partially RPL collateralized, earning half of the potential bonus commission
+4. Node Operator C, no RPL staked (Eth Only), earning no bonus commission
 
 The Eth Revenue would be distributed as shown below:
 ![BorrowedEthRevenue](/plots/BorrowedEthRevenue.png)
@@ -92,7 +98,7 @@ If we started by applying this proposal to our existing set of Node Operators to
 
 The effects of the changes would begin to materialize as many Node Operators might not "top up" their RPL collateral, and instead opt to give up some commission to the Commission Cut Pot. We would also expect a wave of new Node Operators to join who vary on the spectrum of desire for RPL speculation, ranging from zero RPL (Eth-Only) to somewhere inbetween RPL bond values of 0-10% borrowed ETH. These new Node Operators would be providing substantial amounts of ETH to the Commission Cut Pot to then be distributed to RPL stakers (both pure RPL stakers and Node Operators with RPL collateral).
 
-**Market Based Variable Adjustment:**
+#### Market Based Variable Adjustment:
 
 Rocket Pool has established itself as an Ethereum Aligned Protocol (See [RPIP17](https://github.com/rocket-pool/RPIPs/blob/main/RPIPs/RPIP-17.md), which the pDAO voted for with a passing vote of ~99.55% - see [results](https://snapshot.org/#/rocketpool-dao.eth/proposal/0x9e093dea49dee9d1b3e43dbb6e0d8735149c5fde6ef703620970129b81d0f7f8)), and here is where we can put our money where our mouth is. RPIP17 laid out a vision to soft limit at 22% market share, and hard limit at 33% market share in order to act in the best interest of Ethereum Health.
 
@@ -140,6 +146,11 @@ Second, knob 2 (Node Operator Base Commission) can be determined by an inversely
   Actual Base = 7\% - \frac{33\%}{33\%}*(7\%) = 0\%
 }
 ```
+
+Lastly, RPL inflation could be treated the same way:
+
+- Scale down from 5% to 0%, based off market share from 0% to 22% as described previously.
+- Once Rocket Pool market share reaches 22%, the oDAO and pDAO treasury could be paid with a very small % of the Commission Cut Pot of money.
 
 The only two "manual" decisions then would be the "Total rETH Commission Fee", and the "Potential Base Commission" fee. I chose 14% and 7% here as a starting point, but I think more discussion could be had - and Rocket Pool may want to leave these temporarily flexible for manual intervention to maintain a competitive product and respond to competitors in the market.
 
