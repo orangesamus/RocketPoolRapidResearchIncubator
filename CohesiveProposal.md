@@ -108,7 +108,7 @@ First, knob 3 (Node Operator Max Bonus Commission) can be determined by an inver
 
 ```math
 \displaylines{
-  PotentialMaxBonus = Total rETH Commission Fee - Node Operator Base Commission \\
+  PotentialMaxBonus = Total \,\, rETH Commission Fee - Node Operator Base Commission \\
   ActualMaxBonus = PotentialMaxBonus - \frac{MarketShare}{22\%}*PotentialMaxBonus \\
   ActualMaxBonus = (14\%-7\%) - \frac{0\%}{22\%}*(14-7\%) = 7\%
 }
@@ -141,6 +141,8 @@ Second, knob 2 (Node Operator Base Commission) can be determined by an inversely
 }
 ```
 
+The only two "manual" decisions then would be the "Total rETH Commission Fee", and the "Potential Base Commission" fee. I chose 14% and 7% here as a starting point, but I think more discussion could be had - and Rocket Pool may want to leave these temporarily flexible for manual intervention to maintain a competitive product and respond to competitors in the market.
+
 ### 4. Protect rETH from underperforming Node Operators
 
 **Introducing Credit Collateral:**
@@ -149,23 +151,23 @@ As we increase leverage by allowing 1.5LEBs with sublinear bonding, it becomes m
 
 One simple example is that this "credit" can be continuously added to from the Eth rewards and Commission from running minipools.
 
-To calculate an example, pretend you were a solo staking Node Operator, and you approach Rocket Pool 32ETH. With sublinear bonding, you create 2 LEB4 minipools and 16 LEB1.5 minipools. The total base case yield (ignoring RPL staking) you would earn in a year can be calculated with the equation belows
+To calculate an example, pretend you were a solo staking Node Operator, and you approach Rocket Pool 32ETH. With sublinear bonding, you create 2 LEB4 minipools and 16 LEB1.5 minipools. The total base case yield (ignoring RPL staking and Bonus Commission) you would earn in a year can be calculated with the equation belows
 
 ```math
-MinipoolYield = SoloStakingAPR*EthBond + SoloStakingAPR*(32-EthBond)*(AllNOCommissionCut)
+MinipoolYield = SoloStakingAPR*EthBond + SoloStakingAPR*(32-EthBond)*(BaseCommission)
 ```
 
-If we say SoloStakingAPR is 3%, and AllNOCommissionCut = 4%, your total yield comes out to:
+If we say SoloStakingAPR is 3%, and BaseCommission = 7%, your total yield comes out to:
 
 ```math
 \displaylines{
-LEB4 = 0.03*4 + 0.03*28*0.04 \\
-LEB1.5 = 0.03*1.5 + 0.03*30.5*0.04 \\
-Total = 2*LEB4 + 16*LEB1.5 = 1.61 Eth
+LEB4 = 0.03*4 + 0.03*28*0.07 \\
+LEB1.5 = 0.03*1.5 + 0.03*30.5*0.07 \\
+Total = 2*LEB4 + 16*LEB1.5 = 2.1 Eth
 }
 ```
 
-This means if you start with 32 Eth, even as an Eth Only Node Operator, roughly once a year you can compound your stake by using your rewards to create an additional 1.5LEB minipool.
+This means if you start with 32 Eth, even as an Eth Only Node Operator, roughly once every 9 months you can compound your stake by using your rewards to create an additional 1.5LEB minipool.
 
 In this scenario, you could choose to "auto-credit" your rewards, where your rewards get sent to your "credit" balance, and once your "credit" balance exceeds 1.5ETH you can use your "credit" to create an additional LEB1.5 minipool.
 
