@@ -18,13 +18,13 @@ Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdo
 - Change RPL Inflation revenue distribution to scale linearly with Node Operator Borrowed Eth, see **RPL Inflation** below
 - Change ETH Commission Cut Pot revenue distribution to scale linearly with Staked RPL, see **ETH Commission Cut Pot** below
 
-|RPL Inflation|ETH Commission Cut Pot|
-|-|-|
-|![RPLinflationRewards](/plots/RPLinflationRewards.png)|![EthCommissionCutRewards](/plots/EthCommissionCutRewards.png)|
+| RPL Inflation                                          | ETH Commission Cut Pot                                         |
+| ------------------------------------------------------ | -------------------------------------------------------------- |
+| ![RPLinflationRewards](/plots/RPLinflationRewards.png) | ![EthCommissionCutRewards](/plots/EthCommissionCutRewards.png) |
 
 <br/>
 
-- Introduce "Base Commission" and "Bonus Commission" for Node Operators. "Base Commission" is paid to all Node Operators, while "Bonus Commission" eligibility is determined by RPL staked on a Node, with max bonus being an RPL Staked value equivalent to 10% borrowed Eth. See Bonus Commission Eligibility below:
+- Introduce "Base Commission" and "Bonus Commission" for Node Operators. "Base Commission" is paid to all Node Operators, while "Bonus Commission" eligibility is determined by RPL staked on a Node, with max bonus being a Staked RPL value equivalent to 10% borrowed Eth. See Bonus Commission Eligibility below:
 
 ![BonusCommissionEligibility](/plots/BonusCommissionEligibility.png)
 
@@ -35,7 +35,8 @@ Total Protocol Revenue Streams are visualized below:
 
 <br/>
 
-To understand the dynamics of the Eth Revenue Stream, take 4 example participants in order of most to least RPL bullishness. 
+To understand the dynamics of the Eth Revenue Stream, take 4 example participants in order of most to least RPL bullishness.
+
 1. Pure RPL Staker (Not Operating a Node)
 1. Node Operator A, fully RPL collateralized, earning all of the potential bonus commission
 1. Node Operator B, partially RPL collateralized, earning half of the potential bonus commission
@@ -44,15 +45,14 @@ To understand the dynamics of the Eth Revenue Stream, take 4 example participant
 The Eth Revenue would be distributed as shown below:
 ![BorrowedEthRevenue](/plots/BorrowedEthRevenue.png)
 
-
 **Reason for the modifications:**
 
 - Traditionally Rocket Pool has married RPL speculation with Node Operation, and has constrained target profitability to be a narrow window:
   - Requiring a minimum RPL bond of 10% borrowed ETH
   - Max effective RPL stake at 150% bonded ETH
   - Recently optimized even more narrowly for an RPL bond of 10-15% borrowed ETH with RPIP30.
-- This proposal provides a path to decoupling the RPL speculation from Node Operation and support the maximum number of participants in Rocket Pool. This is accomplished by:
-  - Opening the market to RPL skeptics (allowing Eth Only Node Operators, and linearly increasing bonus commission for Node Operators with RPL collaterals of 0-10% borrowed ETH).
+- This proposal provides a path to decoupling RPL speculation from Node Operation and support the maximum number of participants in Rocket Pool. This is accomplished by:
+  - Opening the market to RPL skeptics (allowing Eth Only Node Operators, and linearly increasing bonus commission for Node Operators with Staked RPL collaterals values equivalent to 0-10% borrowed ETH).
   - We also open the market to a wider range of RPL speculators by allowing pure RPL staking
 - The changes to the RPL Inflation Revenue Distribution introduces the "Rocket Pool Node Operator Flywheel" shown below:
 
@@ -67,8 +67,8 @@ The Eth Revenue would be distributed as shown below:
 - Node Operation unlocks a base commission of Eth, and access to RPL inflation
 - Node Operators who also stake RPL unlock a bonus commission of Eth
 - Instead of 10% RPL Bond being the "minimum bond" requirement, it becomes the "max bonus". Examples:
-   - Your RPL collateral falls to 9%? No problem, you just get base commission + 90% of your potential bonus commission
-   - Don't like RPL and want to do Eth Only? No problem, you still get base commission
+  - Your RPL collateral falls to 9%? No problem, you just get base commission + 90% of your potential bonus commission
+  - Don't like RPL and want to do Eth Only? No problem, you still get base commission
 
 <br/>
 
@@ -198,29 +198,6 @@ Ways to penalize underperforming NO’s and make rETH whole (in the order shown 
 With the description shown above, Node Operators can essentially "deleverage" some of their stake while retaining the commission cuts they earn from LEB1.5's. This "credit" balance could even be flexible to be used as shared security in other systems like EigenLayer (Shoutout to Jasper's [Rocket Layer Bounty](https://dao.rocketpool.net/t/round-8-gmc-call-for-bounty-applications-deadline-is-january-14/2558/2?u=samus) / [Hybrid Theory Article](https://mirror.xyz/jasperthefriendlyghost.eth/Xv7lLt8SVTfCaFnVie50IvvFrI4-TkQTgZcxb_omEnA)), and further buffer the already leveraged 1.5ETH Bond that is at stake for each minipool.
 
 Rocket Pool has already implemented a simple version of a "credit" balance which was used in the most recent "Atlas" upgrade to assist Node Operators with converting their EB16's to LEB8's. This "credit" balance mechanism could be reused for LEB8 conversions to sublinear bonding, while also functioning as an additional layer of collateral should a Node Operator choose to somewhat deleverage their bonds at stake.
-
-<details>
-  <summary>Optional variations</summary>
-
-- Eth _rewards_ could be rerouted to make rETH whole before going to the underperforming Node Operator
-- Node Operators could have Rocket Pool convert their "credit" balance to rETH, so that they still earn some staking yield on their credit balance (this would probably have tax implications though to swap ETH for rETH, then back to ETH to stake as a bond for an additional LEB1.5)
-- Staked RPL could also be used as a form of collateral, penalizing underperfoming Node Operators could look like something below:
-
-1. Take from their ETH Rewards
-2. Take from their ETH (or rETH) Credit
-3. Take from their RPL Rewards
-4. Take from their RPL Bond
-5. Take from their ETH Bond
-
-An additional optional variation: To prevent market impacts to selling RPL for ETH to make rETH whole, the method below could be used:
-
-![RerouteRpl](/plots/RerouteRpl.png)
-
-In the above method, Staked RPL NO’s collectively lose ~some Eth, but gain ~some equivalent amount of RPL for that rewards period
-
-With this method, RPL acts as a buffer of collateral before the ETH Bond is affected, but under extreme scenarios a validator is ejected for falling under the minimum required Eth Bond
-
-</details>
 
 ### Acknowledgments
 
