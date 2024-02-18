@@ -13,7 +13,7 @@ Where 1 and 2 are the top priorities, but 1 should be accompanied with 4, and 2 
 
 Defer to Valdorff’s recommendations here, using `Aggressive [alt]` from [bond_curves](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/bond_curves.md) (First two minipools are LEB4’s, thereafter allow LEB1.5s).
 
-### 2. Commission Pot:
+### 2. RPL Commission Pot:
 
 Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdorff's [direct_capture](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/direct_capture.md) with 4 main modifications:
 
@@ -112,7 +112,7 @@ Rocket Pool has established itself as an Ethereum Aligned Protocol (See [RPIP17]
 - **The ideal total fee that rETH charges such that people are still willing to hold rETH**
 - **And the rest (Total Fee - Node Operator Commission) can be captured by RPL**
 
-With the end goal in mind, UVC can be used by enabling market share based controls for the commission knobs. You can play with the numbers yourself with your own copy of [MarketShareBasedVariableCommissions.xlsx](/MarketShareBasedVariableCommissions.xlsx)
+With the end goal in mind, UVC can be used by enabling market share based controls for the commission knobs. You can play with the numbers yourself with your own copy of [MarketShareBasedVariableCommissions.xlsx](/MarketShareBasedVariableCommissions.xlsx). The 3 main commission knobs to control are listed again below:
 
 1. Total rETH Commission Fee
 2. Node Operator Base Commission
@@ -120,47 +120,64 @@ With the end goal in mind, UVC can be used by enabling market share based contro
 
 To start, knobs 1 and 2 can be considered "manual inputs". From the previous section as an example we are leaving knob 1 the same as today (14% total rETH Commission Fee), and we chose a Base Commission of 7%. That left 14% - 7% = 7% to go to Bonus Commission. Now, let's apply market share based adjustments. Knobs 2 and 3 (Node Operator Commissions) can be determined by decreasing linearly from 0% market share to 22% (our "hard-limit" market share). This can be demonstrated with examples below:
 
-- If Rocket Pool had a market share of 0%, then the Base and Bonus Commissions would each equal 7%.
+- If Rocket Pool had a market share of 0%, then the Commissions would look like:
+  - Base Commission = **7%**
+  - Bonus Commission = **7%**
+  - RPL Commission Pot is guaranteed **0%**
+  - Total rETH Commission Fee = **14%** = 7% + 7% + 0%
 - If Rocket Pool reaches it's hard limit market share of 22%, then the Base and Bonus Commissions would each equal 0%
-- If Rocket Pool is halfway toward its hard limit market share (11%), the math can be described with equations below:
+  - Base Commission = **0%**
+  - Bonus Commission = **0%**
+  - RPL Commission Pot is guaranteed **14%**
+  - Total rETH Commission Fee = **14%** = 0% + 0% + 14%
+- If Rocket Pool is halfway toward its hard limit market share (11%) then the Commissions would look like:
+  - Base Commission = **3.5%**
+  - Bonus Commission = **5.25%**
+  - RPL Commission Pot is guaranteed **5.25%**
+  - Total rETH Commission Fee = **14%** = 3.5% + 5.25% + 5.25%
 
-Base Commission:
+See math below for example calculations with market share at 11%:
 
-```math
-\displaylines{
-  Actual Base = PotentialBase - \frac{MarketShare}{22\%}*PotentialBase \\
-  Actual Base = 7\% - \frac{11\%}{22\%}*(7\%) = 3.5\%
-}
-```
+<details>
+  <summary>Example Calculations</summary>
+  Base Commission:
+  
+  ```math
+  \displaylines{
+    Actual Base = PotentialBase - \frac{MarketShare}{HardLimit\%}*PotentialBase \\
+    Actual Base = 7\% - \frac{11\%}{22\%}*(7\%) = 3.5\%
+  }
+  ```
+  
+  <br/>
+  
+  Bonus Commission:
+  
+  ```math
+  \displaylines{
+    PotentialBonus = Total \,\, rETH Commission Fee - Node Operator Base Commission \\
+    ActualBonus = PotentialBonus - \frac{MarketShare}{HardLimit\%}*PotentialBonus \\
+    ActualBonus = (14\%-3.5\%) - \frac{11\%}{22\%}*(14-3.5\%) = 5.25\%
+  }
+  ```
+  
+  <br/>
+  
+  This means with Rocket Pool at an 11% market share, the Total Potential Node Operator Commission would be 8.75%, and 5.25% of all rETH commission would be guaranteed to the RPLCommissionPot as shown by the math below:
+  
+  ```math
+  \displaylines{
+    TotalPotentialNOCommission = NO Base Commission + NO Bonus Commission \\
+    TotalPotentialNOCommission = 3.5\% + 5.25\% = 8.75\% \\
+    GuaranteedRPLCommissionPot = Total \,\, rETHCommissionFee - TotalPotentialNOCommission \\
+    GuaranteedRPLCommissionPot = 14\% - 8.75\% = 5.25\%
+  }
+  ```
+</details>
 
 <br/>
 
-Bonus Commission:
-
-```math
-\displaylines{
-  PotentialBonus = Total \,\, rETH Commission Fee - Node Operator Base Commission \\
-  ActualBonus = PotentialBonus - \frac{MarketShare}{22\%}*PotentialBonus \\
-  ActualBonus = (14\%-3.5\%) - \frac{11\%}{22\%}*(14-3.5\%) = 5.25\%
-}
-```
-
-<br/>
-
-This means with Rocket Pool at an 11% market share, the Total Potential Node Operator Commission would be 8.75%, and 5.25% of all rETH commission would be guaranteed to the RPLCommissionPot as shown by the math below:
-
-```math
-\displaylines{
-  TotalPotentialNOCommission = NO Base Commission + NO Bonus Commission \\
-  TotalPotentialNOCommission = 3.5\% + 5.25\% = 8.75\% \\
-  GuaranteedRPLCommissionPot = Total \,\, rETHCommissionFee - TotalPotentialNOCommission \\
-  GuaranteedRPLCommissionPot = 14\% - 8.75\% = 5.25\%
-}
-```
-
-<br/>
-
-To enforce the "soft limit" market share, knob 1 (total rETH Commission Fee) can be set to linearly increase from the soft-limit to the hard-limit market share values. This can be demonstrated with examples below:
+To enforce the "soft limit" market share, knob 1 (total rETH Commission Fee) can be set to linearly increase from the soft-limit to the hard-limit market share values to make rETH increasingly less attractive. This can be demonstrated with examples below:
 
 - If Rocket Pool has not reached its soft limit market share and is still in "growth mode" (market share ranging from 0-16%). The total rETH Commission Fee will remain at it's manual input target (say 14%).
 - If Rocket Pool reaches its hard limit market share of 22%, the total rETH Commission Fee will be 100% (meaning no ETH revenue goes to rETH holders, which removes incentives to hold rETH).
@@ -180,8 +197,8 @@ This means at 20% market share, rETH is charging 71.33% Commission, leaving only
 
 Lastly, RPL inflation could be treated the same way:
 
-- Scale down from 5% to 0%, based off market share from 0% to 16% as described previously.
-- Once Rocket Pool market share reaches 16%, the oDAO and pDAO treasury could be paid with a very small percentage of ETH revenue from the Commission Pot.
+- Scale down from 5% to 0%, based off market share from 0% to Soft Limit (say 16%) in a similar manner described previously.
+- Once Rocket Pool market share reaches its Soft Limit (say 16%), the oDAO and pDAO treasury could be paid with a very small percentage of ETH revenue from the Commission Pot.
 
 <br/>
 
