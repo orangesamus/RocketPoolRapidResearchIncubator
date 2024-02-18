@@ -102,8 +102,6 @@ With the implementation presented in the [RPL Commission Pot](#2-rpl-commission-
    - 3a. Node Operator Bonus Commission
    - 3b. RPL Commission Pot
 
-<br/>
-
 #### Starting Point
 
 There are 2 primary "manual inputs" to play with. The first manual input would be knob 1 (Total rETH Commission Fee). The second primary manual input would be knob 2 (Node Operator Base Commission). Knob 3 (Node Operator Bonus Commission, and RPL Commission Pot) depends on amount of RPL staked and can capture whatever is left.
@@ -114,13 +112,13 @@ There are 2 primary "manual inputs" to play with. The first manual input would b
 3. That leaves **7%** to be allocated between the Node Operator Bonus Commission or the RPL Commission Pot. This means a fully RPL collateralized Node could earn 7% bonus commission, and an Eth Only Node Operator would earn 0% bonus commission.
    - For Eth Only Node Operators, or Nodes with RPL collateral values equivalent to less than 10% borrowed Eth, the remaining commission goes to the Commission Pot to be distributed to RPL stakers.
 
-<br/>
-
 #### Market Share Based Variable Adjustment:
 
 UVC can now be used to enable market share based controls for the commission knobs. You can play with the numbers yourself with your own copy of [MarketShareBasedVariableCommissions.xlsx](/MarketShareBasedVariableCommissions.xlsx)
 
-Knobs 2 and 3 (Node Operator Commissions) can be determined by decreasing linearly from 0% market share to 22% (our "hard-limit" market share). This can be demonstrated with examples below:
+**Node Operator Commissions to enforce Hard Limit:**
+
+Knobs 2 and 3a (Node Operator Base and Bonus Commissions) can be determined by decreasing linearly from 0% market share to 22% (our "hard-limit" market share). This can be demonstrated with examples below:
 
 - If Rocket Pool had a market share of 0%, then the Commissions would look like:
   - Base Commission = **7%**
@@ -179,6 +177,8 @@ See math below for example calculations with market share at soft limit (16%):
 
 <br/>
 
+**Total rETH Commission Fee to enforce Soft Limit:**
+
 To enforce the "soft limit" market share, knob 1 (total rETH Commission Fee) can be set to linearly increase from the soft-limit to the hard-limit market share values to make rETH increasingly less attractive. This can be demonstrated with examples below:
 
 - If Rocket Pool has not reached its soft limit market share and is still in "growth mode" (market share ranging from 0-16%). The total rETH Commission Fee will remain at it's manual input target (say 14%).
@@ -196,6 +196,19 @@ To enforce the "soft limit" market share, knob 1 (total rETH Commission Fee) can
 This means at 20% market share, rETH is charging 71.33% Commission, leaving only 28.67% of the ETH revenue going to rETH holders. This should make rETH less attractive relative to other LST's and allow rETH to balance back to its target market share at the soft limit.
 
 <br/>
+
+**Stagnation and Intervention:**
+
+If Rocket Pool is in growth mode (market share 0% to 16%), and growth stagnates due to improper "manual input" starting values, "manual intervention" could be done to incentivize growth:
+
+1. If there is excess rETH demand we should not increase Target total rETH Commission Fee, but instead increase Base Commission to NO's to meet rETH demand (effectively squeezing the “bonus commission” and “commission pot” to RPL stakers, to instead incentivize Node Operators to meet the demand)
+2. If rETH demand dries up, we can decrease the total rETH Commission Fee to make rETH more attractive, and leave “Potential Base” alone (effectively squeezing the “bonus commission” and “commision pot” to RPL stakers, and instead giving it to rETH holders)
+
+The two adjustments described above could be done with a manual vote, or growth could be quantified and automated based on market share/time, or deposit pool status, etc. Similar intervention could be done at "maturity", but at that stage we are targeting the Soft Limit instead of growth.
+
+<br/>
+
+#### RPL Inflation:
 
 Lastly, RPL inflation could be treated the same way:
 
