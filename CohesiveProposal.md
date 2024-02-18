@@ -32,7 +32,7 @@ Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdo
 
 <br/>
 
-4. Commission to Node Operators, and RPL Inflation to Node Operators will scale down to zero as Rocket Pool approaches soft limit of 22% market share, and hard limit of 33% market share. See [Market Share Based Variable Adjustment](#market-share-based-variable-adjustment) for more details
+4. Commission to Node Operators, and RPL Inflation to Node Operators will scale down to zero as Rocket Pool approaches its hard limit of market share (22%). Yield paid to rETH holders will scale down to zero as Rocket Pool passes its soft limit of market share (16%) and approaches its hard limit of market share (22%). See [Market Share Based Variable Adjustment](#market-share-based-variable-adjustment) for more details
 
 <br/>
 
