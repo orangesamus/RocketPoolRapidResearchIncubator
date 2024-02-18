@@ -86,39 +86,37 @@ The Eth Revenue would be distributed as shown below:
 
 ### 3. Universal Variable Commission
 
-All new minipools are UVC. There are 3 major commission knobs to control:
-
-1. Total rETH Commission Fee
-1. Node Operator Base Commission
-1. Node Operator Bonus Commission
-
-- In general, we can start by leaving the total rETH commission fee at **14%**
-- All Node Operators receive a base commission. According to [calculationsAndConclusions](/calculationsAndConclusions.md) and [YieldComparisons](/YieldComparisons.xlsx), a base commission of **7%** would be ~1.5x more profitable than solo staking for LEB4's (from bonded ETH yield + base commission alone). For reference, Lido's CSM suggested a setup that provided 1.5x more profitability than solo staking.
-  - Note that this does not account for sublinear bonding, which could allow the number **7%** listed above to be smaller and still more profitable due to increased commission
-- That leaves **7%** to be allocated between the RPL Commission Pot or the Node Operator Bonus Commission. This means a fully RPL collateralized Node could earn 7% bonus commission, and an Eth Only Node Operator would earn 0% bonus commission.
-  - For Eth Only Node Operators, or Nodes with RPL collateral values equivalent to less than 10% borrowed Eth, the remaining commission goes to the Commission Pot to be distributed to RPL stakers.
-
-If we started by applying this proposal to our existing set of Node Operators today, very little would change with commissions. Most Node Operators today are "fully RPL collateralized" since they all put up a 10% RPL bond as a minimum requirement when spinning up new minipools. This would mean they would mostly all earn the full bonus commission + the base commission, adding up to a total commission of 14% (the same as it is today).
-
-The effects of the changes would begin to materialize as many Node Operators might not "top up" their RPL collateral, and instead opt to give up some commission to the RPL Commission Pot. We would also expect a wave of new Node Operators to join who vary on the spectrum of desire for RPL speculation, ranging from zero RPL (Eth-Only) to somewhere inbetween RPL bond values of 0-10% borrowed ETH. These new Node Operators would be providing substantial amounts of ETH to the Commission Pot to then be distributed to RPL stakers (both pure RPL stakers and Node Operators with RPL collateral).
+Rocket Pool has established itself as an Ethereum Aligned Protocol (See [RPIP17](https://github.com/rocket-pool/RPIPs/blob/main/RPIPs/RPIP-17.md), which the pDAO voted for with a passing vote of ~99.55% - see [results](https://snapshot.org/#/rocketpool-dao.eth/proposal/0x9e093dea49dee9d1b3e43dbb6e0d8735149c5fde6ef703620970129b81d0f7f8)). RPIP17 laid out a vision to soft limit at 16% market share, and hard limit at 22% market share in order to act in the best interest of Ethereum Health. Here is where we can put our money where our mouth is.
 
 #### Market Share Based Variable Adjustment:
 
-Rocket Pool has established itself as an Ethereum Aligned Protocol (See [RPIP17](https://github.com/rocket-pool/RPIPs/blob/main/RPIPs/RPIP-17.md), which the pDAO voted for with a passing vote of ~99.55% - see [results](https://snapshot.org/#/rocketpool-dao.eth/proposal/0x9e093dea49dee9d1b3e43dbb6e0d8735149c5fde6ef703620970129b81d0f7f8)), and here is where we can put our money where our mouth is. RPIP17 laid out a vision to soft limit at 16% market share, and hard limit at 22% market share in order to act in the best interest of Ethereum Health.
-
 **Our end goal is that eventually there should be an equilbrium established by the market for:**
 
-- **The ideal commission a Node Operator will take at our "soft limit" market share**
 - **The ideal total fee that rETH charges such that people are still willing to hold rETH**
+- **The ideal commission a Node Operator will take at our "soft limit" market share**
 - **And the rest (Total Fee - Node Operator Commission) can be captured by RPL**
 
-With the end goal in mind, UVC can be used by enabling market share based controls for the commission knobs. You can play with the numbers yourself with your own copy of [MarketShareBasedVariableCommissions.xlsx](/MarketShareBasedVariableCommissions.xlsx). The 3 main commission knobs to control are listed again below:
+With the implementation presented in the [RPL Commission Pot](#2-rpl-commission-pot) section, we have 3 major commission knobs to control:
 
 1. Total rETH Commission Fee
 2. Node Operator Base Commission
-3. Node Operator Bonus Commission
+3. RPL Value Capture (distrubtion depends on staked RPL)
+   - 3a. Node Operator Bonus Commission
+   - 3b. RPL Commission Pot
 
-To start, knobs 1 and 2 can be considered "manual inputs". From the previous section as an example we are leaving knob 1 the same as today (14% total rETH Commission Fee), and we chose a Base Commission of 7%. That left 14% - 7% = 7% to go to Bonus Commission. Now, let's apply market share based adjustments. Knobs 2 and 3 (Node Operator Commissions) can be determined by decreasing linearly from 0% market share to 22% (our "hard-limit" market share). This can be demonstrated with examples below:
+<br/>
+
+There are 2 primary "manual inputs" to play with. The first manual input would be knob 1 (Total rETH Commission Fee). The second primary manual input would be knob 2 (Node Operator Base Commission). Knob 3 (Node Operator Bonus Commission, and RPL Commission Pot)depends on amount of RPL staked) can capture whatever is left.
+
+1. We can start by leaving total rETH commission fee at **14%** as the market has shown ample demand for this fee, and it is still relatively competitive to other LST's.
+2. For Node Operator Base Commission, we can start by choosing **7%**. According to [calculationsAndConclusions](/calculationsAndConclusions.md) and [YieldComparisons](/YieldComparisons.xlsx), a base commission of 7% would be ~1.5x more profitable than solo staking for LEB4's (from bonded ETH yield + base commission alone). For reference, Lido's CSM suggested a setup that provided 1.5x more profitability than solo staking.
+   - Note that this does not account for sublinear bonding, which could allow the number 7% listed above to be smaller and still more profitable due to increased commission
+3. That leaves **7%** to be allocated between the Node Operator Bonus Commission or the RPL Commission Pot. This means a fully RPL collateralized Node could earn 7% bonus commission, and an Eth Only Node Operator would earn 0% bonus commission.
+   - For Eth Only Node Operators, or Nodes with RPL collateral values equivalent to less than 10% borrowed Eth, the remaining commission goes to the Commission Pot to be distributed to RPL stakers.
+
+Next, UVC can be used to enable market share based controls for the commission knobs. You can play with the numbers yourself with your own copy of [MarketShareBasedVariableCommissions.xlsx](/MarketShareBasedVariableCommissions.xlsx)
+
+Knobs 2 and 3 (Node Operator Commissions) can be determined by decreasing linearly from 0% market share to 22% (our "hard-limit" market share). This can be demonstrated with examples below:
 
 - If Rocket Pool had a market share of 0%, then the Commissions would look like:
   - Base Commission = **7%**
