@@ -130,13 +130,13 @@ To start, knobs 1 and 2 can be considered "manual inputs". From the previous sec
   - Bonus Commission = **0%**
   - RPL Commission Pot is guaranteed **14%**
   - Total rETH Commission Fee = **14%** = 0% + 0% + 14%
-- If Rocket Pool is halfway toward its hard limit market share (11%) then the Commissions would look like:
-  - Base Commission = **3.5%**
-  - Bonus Commission = **5.25%**
-  - RPL Commission Pot is guaranteed **5.25%**
-  - Total rETH Commission Fee = **14%** = 3.5% + 5.25% + 5.25%
+- If Rocket Pool reaches its soft limit market share (16%) then the Commissions would look like:
+  - Base Commission = **1.9%**
+  - Bonus Commission = **3.3%**
+  - RPL Commission Pot is guaranteed **8.8%**
+  - Total rETH Commission Fee = **14%** = 1.9% + 3.3% + 8.8%
 
-See math below for example calculations with market share at 11%:
+See math below for example calculations with market share at soft limit (16%):
 
 <details>
   <summary>Example Calculations</summary>
@@ -145,7 +145,7 @@ See math below for example calculations with market share at 11%:
   ```math
   \displaylines{
     Actual Base = PotentialBase - \frac{MarketShare}{HardLimit\%}*PotentialBase \\
-    Actual Base = 7\% - \frac{11\%}{22\%}*(7\%) = 3.5\%
+    Actual Base = 7\% - \frac{16\%}{22\%}*(7\%) = 1.9\%
   }
   ```
   
@@ -157,20 +157,20 @@ See math below for example calculations with market share at 11%:
   \displaylines{
     PotentialBonus = Total \,\, rETH Commission Fee - Node Operator Base Commission \\
     ActualBonus = PotentialBonus - \frac{MarketShare}{HardLimit\%}*PotentialBonus \\
-    ActualBonus = (14\%-3.5\%) - \frac{11\%}{22\%}*(14-3.5\%) = 5.25\%
+    ActualBonus = (14\%-1.9\%) - \frac{16\%}{22\%}*(14-1.9\%) = 3.3\%
   }
   ```
   
   <br/>
   
-  This means with Rocket Pool at an 11% market share, the Total Potential Node Operator Commission would be 8.75%, and 5.25% of all rETH commission would be guaranteed to the RPLCommissionPot as shown by the math below:
+  This means with Rocket Pool at its soft limit of 16% market share, the Total Potential Node Operator Commission would be 5.2%, and 8.8% of all rETH commission would be guaranteed to the RPLCommissionPot as shown by the math below:
   
   ```math
   \displaylines{
     TotalPotentialNOCommission = NO Base Commission + NO Bonus Commission \\
-    TotalPotentialNOCommission = 3.5\% + 5.25\% = 8.75\% \\
+    TotalPotentialNOCommission = 1.9\% + 3.3\% = 5.2\% \\
     GuaranteedRPLCommissionPot = Total \,\, rETHCommissionFee - TotalPotentialNOCommission \\
-    GuaranteedRPLCommissionPot = 14\% - 8.75\% = 5.25\%
+    GuaranteedRPLCommissionPot = 14\% - 5.2\% = 8.8\%
   }
   ```
 </details>
