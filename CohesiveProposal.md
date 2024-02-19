@@ -19,7 +19,7 @@ Defer to Valdorff’s recommendations here, using `Aggressive [alt]` from [bond_
 
 #### Summary:
 
-Rocket Pool will remove the minimum RPL Bond requirement to allow Eth Only Node Operators. The Node Operators who desire less RPL speculation can still join, they just give up some of their commission to those who do stake RPL (this is how RPL captures value). All Node Operators can earn a base commission, and Node Operators who also stake RPL can earn a bonus commission. Some remaining commission will also be deposited to a "Commission Pot" to be distributed to all RPL Stakers (including pure RPL Stakers who do not run a node).
+Rocket Pool will remove the minimum RPL Bond requirement to allow Eth Only Node Operators. The Node Operators who desire less RPL speculation can still join, they just give up some of their commission to those who do stake RPL (this is how RPL captures value). All Node Operators earn a base commission, and Node Operators who also stake RPL can earn a bonus commission. Some remaining commission will also be deposited to a "Commission Pot" to be distributed to all RPL Stakers (including pure RPL Stakers who do not run a node).
 
 A simple example would be keep the total rETH Commission Fee at 14%, give 6% as Base Commission to all Node Operators, give up to 7% as Bonus Commission to Node Operators who stake RPL, and guarantee 1% to the Commission Pot to distribute to all RPL Stakers.
 
@@ -96,12 +96,6 @@ All new minipools require Universal Variable Commission, meaning the commission 
 
 Rocket Pool has established itself as an Ethereum Aligned Protocol (See [RPIP17](https://github.com/rocket-pool/RPIPs/blob/main/RPIPs/RPIP-17.md), which the pDAO voted for with a passing vote of ~99.55% - see [results](https://snapshot.org/#/rocketpool-dao.eth/proposal/0x9e093dea49dee9d1b3e43dbb6e0d8735149c5fde6ef703620970129b81d0f7f8)). RPIP17 laid out a vision to soft limit at 16% market share, and hard limit at 22% market share in order to act in the best interest of Ethereum Health. Here is where we can put our money where our mouth is.
 
-_Our end goal is that eventually there should be an equilbrium established by the market for:_
-
-- _The ideal total fee that rETH charges such that people are still willing to hold rETH_
-- _The ideal commission a Node Operator will take at our "soft limit" market share_
-- _And the rest (Total Fee - Node Operator Commission) can be captured by RPL_
-
 With the implementation presented in the [RPL Value Capture](#2-rpl-value-capture) section, we have 3 major commission knobs to control to achieve our end goal:
 
 1. Total rETH Commission Fee
@@ -110,7 +104,13 @@ With the implementation presented in the [RPL Value Capture](#2-rpl-value-captur
    - 3a. Node Operator Bonus Commission
    - 3b. RPL Commission Pot
 
-Next we explore how these commission variables will be set.
+_Our end goal is that eventually there should be an equilbrium established by the market for:_
+
+1. _The ideal total fee that rETH charges such that people are still willing to hold rETH_
+2. _The ideal commission a Node Operator will take at our "soft limit" market share_
+3. _And the rest (Total Fee - Node Operator Commission) can be captured by RPL_
+
+With that in mind, we explore how these commission variables will be set.
 
 #### Starting Point
 
