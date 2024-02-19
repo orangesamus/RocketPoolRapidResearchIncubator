@@ -92,7 +92,7 @@ The Eth Revenue would be distributed as shown below:
 
 #### Summary:
 
-All new minipools require Universal Variable Commission, meaning the commission variables can be universally changed by the protocol (instead of historically where each minipool had a fixed commission).
+All new minipools require Universal Variable Commission, meaning the commission variables can be universally changed by the protocol (instead of historically where each minipool had its own fixed commission).
 
 Rocket Pool has established itself as an Ethereum Aligned Protocol (See [RPIP17](https://github.com/rocket-pool/RPIPs/blob/main/RPIPs/RPIP-17.md), which the pDAO voted for with a passing vote of ~99.55% - see [results](https://snapshot.org/#/rocketpool-dao.eth/proposal/0x9e093dea49dee9d1b3e43dbb6e0d8735149c5fde6ef703620970129b81d0f7f8)). RPIP17 laid out a vision to soft limit at 16% market share, and hard limit at 22% market share in order to act in the best interest of Ethereum Health. Here is where we can put our money where our mouth is.
 
@@ -106,7 +106,7 @@ With the implementation presented in the [RPL Value Capture](#2-rpl-value-captur
 
 1. Total rETH Commission Fee
 2. Node Operator Base Commission
-3. RPL Value Capture (distrubtion depends on staked RPL)
+3. RPL Value Capture (distribution depends on staked RPL)
    - 3a. Node Operator Bonus Commission
    - 3b. RPL Commission Pot
 
@@ -114,7 +114,7 @@ Next we explore how these commission variables will be set.
 
 #### Starting Point
 
-There are 2 primary "manual inputs" to play with. The first manual input would be knob 1 (Total rETH Commission Fee). The second primary manual input would be knob 2 (Node Operator Base Commission). Knob 3 (Node Operator Bonus Commission, and RPL Commission Pot) depends on amount of RPL staked and can capture whatever is left.
+There are 2 primary "manual inputs" to play with. The first manual input would be knob 1 (Total rETH Commission Fee). The second primary manual input would be knob 2 (Node Operator Base Commission). Knob 3 (RPL Value Capture) can capture whatever commission is left ("knob 1 - knob 2").
 
 1. We can start by leaving total rETH commission fee at **14%** as the market has shown ample demand for this fee, and it is still relatively competitive to other LST's.
 2. For Node Operator Base Commission, we can start by choosing **7%**. According to [calculationsAndConclusions](/calculationsAndConclusions.md) and [YieldComparisons](/YieldComparisons.xlsx), a base commission of 7% would be ~1.5x more profitable than solo staking for LEB4's (from bonded ETH yield + base commission alone). For reference, Lido's CSM suggested a setup that provided 1.5x more profitability than solo staking.
@@ -135,16 +135,16 @@ Knobs 2 and 3a (Node Operator Base and Bonus Commissions) can be determined by d
   - Bonus Commission = **7%**
   - RPL Commission Pot is guaranteed **0%**
   - Total rETH Commission Fee = **14%** = 7% + 7% + 0%
-- If Rocket Pool reaches it's hard limit market share of 22%, then the Base and Bonus Commissions would each equal 0%
-  - Base Commission = **0%**
-  - Bonus Commission = **0%**
-  - RPL Commission Pot is guaranteed **14%**
-  - Total rETH Commission Fee = **14%** = 0% + 0% + 14%
 - If Rocket Pool reaches its soft limit market share (16%) then the Commissions would look like:
   - Base Commission = **1.9%**
   - Bonus Commission = **3.3%**
   - RPL Commission Pot is guaranteed **8.8%**
   - Total rETH Commission Fee = **14%** = 1.9% + 3.3% + 8.8%
+- If Rocket Pool reaches it's hard limit market share of 22%, then the Base and Bonus Commissions would each equal 0%
+  - Base Commission = **0%**
+  - Bonus Commission = **0%**
+  - RPL Commission Pot is guaranteed **14%**
+  - Total rETH Commission Fee = **14%** = 0% + 0% + 14%
 
 See math below for example calculations with market share at soft limit (16%):
 
@@ -209,8 +209,8 @@ This means at 20% market share, rETH is charging 71.33% Commission, leaving only
 
 If Rocket Pool is in growth mode (market share 0% to 16%), and growth stagnates due to improper "manual input" starting values, "manual intervention" could be done to incentivize growth:
 
-1. If there is excess rETH demand we should not increase Target total rETH Commission Fee, but instead increase Base Commission to NO's to meet rETH demand (effectively squeezing the “bonus commission” and “commission pot” to RPL stakers, to instead incentivize Node Operators to meet the demand)
-2. If rETH demand dries up, we can decrease the total rETH Commission Fee to make rETH more attractive, and leave “Potential Base” alone (effectively squeezing the “bonus commission” and “commision pot” to RPL stakers, and instead giving it to rETH holders)
+1. If there is excess rETH demand we should not increase Target total rETH Commission Fee, but instead increase Base Commission to NO's to meet rETH demand (effectively squeezing the RPL Value Capture knob, and instead incentivizing Node Operators to meet the demand)
+2. If rETH demand dries up, we can decrease the total rETH Commission Fee to make rETH more attractive, and leave Base Commission alone (effectively squeezing the RPL Value Capture knob, and instead giving it to rETH holders)
 
 The two adjustments described above could be done with a manual vote, or growth could be quantified and automated based on market share/time, or deposit pool status, etc. Similar intervention could be done at "maturity", but at that stage we are targeting the Soft Limit instead of growth.
 
