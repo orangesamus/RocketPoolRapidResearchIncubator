@@ -18,9 +18,9 @@ Defer to Valdorff’s recommendations here, using `Aggressive [alt]` from [bond_
 Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdorff's [direct_capture](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/direct_capture.md) with 4 main modifications:
 
 1. Change RPL Inflation revenue distribution to scale linearly with Node Operator Borrowed Eth, see **"RPL Inflation Revenue to NO"** below
-1. Change ETH revenue to RPL Commission Pot distribution to scale linearly with Staked RPL, see **"ETH Revenue to RPL Commission Pot"** below
+1. Change ETH revenue to Commission Pot distribution to scale linearly with Staked RPL, see **"ETH Revenue to Commission Pot"** below
 
-| RPL Inflation Revenue to NO                            | ETH Revenue to RPL Commission Pot                              |
+| RPL Inflation Revenue to NO                            | ETH Revenue to Commission Pot                              |
 | ------------------------------------------------------ | -------------------------------------------------------------- |
 | ![RPLinflationRewards](/plots/RPLinflationRewards.png) | ![EthCommissionCutRewards](/plots/EthCommissionCutRewards.png) |
 
