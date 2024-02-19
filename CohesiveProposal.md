@@ -199,13 +199,17 @@ See math below for example calculations with market share above soft limit (at 2
 
 <details>
   <summary>Example Calculations</summary>
-    ```math
-    \displaylines{
-      TotalrETHFee = TargetFee + (100\%-TargetFee)*\frac{MarketShare - SoftLimit}{HardLimit - SoftLimit} \\
-      TotalrETHFee = 14\% + (100\%-14\%)*\frac{20\% - 16\%}{22\% - 16\%} \\
-      TotalrETHFee = 71.33\%
-    }
-    ```
+  
+  <br/>
+
+```math
+\displaylines{
+  TotalrETHFee = TargetFee + (100\%-TargetFee)*\frac{MarketShare - SoftLimit}{HardLimit - SoftLimit} \\
+  TotalrETHFee = 14\% + (100\%-14\%)*\frac{20\% - 16\%}{22\% - 16\%} \\
+  TotalrETHFee = 71.33\%
+}
+```
+
 </details>
 
 **Stagnation and Intervention:**
