@@ -3,7 +3,7 @@
 Combine ideas from 4 categories of submissions:
 
 1. Bond Reduction through sublinear bonding
-1. RPL Value Capture through Commission Pot distributed to RPL Stakers
+1. RPL Value Capture
 1. Universal Variable Commission
 1. rETH Protection from underperforming Node Operators
 
@@ -11,16 +11,37 @@ Where 1 and 2 are the top priorities, but 1 should be accompanied with 4, and 2 
 
 ### 1. Bond Reduction
 
+#### Summary:
+
 Defer to Valdorff’s recommendations here, using `Aggressive [alt]` from [bond_curves](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/bond_curves.md) (First two minipools are LEB4’s, thereafter allow LEB1.5s).
 
-### 2. RPL Commission Pot:
+### 2. RPL Value Capture:
+
+#### Summary:
+
+Rocket Pool will remove the minimum RPL Bond requirement to allow Eth Only Node Operators. The Node Operators who desire less RPL speculation can still join, they just give up some of their commission to those who do stake RPL (this is how RPL captures value). All Node Operators can earn a base commission, and Node Operators who also stake RPL can earn a bonus commission. Some remaining commission will also be deposited to a "Commission Pot" to be distributed to all RPL Stakers (including pure RPL Stakers who do not run a node).
+
+A simple example would be keep the total rETH Commission Fee at 14%, give 6% as Base Commission to all Node Operators, give up to 7% as Bonus Commission to Node Operators who stake RPL, and guarantee 1% to the Commission Pot to distribute to all RPL Stakers.
+
+In Summary:
+
+- Individuals will be free to stake only ETH, only RPL, or any combination of the two.
+- Staking RPL unlocks access to the Commission Pot of ETH revenue
+  - The Commission Pot grows with rETH TVL, this means as rETH TVL grows, the value of RPL should grow along with it.
+- Node Operation unlocks a base commission of ETH, and access to RPL inflation
+- Node Operators who also stake RPL unlock a bonus commission of Eth
+- **Instead of 10% RPL Bond being the "minimum bond" requirement, it becomes the "max bonus"**. See examples below:
+  - Don't like RPL and want to do Eth Only? No problem, you still get base commission
+  - Your RPL bond falls to 9%? No problem, you still get base commission + 90% of your potential bonus commission
+
+#### Implementation:
 
 Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdorff's [direct_capture](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/direct_capture.md) with 4 main modifications:
 
 1. Change RPL Inflation revenue distribution to scale linearly with Node Operator Borrowed Eth, see **"RPL Inflation Revenue to NO"** below
 1. Change ETH revenue to Commission Pot distribution to scale linearly with Staked RPL, see **"ETH Revenue to Commission Pot"** below
 
-| RPL Inflation Revenue to NO                            | ETH Revenue to Commission Pot                              |
+| RPL Inflation Revenue to NO                            | ETH Revenue to Commission Pot                                  |
 | ------------------------------------------------------ | -------------------------------------------------------------- |
 | ![RPLinflationRewards](/plots/RPLinflationRewards.png) | ![EthCommissionCutRewards](/plots/EthCommissionCutRewards.png) |
 
@@ -32,11 +53,9 @@ Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdo
 
 <br/>
 
-4. Commission to Node Operators, and RPL Inflation to Node Operators will scale down to zero as Rocket Pool approaches its hard limit of market share (22%). Yield paid to rETH holders will scale down to zero as Rocket Pool passes its soft limit of market share (16%) and approaches its hard limit of market share (22%). See [Market Share Based Variable Adjustment](#market-share-based-variable-adjustment) for more details
+4. RPL Inflation will scale down to zero as Rocket Pool approaches its soft limit of market share (16%). Yield paid to rETH holders will scale down to zero after Rocket Pool passes its soft limit of market share (16%) and approaches its hard limit of market share (22%). Commission to Node Operators will scale down to zero as Rocket Pool approaches its hard limit of market share (22%). See [Market Share Based Variable Adjustment](#market-share-based-variable-adjustment) for more details
 
-<br/>
-
-#### Visualizing these changes:
+#### Visualizing the Implementation:
 
 Total Protocol Revenue Streams are visualized below:
 
@@ -54,9 +73,7 @@ To understand the dynamics of the Eth Revenue Stream, take 4 example participant
 The Eth Revenue would be distributed as shown below:
 ![BorrowedEthRevenue](/plots/BorrowedEthRevenue.png)
 
-<br/>
-
-**Reason for the modifications:**
+#### Reason for the modifications:
 
 - Traditionally Rocket Pool has married RPL speculation with Node Operation, and has constrained target profitability to be a narrow window:
   - Requiring a minimum RPL bond of 10% borrowed ETH
@@ -71,36 +88,29 @@ The Eth Revenue would be distributed as shown below:
 
 <br/>
 
-**Summary:**
-
-- Individuals will be free to stake only ETH, only RPL, or any combination of the two.
-- Staking RPL unlocks access to the Commission Pot of ETH revenue
-  - The Commission Pot grows with rETH TVL, this means as rETH TVL grows, the value of RPL should grow along with it.
-- Node Operation unlocks a base commission of ETH, and access to RPL inflation
-- Node Operators who also stake RPL unlock a bonus commission of Eth
-- **Instead of 10% RPL Bond being the "minimum bond" requirement, it becomes the "max bonus".** Examples:
-  - Your RPL collateral falls to 9%? No problem, you just get base commission + 90% of your potential bonus commission
-  - Don't like RPL and want to do Eth Only? No problem, you still get base commission
-
-<br/>
-
 ### 3. Universal Variable Commission
+
+#### Summary:
+
+All new minipools require Universal Variable Commission, meaning the commission variables can be universally changed by the protocol (instead of historically where each minipool had a fixed commission).
 
 Rocket Pool has established itself as an Ethereum Aligned Protocol (See [RPIP17](https://github.com/rocket-pool/RPIPs/blob/main/RPIPs/RPIP-17.md), which the pDAO voted for with a passing vote of ~99.55% - see [results](https://snapshot.org/#/rocketpool-dao.eth/proposal/0x9e093dea49dee9d1b3e43dbb6e0d8735149c5fde6ef703620970129b81d0f7f8)). RPIP17 laid out a vision to soft limit at 16% market share, and hard limit at 22% market share in order to act in the best interest of Ethereum Health. Here is where we can put our money where our mouth is.
 
-**Our end goal is that eventually there should be an equilbrium established by the market for:**
+_Our end goal is that eventually there should be an equilbrium established by the market for:_
 
-- **The ideal total fee that rETH charges such that people are still willing to hold rETH**
-- **The ideal commission a Node Operator will take at our "soft limit" market share**
-- **And the rest (Total Fee - Node Operator Commission) can be captured by RPL**
+- _The ideal total fee that rETH charges such that people are still willing to hold rETH_
+- _The ideal commission a Node Operator will take at our "soft limit" market share_
+- _And the rest (Total Fee - Node Operator Commission) can be captured by RPL_
 
-With the implementation presented in the [RPL Commission Pot](#2-rpl-commission-pot) section, we have 3 major commission knobs to control:
+With the implementation presented in the [RPL Value Capture](#2-rpl-value-capture) section, we have 3 major commission knobs to control to achieve our end goal:
 
 1. Total rETH Commission Fee
 2. Node Operator Base Commission
 3. RPL Value Capture (distrubtion depends on staked RPL)
    - 3a. Node Operator Bonus Commission
    - 3b. RPL Commission Pot
+
+Next we explore how these commission variables will be set.
 
 #### Starting Point
 
@@ -195,8 +205,6 @@ To enforce the "soft limit" market share, knob 1 (total rETH Commission Fee) can
 
 This means at 20% market share, rETH is charging 71.33% Commission, leaving only 28.67% of the ETH revenue going to rETH holders. This should make rETH less attractive relative to other LST's and allow rETH to balance back to its target market share at the soft limit.
 
-<br/>
-
 **Stagnation and Intervention:**
 
 If Rocket Pool is in growth mode (market share 0% to 16%), and growth stagnates due to improper "manual input" starting values, "manual intervention" could be done to incentivize growth:
@@ -206,14 +214,12 @@ If Rocket Pool is in growth mode (market share 0% to 16%), and growth stagnates 
 
 The two adjustments described above could be done with a manual vote, or growth could be quantified and automated based on market share/time, or deposit pool status, etc. Similar intervention could be done at "maturity", but at that stage we are targeting the Soft Limit instead of growth.
 
-<br/>
-
 #### RPL Inflation:
 
-Lastly, RPL inflation could be treated the same way:
+Lastly, RPL inflation could be treated in a similar same way:
 
-- Scale down from 5% to 0%, based off market share from 0% to Soft Limit (say 16%) in a similar manner described previously.
-- Once Rocket Pool market share reaches its Soft Limit (say 16%), the oDAO and pDAO treasury could be paid with a very small percentage of ETH revenue from the Commission Pot.
+- Scale down linearly from 5% to 0%, based off market share from 0% to Soft Limit (say 16%) in a similar manner described previously.
+- At maturity, as Rocket Pool approaches its Soft Limit (say 16%) for market share, the oDAO and pDAO treasury could be paid with a very small percentage of ETH revenue from the Commission Pot. This could also be scaled up linearly to the necessary amount to smoothly transition away from RPL Inflation.
 
 <br/>
 

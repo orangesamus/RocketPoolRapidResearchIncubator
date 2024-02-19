@@ -7,7 +7,7 @@ This Repository contains my original "Commission Cut" proposal submitted for the
 Combine ideas from 4 categories of submissions:
 
 1. Bond Reduction through sublinear bonding
-1. RPL Value Capture through Commission Pot distributed to RPL Stakers
+1. RPL Value Capture
 1. Universal Variable Commission
 1. rETH protection from underperforming Node Operators
 
