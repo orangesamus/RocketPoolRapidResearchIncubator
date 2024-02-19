@@ -188,7 +188,7 @@ To enforce the "soft limit" market share, knob 1 (total rETH Commission Fee) can
 ```math
 \displaylines{
   TotalrETHFee = TargetFee + (100\%-TargetFee)*\frac{MarketShare - SoftLimit}{HardLimit - SoftLimit} \\
-  TotalrETHFee = 14\% + (100\%-14%)*\frac{20\% - 16\%}{22\% - 16\%} \\
+  TotalrETHFee = 14\% + (100\%-14\%)*\frac{20\% - 16\%}{22\% - 16\%} \\
   TotalrETHFee = 71.33\%
 }
 ```
