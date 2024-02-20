@@ -38,10 +38,10 @@ In Summary:
 
 Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdorff's [direct_capture](https://github.com/Valdorff/rp-thoughts/blob/main/2023_11_rapid_research_incubator/direct_capture.md) with 4 main modifications:
 
-1. Change RPL Inflation revenue distribution to scale linearly with Node Operator Borrowed Eth, see **"RPL Inflation Revenue to NO"** below
-1. Change ETH revenue to Commission Pot distribution to scale linearly with Staked RPL, see **"ETH Revenue to Commission Pot"** below
+1. Change distribution of RPL from RPL Inflation to scale linearly with Node Operator Borrowed Eth, see **"RPL Inflation Distribution"** below
+1. Change distribution of ETH from Commission Pot to scale linearly with Staked RPL, see **"Commission Pot Distribution"** below
 
-| RPL Inflation Revenue to NO                            | ETH Revenue to Commission Pot                                  |
+| RPL Inflation Distribution                             | Commission Pot Distribution                                    |
 | ------------------------------------------------------ | -------------------------------------------------------------- |
 | ![RPLinflationRewards](/plots/RPLinflationRewards.png) | ![EthCommissionCutRewards](/plots/EthCommissionCutRewards.png) |
 
@@ -53,7 +53,7 @@ Mostly building off of [commission_cut](/initialProposalSubmission.md) and Valdo
 
 <br/>
 
-4. RPL Inflation will scale down to zero as Rocket Pool approaches its soft limit of market share (16%). Yield paid to rETH holders will scale down to zero after Rocket Pool passes its soft limit of market share (16%) and approaches its hard limit of market share (22%). Commission to Node Operators will scale down to zero as Rocket Pool approaches its hard limit of market share (22%). See [Market Share Based Variable Adjustment](#market-share-based-variable-adjustment) for more details
+4. Actual commission variables can be set as determined by [Universal Variable Commission](#3-universal-variable-commission) section
 
 #### Visualizing the Implementation:
 
