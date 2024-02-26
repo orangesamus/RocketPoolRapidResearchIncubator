@@ -50,7 +50,7 @@ The outline includes two main sections:
 
 1. [Planned for Inclusion](#planned-for-inclusion):
    1. These proposals have been voted and approved by the pDAO.
-   2. These proposals are grouped by the Rocket Pool upgrade in which they plan to be integrated.
+   2. These proposals are grouped by the Rocket Pool upgrade in which they plan to be included.
 2. [Considering for Inclusion](#considering-for-inclusion):
    1. This section is categorized first by topic, with each topic listing the proposals being considered for inclusion.
    2. These proposals may not have an RPIP yet and it is uncertain which Rocket Pool upgrade they will be included in (if at all).
