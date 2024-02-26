@@ -113,8 +113,10 @@ The outline includes two main sections:
 
 ##### Notes
 
-<sup>\*</sup>With sublinear bonding, Forced Exits are critical to protect against loss scenarios associated with MEV theft and abandonment \
-<sup>†</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for integration in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024 \
+<sup>\*</sup>With sublinear bonding, Forced Exits are critical to protect against loss scenarios associated with MEV theft and abandonment
+
+<sup>†</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for integration in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024
+
 <sup>‡</sup>As we increase leverage by allowing sublinear bonding, it becomes more important to protect rETH from underperforming NO's
 
 #### 3. RPL Value Capture
