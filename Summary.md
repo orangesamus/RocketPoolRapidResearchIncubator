@@ -1,10 +1,7 @@
-## Summary
+## Table of Contents
 
-This page is meant to be an outline of the proposals that are being considered for inclusion. The proposals that are already planned for inclusion are also included for reference.
-
-**Table of Contents**
-
-- [Summary](#summary)
+- [Table of Contents](#table-of-contents)
+  - [Summary](#summary)
   - [Planned Upgrades](#planned-upgrades)
     - [1. Houston](#1-houston)
     - [2. Saturn](#2-saturn)
@@ -15,6 +12,10 @@ This page is meant to be an outline of the proposals that are being considered f
     - [4. rETH Protection](#4-reth-protection)
     - [5. Forced Exits](#5-forced-exits)
     - [6. RPL Inflation Rework](#6-rpl-inflation-rework)
+
+### Summary
+
+This page is meant to be an outline of the proposals that are being considered for inclusion. The proposals that are already planned for inclusion are also included for reference.
 
 ### Planned Upgrades
 
