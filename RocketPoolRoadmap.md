@@ -56,23 +56,17 @@ The outline includes two main sections:
 
 ##### Proposals
 
-|                                                                                       |
-| ------------------------------------------------------------------------------------- |
-| 1. [RPIP-31: RPL Withdrawal Address](https://rpips.rocketpool.net/RPIPs/RPIP-32)      |
-| 2. [RPIP-32: Stake ETH on behalf of node](https://rpips.rocketpool.net/RPIPs/RPIP-32) |
-| 3.<sup>\*</sup> [RPIP-33: On-Chain pDAO](https://rpips.rocketpool.net/RPIPs/RPIP-33)  |
+1. [RPIP-31: RPL Withdrawal Address](https://rpips.rocketpool.net/RPIPs/RPIP-32)
+2. [RPIP-32: Stake ETH on behalf of node](https://rpips.rocketpool.net/RPIPs/RPIP-32)
+3. <sup>\*</sup> [RPIP-33: On-Chain pDAO](https://rpips.rocketpool.net/RPIPs/RPIP-33)
 
 ##### Required Support
 
-|                                                                                                   |
-| ------------------------------------------------------------------------------------------------- |
-| 1.<sup>\*</sup> [EIP-4788: Beacon block root in the EVM](https://eips.ethereum.org/EIPS/eip-4788) |
+1. <sup>\*</sup> [EIP-4788: Beacon block root in the EVM](https://eips.ethereum.org/EIPS/eip-4788)
 
 ##### Notes
 
-|                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------------------------------------------ |
-| <sup>\*</sup> EIP-4788 is required for RPIP-33. EIP-4788 is included in the "Dencun" Ethereum Upgrade scheduled for March 13th, 2024 |
+<sup>\*</sup>EIP-4788 is required for RPIP-33. EIP-4788 is included in the "Dencun" Ethereum Upgrade scheduled for March 13th, 2024
 
 #### 2. Saturn
 
