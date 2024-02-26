@@ -2,12 +2,7 @@
 
 This page is meant to be an outline of the proposals that are being considered for inclusion. The proposals that are already planned for inclusion are also included for reference.
 
-**Planned Upgrades:**
-
-1. [Houston](#1-houston)
-2. [Saturn](#2-saturn)
-
-**Categories of Proposals Considering for Inclusion:**
+**Table of Contents**
 
 - [Summary](#summary)
   - [Planned Upgrades](#planned-upgrades)
