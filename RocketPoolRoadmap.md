@@ -58,11 +58,11 @@ The outline includes two main sections:
 
 1. [RPIP-31: RPL Withdrawal Address](https://rpips.rocketpool.net/RPIPs/RPIP-32)
 2. [RPIP-32: Stake ETH on behalf of node](https://rpips.rocketpool.net/RPIPs/RPIP-32)
-3. <sup>\*</sup> [RPIP-33: On-Chain pDAO](https://rpips.rocketpool.net/RPIPs/RPIP-33)
+3. [RPIP-33: On-Chain pDAO](https://rpips.rocketpool.net/RPIPs/RPIP-33)<sup>\*</sup>
 
 ##### Required Support
 
-1. <sup>\*</sup> [EIP-4788: Beacon block root in the EVM](https://eips.ethereum.org/EIPS/eip-4788)
+1. [EIP-4788: Beacon block root in the EVM](https://eips.ethereum.org/EIPS/eip-4788)<sup>\*</sup>
 
 ##### Notes
 
