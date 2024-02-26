@@ -1,8 +1,12 @@
 ## Rocket Pool Roadmap
 
+<br/>
+
 ### Introduction
 
 The goal of this page is to present an outline of the Rocket Pool Roadmap, including proposals being considered for inclusion.
+
+<br/>
 
 ### Table Of Contents
 
@@ -38,6 +42,8 @@ The goal of this page is to present an outline of the Rocket Pool Roadmap, inclu
     - [7. RPL Inflation Rework](#7-rpl-inflation-rework)
       - [Proposals](#proposals-5)
 
+<br/>
+
 ### Summary
 
 The outline includes two main sections:
@@ -49,6 +55,8 @@ The outline includes two main sections:
    1. This section is categorized first by topic, with each topic listing the proposals being considered for inclusion.
    2. These proposals may not have an RPIP yet and it is uncertain which Rocket Pool upgrade they will be included in (if at all).
    3. This outline does not provide an exhaustive list of all proposals or research ideas, but instead prioritizes ideas being considered for inclusion.
+
+<br/>
 
 ### Planned for Integration
 
@@ -85,6 +93,8 @@ The outline includes two main sections:
 <sup>\*</sup>Rewards rework has already implemented by the oDAO, but unstaking rework requires smart contract changes and has not been implemented yet
 
 ---
+
+<br/>
 
 ### Considering for Inclusion
 
