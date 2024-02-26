@@ -29,7 +29,7 @@ The goal of this page is to present an outline of the Rocket Pool Roadmap, inclu
 This outline includes three main sections:
 
 1. [Summary Table](#summary-table):
-   1. A table summarizing all of the proposals with the following categories:
+   1. Summarizes all of the proposals with the following categories:
       1. Priority
       2. Governance Stage
       3. Technical Stage
@@ -64,12 +64,14 @@ A Summary of the Proposals being considered for Inclusion, with the following ca
   - 4: Ready
 
 | Name      | Priority | Governance | Technical |
-| --------- | -------- | ---------- | --------- |
-| Megapools | 1        | 1          | 3         |
+| --------- | :------: | :--------: | :-------: |
+| Megapools |    1     |     1      |     3     |
 
 <br/>
 
 ## Releases
+
+---
 
 ### 1. Houston
 
@@ -87,6 +89,8 @@ A Summary of the Proposals being considered for Inclusion, with the following ca
 
 <sup>\*</sup>EIP-4788 is required for RPIP-33. EIP-4788 is included in the "Dencun" Ethereum Upgrade scheduled for March 13th, 2024
 
+---
+
 ### 2. Saturn
 
 #### Proposals
@@ -99,11 +103,13 @@ A Summary of the Proposals being considered for Inclusion, with the following ca
 
 <sup>\*</sup>Rewards rework has already been implemented by the oDAO, but unstaking rework requires smart contract changes and has not been implemented yet
 
-<br/>
-<br/>
+---
+
 <br/>
 
 ## Considering for Inclusion
+
+---
 
 ### 1. Megapools
 
@@ -118,6 +124,8 @@ A Summary of the Proposals being considered for Inclusion, with the following ca
 #### Notes
 
 <sup>\*</sup>EIP-4788 is required for Megapools. EIP-4788 is included in the "Dencun" Ethereum Upgrade scheduled for March 13th, 2024
+
+---
 
 ### 2. Sublinear Bonding
 
@@ -169,6 +177,8 @@ A Summary of the Proposals being considered for Inclusion, with the following ca
 #### Notes
 
 <sup>\*</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for inclusion in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024
+
+---
 
 ### 7. RPL Inflation Rework
 
