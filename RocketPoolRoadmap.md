@@ -14,7 +14,7 @@ The goal of this page is to present an outline of the Rocket Pool Roadmap, inclu
   - [Introduction](#introduction)
   - [Table Of Contents](#table-of-contents)
   - [Summary](#summary)
-  - [Planned for Integration](#planned-for-integration)
+  - [Planned for Inclusion](#planned-for-inclusion)
     - [1. Houston](#1-houston)
       - [Proposals](#proposals)
       - [Required Support](#required-support)
@@ -48,7 +48,7 @@ The goal of this page is to present an outline of the Rocket Pool Roadmap, inclu
 
 The outline includes two main sections:
 
-1. [Planned for Integration](#planned-for-integration):
+1. [Planned for Inclusion](#planned-for-inclusion):
    1. These proposals have been voted and approved by the pDAO.
    2. These proposals are grouped by the Rocket Pool upgrade in which they plan to be integrated.
 2. [Considering for Inclusion](#considering-for-inclusion):
@@ -59,7 +59,7 @@ The outline includes two main sections:
 <br/>
 <br/>
 
-### Planned for Integration
+### Planned for Inclusion
 
 ---
 
@@ -138,7 +138,7 @@ The outline includes two main sections:
 
 <sup>\*</sup>With sublinear bonding, Forced Exits are critical to protect against loss scenarios associated with MEV theft and abandonment
 
-<sup>†</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for integration in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024
+<sup>†</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for inclusion in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024
 
 <sup>‡</sup>As we increase leverage by allowing sublinear bonding, it becomes more important to protect rETH from underperforming NO's
 
@@ -168,7 +168,7 @@ The outline includes two main sections:
 
 ##### Notes
 
-<sup>\*</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for integration in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024
+<sup>\*</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for inclusion in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024
 
 #### 7. RPL Inflation Rework
 
