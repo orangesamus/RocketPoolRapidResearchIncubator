@@ -46,15 +46,26 @@ This outline includes three main sections:
 
 ## Summary Table
 
-A Summary of the Proposals being considered for Inclusion
+A Summary of the Proposals being considered for Inclusion, with the following categories:
 
-| Name      | Priority | Governance Stage | Technical Stage |
-| --------- | -------- | ---------------- | --------------- |
-| Megapools | 1        | 1                | 3               |
+- Priority
+  - 1: High
+  - 2: Medium
+  - 3: Low
+- Governance
+  - 1: Early discussion
+  - 2: Forum temp checking
+  - 3: Voting
+  - 4: Accepted
+- Technical
+  - 1: Early research
+  - 2: Proof of concept
+  - 3: Full spec
+  - 4: Ready
 
-Priority 1-3: High, medium, low
-Governance Stage 1-4: Early discussion, forum temp checking, voting, accepted
-Technical stage 1-4: Early research, proof of concept, full spec, ready
+| Name      | Priority | Governance | Technical |
+| --------- | -------- | ---------- | --------- |
+| Megapools | 1        | 1          | 3         |
 
 <br/>
 
