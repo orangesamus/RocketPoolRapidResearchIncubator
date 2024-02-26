@@ -52,6 +52,8 @@ The outline includes two main sections:
 
 ### Planned for Integration
 
+---
+
 #### 1. Houston
 
 ##### Proposals
@@ -68,6 +70,8 @@ The outline includes two main sections:
 
 <sup>\*</sup>EIP-4788 is required for RPIP-33. EIP-4788 is included in the "Dencun" Ethereum Upgrade scheduled for March 13th, 2024
 
+---
+
 #### 2. Saturn
 
 ##### Proposals
@@ -80,7 +84,11 @@ The outline includes two main sections:
 
 <sup>\*</sup>Rewards rework has already implemented by the oDAO, but unstaking rework requires smart contract changes and has not been implemented yet
 
+---
+
 ### Considering for Inclusion
+
+---
 
 #### 1. Megapools
 
@@ -95,6 +103,8 @@ The outline includes two main sections:
 ##### Notes
 
 <sup>\*</sup>EIP-4788 is required for Megapools. EIP-4788 is included in the "Dencun" Ethereum Upgrade scheduled for March 13th, 2024
+
+---
 
 #### 2. Sublinear Bonding
 
@@ -119,11 +129,19 @@ The outline includes two main sections:
 
 <sup>‡</sup>As we increase leverage by allowing sublinear bonding, it becomes more important to protect rETH from underperforming NO's
 
+---
+
 #### 3. RPL Value Capture
+
+---
 
 #### 4. Universal Variable Commission
 
+---
+
 #### 5. rETH Protection
+
+---
 
 #### 6. Forced Exits
 
@@ -146,3 +164,5 @@ The outline includes two main sections:
 1. [Change RPL Inflation to NO's to distribute by Borrowed ETH](/Proposals/RPLInflationRework.md#1-change-rpl-inflation-to-nos-to-distribute-by-borrowed-eth)
 2. [Remove RPL Inflation to NO's](/Proposals/RPLInflationRework.md#2-remove-rpl-inflation-to-nos)
 3. [Remove RPL Inflation to oDAO & pDAO and replace with ETH commission](/Proposals/RPLInflationRework.md#3-remove-rpl-inflation-to-odao--pdao-and-replace-with-eth-commission)
+
+---
