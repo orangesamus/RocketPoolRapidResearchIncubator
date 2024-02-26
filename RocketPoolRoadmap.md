@@ -49,7 +49,7 @@ This outline includes three main sections:
 
 A Summary of the Proposals being considered for Inclusion, with the following categories:
 
-- Priority
+- Priority (Author-subjective for now)
   - 1: High
   - 2: Medium
   - 3: Low
