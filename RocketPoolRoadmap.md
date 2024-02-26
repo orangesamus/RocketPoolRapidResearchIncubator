@@ -39,8 +39,9 @@ This outline includes three main sections:
    3. Proposals in this category have been voted on and approved by the pDAO.
 3. [Considering for Inclusion](#considering-for-inclusion):
    1. This section is categorized first by topic, with each topic listing the proposals being considered for inclusion.
-   2. These proposals may not have an RPIP yet and it is uncertain which Rocket Pool upgrade they will be included in (if at all).
-   3. This outline does not provide an exhaustive list of all proposals or research ideas, but instead prioritizes ideas being considered for inclusion.
+   2. This section lists the topics and proposals in no particular order.
+   3. These proposals may not have an RPIP yet and it is uncertain which Rocket Pool upgrade they will be included in (if at all).
+   4. This outline does not provide an exhaustive list of all proposals or research ideas, but instead prioritizes ideas being considered for inclusion.
 
 <br/>
 
@@ -63,9 +64,21 @@ A Summary of the Proposals being considered for Inclusion, with the following ca
   - 3: Full spec
   - 4: Ready
 
-| Name      | Priority | Governance | Technical |
-| --------- | :------: | :--------: | :-------: |
-| Megapools |    1     |     1      |     3     |
+| Name                                                               | Priority | Governance | Technical |
+| ------------------------------------------------------------------ | :------: | :--------: | :-------: |
+| [RPIP-31: RPL Withdrawal Address](#1-houston)                      |    1     |     4      |     4     |
+| [RPIP-32: Stake ETH on behalf of node](#1-houston)                 |    1     |     4      |     4     |
+| [RPIP-33: On-Chain pDAO](#1-houston)                               |    1     |     4      |     4     |
+| [RPIP-28: Deposits Under the Minimum](#2-saturn)                   |    1     |     4      |     ?     |
+| [RPIP-30: RPL Staking Rework](#2-saturn)                           |    2     |     4      |     ?     |
+| [RPIP-35: Time-based Balance and RPL Price Submissions](#2-saturn) |    3     |     4      |     ?     |
+| [Megapools](#1-megapools)                                          |    1     |     1      |    3?     |
+| [Sublinear Bonding](#2-sublinear-bonding)                          |    1     |     1      |     1     |
+| [RPL Value Capture](#3-rpl-value-capture)                          |    1     |     1      |     1     |
+| [Universal Variable Commission](#4-universal-variable-commission)  |    2     |     1      |     1     |
+| [rETH Protection](#5-reth-protection)                              |    3     |     1      |     1     |
+| [Forced Exits](#6-forced-exits)                                    |    1     |     1      |    2?     |
+| [RPL Inflation Rework](#7-rpl-inflation-rework)                    |    3     |     1      |     1     |
 
 <br/>
 
