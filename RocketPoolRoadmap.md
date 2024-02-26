@@ -91,7 +91,7 @@ The outline includes two main sections:
 
 ##### Notes
 
-<sup>\*</sup>Rewards rework has already implemented by the oDAO, but unstaking rework requires smart contract changes and has not been implemented yet
+<sup>\*</sup>Rewards rework has already been implemented by the oDAO, but unstaking rework requires smart contract changes and has not been implemented yet
 
 ---
 
