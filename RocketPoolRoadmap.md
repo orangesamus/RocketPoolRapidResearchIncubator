@@ -57,6 +57,7 @@ The outline includes two main sections:
    3. This outline does not provide an exhaustive list of all proposals or research ideas, but instead prioritizes ideas being considered for inclusion.
 
 <br/>
+<br/>
 
 ### Planned for Integration
 
@@ -94,6 +95,8 @@ The outline includes two main sections:
 
 ---
 
+<br/>
+<br/>
 <br/>
 
 ### Considering for Inclusion
