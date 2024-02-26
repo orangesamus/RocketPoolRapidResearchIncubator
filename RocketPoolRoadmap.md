@@ -66,23 +66,23 @@ The outline includes two main sections:
 
 ##### Notes
 
+---
+
 <sup>\*</sup>EIP-4788 is required for RPIP-33. EIP-4788 is included in the "Dencun" Ethereum Upgrade scheduled for March 13th, 2024
 
 #### 2. Saturn
 
 ##### Proposals
 
-|                                                                                                        |
-| ------------------------------------------------------------------------------------------------------ |
-| 1. [RPIP-28: Deposits Under the Minimum](https://rpips.rocketpool.net/RPIPs/RPIP-28)                   |
-| 2.<sup>\*</sup> [RPIP-30: RPL Staking Rework](https://rpips.rocketpool.net/RPIPs/RPIP-30)              |
-| 3. [RPIP-35: Time-based Balance and RPL Price Submissions](https://rpips.rocketpool.net/RPIPs/RPIP-35) |
+1. [RPIP-28: Deposits Under the Minimum](https://rpips.rocketpool.net/RPIPs/RPIP-28)
+2. [RPIP-30: RPL Staking Rework](https://rpips.rocketpool.net/RPIPs/RPIP-30)<sup>\*</sup>
+3. [RPIP-35: Time-based Balance and RPL Price Submissions](https://rpips.rocketpool.net/RPIPs/RPIP-35)
 
 ##### Notes
 
-|                                                                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <sup>\*</sup> Rewards rework has already implemented by the oDAO, but unstaking rework requires smart contract changes and has not been implemented yet |
+---
+
+<sup>\*</sup>Rewards rework has already implemented by the oDAO, but unstaking rework requires smart contract changes and has not been implemented yet
 
 ### Considering for Inclusion
 
@@ -90,50 +90,40 @@ The outline includes two main sections:
 
 ##### Proposals
 
-|                                                                                                                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.<sup>\*</sup> [One megapool contract per Node Operator which acts as the withdrawal credentials for one or many validators](https://github.com/rocket-pool/rocketpool-research/blob/master/Megapools/megapools.md) |
+1. [One megapool contract per Node Operator which acts as the withdrawal credentials for one or many validators](https://github.com/rocket-pool/rocketpool-research/blob/master/Megapools/megapools.md)<sup>\*</sup>
 
 ##### Required Support
 
-|                                                                                                   |
-| ------------------------------------------------------------------------------------------------- |
-| 1.<sup>\*</sup> [EIP-4788: Beacon block root in the EVM](https://eips.ethereum.org/EIPS/eip-4788) |
+1. [EIP-4788: Beacon block root in the EVM](https://eips.ethereum.org/EIPS/eip-4788)<sup>\*</sup>
 
 ##### Notes
 
-|                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------- |
-| <sup>\*</sup> EIP-4788 is required for Megapools. EIP-4788 is included in the "Dencun" Ethereum Upgrade scheduled for March 13th, 2024 |
+---
+
+<sup>\*</sup>EIP-4788 is required for Megapools. EIP-4788 is included in the "Dencun" Ethereum Upgrade scheduled for March 13th, 2024
 
 #### 2. Sublinear Bonding
 
 ##### Proposals
 
-|                                                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.<sup>\*†‡</sup> [First two minipools are LEB4’s, thereafter allow LEB1.5's](/Proposals/SublinearBonding.md#1-first-two-minipools-are-leb4s-thereafter-allow-leb15s) |
+1. [First two minipools are LEB4’s, thereafter allow LEB1.5's](/Proposals/SublinearBonding.md#1-first-two-minipools-are-leb4s-thereafter-allow-leb15s)<sup>\*†‡</sup>
 
 ##### Required Support
 
-|                                                                                                      |
-| ---------------------------------------------------------------------------------------------------- |
-| 1.<sup>\*</sup> [Forced Exits](#5-forced-exits)                                                      |
-| 2.<sup>†</sup> [EIP7002: Execution Layer Triggerable Exits](https://eips.ethereum.org/EIPS/eip-7002) |
+1. [Forced Exits](#5-forced-exits)<sup>\*</sup>
+2. [EIP7002: Execution Layer Triggerable Exits](https://eips.ethereum.org/EIPS/eip-7002)<sup>†</sup>
 
 ##### Recommended Support
 
-|                                                      |
-| ---------------------------------------------------- |
-| 1.<sup>‡</sup> [rETH Protection](#4-reth-protection) |
+1. [rETH Protection](#4-reth-protection)<sup>‡</sup>
 
 ##### Notes
 
-|                                                                                                                                                                                  |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <sup>\*</sup> With sublinear bonding, Forced Exits are critical to protect against loss scenarios associated with MEV theft and abandonment                                      |
-| <sup>†</sup> EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for integration in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024 |
-| <sup>‡</sup> As we increase leverage by allowing sublinear bonding, it becomes more important to protect rETH from underperforming NO's                                          |
+---
+
+<sup>\*</sup>With sublinear bonding, Forced Exits are critical to protect against loss scenarios associated with MEV theft and abandonment \
+<sup>†</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for integration in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024 \
+<sup>‡</sup>As we increase leverage by allowing sublinear bonding, it becomes more important to protect rETH from underperforming NO's
 
 #### 3. RPL Value Capture
 
@@ -145,28 +135,22 @@ The outline includes two main sections:
 
 ##### Proposals
 
-|                                                                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.<sup>\*</sup> [Exit a validator when a NO's (total_leakage + debt) > 0.5 ETH](/Proposals/ForcedExits.md#1-exit-a-validator-when-a-nos-total_leakage--debt--05-eth) |
+1. [Exit a validator when a NO's (total_leakage + debt) > 0.5 ETH](/Proposals/ForcedExits.md#1-exit-a-validator-when-a-nos-total_leakage--debt--05-eth)<sup>\*</sup>
 
 ##### Required Support
 
-|                                                                                                       |
-| ----------------------------------------------------------------------------------------------------- |
-| 1.<sup>\*</sup> [EIP7002: Execution Layer Triggerable Exits](https://eips.ethereum.org/EIPS/eip-7002) |
+1. [EIP7002: Execution Layer Triggerable Exits](https://eips.ethereum.org/EIPS/eip-7002)<sup>\*</sup>
 
 ##### Notes
 
-|                                                                                                                                                                                   |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <sup>\*</sup> EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for integration in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024 |
+---
+
+<sup>\*</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for integration in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024
 
 #### 7. RPL Inflation Rework
 
 ##### Proposals
 
-|                                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1. [Change RPL Inflation to NO's to distribute by Borrowed ETH](/Proposals/RPLInflationRework.md#1-change-rpl-inflation-to-nos-to-distribute-by-borrowed-eth)                   |
-| 2. [Remove RPL Inflation to NO's](/Proposals/RPLInflationRework.md#2-remove-rpl-inflation-to-nos)                                                                               |
-| 3. [Remove RPL Inflation to oDAO & pDAO and replace with ETH commission](/Proposals/RPLInflationRework.md#3-remove-rpl-inflation-to-odao--pdao-and-replace-with-eth-commission) |
+1. [Change RPL Inflation to NO's to distribute by Borrowed ETH](/Proposals/RPLInflationRework.md#1-change-rpl-inflation-to-nos-to-distribute-by-borrowed-eth)
+2. [Remove RPL Inflation to NO's](/Proposals/RPLInflationRework.md#2-remove-rpl-inflation-to-nos)
+3. [Remove RPL Inflation to oDAO & pDAO and replace with ETH commission](/Proposals/RPLInflationRework.md#3-remove-rpl-inflation-to-odao--pdao-and-replace-with-eth-commission)
