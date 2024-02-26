@@ -66,8 +66,6 @@ The outline includes two main sections:
 
 ##### Notes
 
----
-
 <sup>\*</sup>EIP-4788 is required for RPIP-33. EIP-4788 is included in the "Dencun" Ethereum Upgrade scheduled for March 13th, 2024
 
 #### 2. Saturn
@@ -79,8 +77,6 @@ The outline includes two main sections:
 3. [RPIP-35: Time-based Balance and RPL Price Submissions](https://rpips.rocketpool.net/RPIPs/RPIP-35)
 
 ##### Notes
-
----
 
 <sup>\*</sup>Rewards rework has already implemented by the oDAO, but unstaking rework requires smart contract changes and has not been implemented yet
 
@@ -97,8 +93,6 @@ The outline includes two main sections:
 1. [EIP-4788: Beacon block root in the EVM](https://eips.ethereum.org/EIPS/eip-4788)<sup>\*</sup>
 
 ##### Notes
-
----
 
 <sup>\*</sup>EIP-4788 is required for Megapools. EIP-4788 is included in the "Dencun" Ethereum Upgrade scheduled for March 13th, 2024
 
@@ -118,8 +112,6 @@ The outline includes two main sections:
 1. [rETH Protection](#4-reth-protection)<sup>‡</sup>
 
 ##### Notes
-
----
 
 <sup>\*</sup>With sublinear bonding, Forced Exits are critical to protect against loss scenarios associated with MEV theft and abandonment \
 <sup>†</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for integration in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024 \
@@ -142,8 +134,6 @@ The outline includes two main sections:
 1. [EIP7002: Execution Layer Triggerable Exits](https://eips.ethereum.org/EIPS/eip-7002)<sup>\*</sup>
 
 ##### Notes
-
----
 
 <sup>\*</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for integration in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024
 
