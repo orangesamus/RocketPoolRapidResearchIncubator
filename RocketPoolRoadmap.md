@@ -2,8 +2,6 @@
 
 The goal of this page is to present an outline of the Rocket Pool Roadmap, including proposals being considered for inclusion.
 
-<br/>
-
 ## Introduction
 
 This outline includes three main sections:
@@ -22,8 +20,6 @@ This outline includes three main sections:
    2. This section lists the topics and proposals in no particular order.
    3. These proposals may not have an RPIP yet and it is uncertain which Rocket Pool upgrade they will be included in (if at all).
    4. This outline does not provide an exhaustive list of all proposals or research ideas, but instead prioritizes ideas being considered for inclusion.
-
-<br/>
 
 ## Summary Table
 
