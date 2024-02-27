@@ -4,26 +4,6 @@ The goal of this page is to present an outline of the Rocket Pool Roadmap, inclu
 
 <br/>
 
-## Table Of Contents
-
-- [Rocket Pool Roadmap](#rocket-pool-roadmap)
-  - [Table Of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Summary Table](#summary-table)
-  - [Releases](#releases)
-    - [1. Houston](#1-houston)
-    - [2. Saturn](#2-saturn)
-  - [Considering for Inclusion](#considering-for-inclusion)
-    - [1. Megapools](#1-megapools)
-    - [2. Sublinear Bonding](#2-sublinear-bonding)
-    - [3. RPL Value Capture](#3-rpl-value-capture)
-    - [4. Universal Variable Commission](#4-universal-variable-commission)
-    - [5. rETH Protection](#5-reth-protection)
-    - [6. Forced Exits](#6-forced-exits)
-    - [7. RPL Inflation Rework](#7-rpl-inflation-rework)
-
-<br/>
-
 ## Introduction
 
 This outline includes three main sections:
