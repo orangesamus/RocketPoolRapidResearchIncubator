@@ -102,9 +102,11 @@ A Summary of the Proposals being considered for Inclusion, with the following ca
 
 ### 1. Megapools
 
+Each Node can have all minipools under the same contract instead of requiring each minipool to have its own contract.
+
 #### Proposals
 
-1. [One megapool contract per Node Operator which acts as the withdrawal credentials for one or many validators](https://github.com/rocket-pool/rocketpool-research/blob/master/Megapools/megapools.md)<sup>\*</sup>
+1. [One megapool contract per node which acts as the withdrawal credentials for one or many validators](/Proposals/Megapools.md)<sup>\*</sup>
 
 #### Required Support
 
@@ -117,6 +119,8 @@ A Summary of the Proposals being considered for Inclusion, with the following ca
 ---
 
 ### 2. Sublinear Bonding
+
+The first minipool(s) require a higher bond from a new Node Operator than subsequent minipools on the same Node.
 
 #### Proposals
 
@@ -151,9 +155,17 @@ A Summary of the Proposals being considered for Inclusion, with the following ca
 
 ### 5. rETH Protection
 
+Outlier underperforming NO's pay restitution to rETH.
+
+#### Proposals
+
+1. [First take from NO ETH rewards, then mark any remaining unpaid restitution as NO debt](/Proposals/rETHprotection.md)
+
 ---
 
 ### 6. Forced Exits
+
+Enable Rocket Pool to kick a NO and access the NO's bond as needed.
 
 #### Proposals
 
@@ -170,6 +182,8 @@ A Summary of the Proposals being considered for Inclusion, with the following ca
 ---
 
 ### 7. RPL Inflation Rework
+
+Change RPL Inflation (proposals range from changing distribution eligibility to removing inflation altogether)
 
 #### Proposals
 

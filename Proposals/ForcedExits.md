@@ -1,5 +1,7 @@
 ## Forced Exits:
 
+Enable Rocket Pool to kick a NO and access the NO's bond as needed.
+
 ### Proposals:
 
 #### 1. Exit a validator when a NO's (total_leakage + debt) > 0.5 ETH
@@ -9,6 +11,10 @@
   - Exit a validator when a NO's (total_leakage + debt) >0.5 ETH; this is about enough for ~3 months covering leakage and debt to rETH at 4% apy: 32*.04*(6/12)\*1.645 = .526 ETH
     - The debt variable could be used for underperformance penalties from [rETH Protection](/Proposals/rETHprotection.md), as well as MEV penalties
     - Note that we can kick one minipool at a time here, which yields at least ~1.5 ETH credit.
+- Benefits:
+  - Increases effectiveness of the NO bond.
+  - Protects rETH under extreme scenarios.
+  - Protects NO under extreme scenarios.
 
 ### Required Support:
 
