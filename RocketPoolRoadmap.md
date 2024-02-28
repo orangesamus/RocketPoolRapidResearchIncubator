@@ -17,8 +17,8 @@ This outline includes three main sections:
    3. Proposals in this category have been voted on and approved by the pDAO.
 3. [Considering for Inclusion](#considering-for-inclusion):
    1. This section is categorized first by topic, with each topic listing the proposals being considered for inclusion.
-   2. This section lists the topics and proposals in no particular order.
-   3. These proposals may not have an RPIP yet and it is uncertain which Rocket Pool upgrade they will be included in (if at all).
+   2. The topics and proposals are listed in no particular order.
+   3. Proposals in this section may not have an RPIP yet and it is uncertain which Rocket Pool upgrade they will be included in (if at all).
    4. This outline does not provide an exhaustive list of all proposals or research ideas, but instead prioritizes ideas being considered for inclusion.
 
 ## Summary Table
