@@ -124,7 +124,7 @@ The first minipool(s) require a higher bond from a new Node Operator than subseq
 
 #### Proposals
 
-1. [First two minipools are LEB4’s, thereafter allow LEB1.5's](/Proposals/SublinearBonding.md#1-first-two-minipools-are-leb4s-thereafter-allow-leb15s)<sup>\*†‡</sup>
+1. [First two minipools are LEB4’s, thereafter allow LEB1.5's](/Proposals/SublinearBonding.md#1-first-two-minipools-are-leb4s-thereafter-allow-leb15s)<sup>\*†‡§</sup>
 
 #### Required Support
 
@@ -134,6 +134,7 @@ The first minipool(s) require a higher bond from a new Node Operator than subseq
 #### Recommended Support
 
 1. [rETH Protection](#4-reth-protection)<sup>‡</sup>
+2. [Universal Variable Commission](#4-universal-variable-commission)<sup>§</sup>
 
 #### Notes
 
@@ -143,13 +144,41 @@ The first minipool(s) require a higher bond from a new Node Operator than subseq
 
 <sup>‡</sup>As we increase leverage by allowing sublinear bonding, it becomes more important to protect rETH from underperforming NO's
 
+<sup>§</sup>Commission becomes a higher portion of Node Operator revenue with sublinear bonding. It becomes important then for Rocket Pool to have the ability to tweak commission variables over time since opt-in upgrades may not be enough to incentivize Node Operators to migrate away from their fixed commission into minipools with variable commission.
+
 ---
 
 ### 3. RPL Value Capture
 
+#### Proposals
+
+1. [Change rETH commission to be split between NO's and RPL](#3-rpl-value-capture)<sup>\*</sup>
+
+#### Recommended Support
+
+1. [Universal Variable Commission](#4-universal-variable-commission)<sup>\*</sup>
+
+#### Notes
+
+<sup>\*</sup>Ideally, UVC would be used to set the proportions of commission going to each group in RPL Value Capture
+
 ---
 
 ### 4. Universal Variable Commission
+
+Commission variables can be universally changed by the protocol instead of each minipool having its own fixed commission.
+
+#### Proposals
+
+1. [Allow markets to find equilibrium for total rETH LST fee, NO commission, and RPL value capture](/Proposals/UniversalVariableCommission.md#1-allow-markets-to-find-equilibrium-for-total-reth-lst-fee-no-commission-and-rpl-value-capture)<sup>\*</sup>
+
+#### Recommended Support
+
+1. [RPL Value Capture](#3-rpl-value-capture)<sup>\*</sup>
+
+#### Notes
+
+<sup>\*</sup>Ideally, UVC would be used to set the proportions of commission going to each group in RPL Value Capture
 
 ---
 
@@ -188,7 +217,8 @@ Change RPL Inflation (proposals range from changing distribution eligibility to 
 #### Proposals
 
 1. [Change RPL Inflation to NO's to distribute by Borrowed ETH](/Proposals/RPLInflationRework.md#1-change-rpl-inflation-to-nos-to-distribute-by-borrowed-eth)
-2. [Remove RPL Inflation to NO's](/Proposals/RPLInflationRework.md#2-remove-rpl-inflation-to-nos)
-3. [Remove RPL Inflation to oDAO & pDAO and replace with ETH commission](/Proposals/RPLInflationRework.md#3-remove-rpl-inflation-to-odao--pdao-and-replace-with-eth-commission)
+2. [Scale Down RPL Inflation to NO's over time](/Proposals/RPLInflationRework.md#2-scale-down-rpl-inflation-to-nos-over-time)
+3. [Remove RPL Inflation to NO's](/Proposals/RPLInflationRework.md#3-remove-rpl-inflation-to-nos)
+4. [Remove RPL Inflation to oDAO & pDAO and replace with ETH commission](/Proposals/RPLInflationRework.md#4-remove-rpl-inflation-to-odao--pdao-and-replace-with-eth-commission)
 
 ---

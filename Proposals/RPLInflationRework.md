@@ -22,14 +22,25 @@ Change RPL Inflation (proposals range from changing distribution eligibility to 
 - Source: Samus' [Cohesive Proposal](https://github.com/orangesamus/RocketPoolRapidResearchIncubator/blob/main/CohesiveProposal.md)
 - Summary:
   - Change distribution of "NO RPL Inflation" to scale linearly with Node Operator Borrowed Eth. Rewards would be distributed to all NO's as calculated by `(your Borrowed ETH)/(total Protocol Borrowed ETH)`
-  - Scale down "NO RPL Inflation" linearly from present value (3.5%) to 0% as rETH market share grows from present day to it's soft-limits goal (soft-limit described in [RPIP17: Self-Limiting Rocket Pool](https://rpips.rocketpool.net/RPIPs/RPIP-17)).
 - Benefits:
   - This gives Node Operators an additional source of revenue related to RPL price. Node Operators can benefit from RPL price appreciation even if they start out as ETH-Only.
   - This gives Node Operators a chance to "earn" access to governance over time without having to pay for it.
 - Drawbacks:
   - RPL Inflation temporarily remains higher which may deter RPL investors.
 
-#### 2. Remove RPL Inflation to NO's
+#### 2. Scale Down RPL Inflation to NO's over time
+- Sources:
+  - Samus' [Cohesive Proposal](https://github.com/orangesamus/RocketPoolRapidResearchIncubator/blob/main/CohesiveProposal.md)
+  - Valdorff's [Cohesive Proposal](https://github.com/Valdorff/rp-thoughts/blob/2024-02_strategy/2024_02_strategy/readme_tier3.md)
+- Summary:
+  - Scale down "NO RPL Inflation" from present value (3.5%) to 0% as rETH market share grows from present day to it's soft-limits goal (soft-limit described in [RPIP17: Self-Limiting Rocket Pool](https://rpips.rocketpool.net/RPIPs/RPIP-17)).
+  - Leave support for RPL rewards (set setting to zero). Eg, if we wanted to run a short term NO onboarding blitz, it might make sense to add RPL rewards.
+- Benefits:
+  - RPL can help bootstrap further demand for NO's in the short term, but RPL can become more attractive for RPL investors as they are less diluted by inflation in the long term.
+Drawbacks:
+  - ETH base commission may drive enough NO demand such that RPL inflation does not add enough value.
+
+#### 3. Remove RPL Inflation to NO's
 
 - Source: Valdorff's [Cohesive Proposal](https://github.com/Valdorff/rp-thoughts/blob/2024-02_strategy/2024_02_strategy/readme_tier3.md)
 - Summary:
@@ -40,13 +51,14 @@ Change RPL Inflation (proposals range from changing distribution eligibility to 
 - Drawbacks:
   - ETH Only NO's would not see any material changes to profitability even if RPL price appreciates.
 
-#### 3. Remove RPL Inflation to oDAO & pDAO and replace with ETH commission
+#### 4. Remove RPL Inflation to oDAO & pDAO and replace with ETH commission
 
 - Source: Samus' [Cohesive Proposal](https://github.com/orangesamus/RocketPoolRapidResearchIncubator/blob/main/CohesiveProposal.md)
 - Summary:
-  - Scale down "DAO RPL Inflation" linearly from present value (1.5%) to 0% as rETH market share grows from present day to it's soft-limits goal (soft-limit described in [RPIP17: Self-Limiting Rocket Pool](https://rpips.rocketpool.net/RPIPs/RPIP-17))
+  - Add a commission share for the oDAO (set settings to zero to start).
+  - Add a commission share for the pDAO (set settings to zero to start).
   - As rETH TVL grows, the amount of revenue generated from commission becomes large enough that a slice of commission could be used to fund the pDAO and oDAO.
-  - During the transition period the pDAO and oDAO would have a blend of funding from both ETH commission and RPL inflation.
+  - During the transition period the pDAO and oDAO could have a blend of funding from both ETH commission and RPL inflation.
 - Benefits:
   - ETH commission may be a more stable and predictable source of funding than RPL
   - Potentially removes some RPL sell pressure from team and DAO's who have to sell RPL for funding

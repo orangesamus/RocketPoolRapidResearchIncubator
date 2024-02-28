@@ -1,5 +1,7 @@
 ## Sublinear Bonding
 
+The first minipool(s) require a higher bond from a new Node Operator than subsequent minipools on the same Node.
+
 ### Proposals:
 
 #### 1. First two minipools are LEB4’s, thereafter allow LEB1.5's
@@ -22,3 +24,5 @@
 
 - [rETH Protection](/Proposals/rETHprotection.md)
   - As we increase leverage by allowing 1.5LEBs with sublinear bonding, it becomes more critical to protect rETH from underperforming NO's.
+- [Universal Variable Commission](/Proposals/UniversalVariableCommission.md)
+  - Commission becomes a higher portion of Node Operator revenue with sublinear bonding. It becomes important then for Rocket Pool to have the ability to tweak commission variables over time since opt-in upgrades may not be enough to incentivize Node Operators to migrate away from their fixed commission into minipools with variable commission.
