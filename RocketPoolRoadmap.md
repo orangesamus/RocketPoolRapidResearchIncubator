@@ -1,6 +1,8 @@
 # Rocket Pool Roadmap
 
-The goal of this page is to present an outline of the Rocket Pool Roadmap, including proposals being considered for inclusion.
+The goal of this page is to present an outline of the Rocket Pool Roadmap, including proposals being considered for inclusion.i
+
+_Disclaimer: This is a work in progress and represents my own personal perspective_
 
 ## Introduction
 
