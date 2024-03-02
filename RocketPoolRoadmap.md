@@ -144,7 +144,7 @@ The first minipool(s) require a higher bond from a new Node Operator than subseq
 
 <sup>†</sup>EIP-7002 is required for Forced Exits. EIP-7002 is tentatively planned for inclusion in the "Pectra" Ethereum Upgrade which is tentatively scheduled for ~Q4 2024
 
-<sup>‡</sup>As we increase leverage by allowing sublinear bonding, it becomes more important to protect rETH from underperforming NO's
+<sup>‡</sup>As we increase leverage by allowing sublinear bonding, it becomes more important to protect rETH from underperforming NOs
 
 <sup>§</sup>Commission becomes a higher portion of Node Operator revenue with sublinear bonding. It becomes important then for Rocket Pool to have the ability to tweak commission variables over time since opt-in upgrades may not be enough to incentivize Node Operators to migrate away from their fixed commission into minipools with variable commission.
 
@@ -152,9 +152,11 @@ The first minipool(s) require a higher bond from a new Node Operator than subseq
 
 ### 3. RPL Value Capture
 
+Change rETH commission to be split between NOs and RPL, allowing RPL to Capture Value from protocol revenue.
+
 #### Proposals
 
-1. [Change rETH commission to be split between NO's and RPL](#3-rpl-value-capture)<sup>\*</sup>
+1. [Buy and Burn](/Proposals/RPLValueCapture.md#1-buy-and-burn)<sup>\*</sup>
 
 #### Recommended Support
 
@@ -186,7 +188,7 @@ Commission variables can be universally changed by the protocol instead of each 
 
 ### 5. rETH Protection
 
-Outlier underperforming NO's pay restitution to rETH.
+Outlier underperforming NOs pay restitution to rETH.
 
 #### Proposals
 
@@ -196,11 +198,11 @@ Outlier underperforming NO's pay restitution to rETH.
 
 ### 6. Forced Exits
 
-Enable Rocket Pool to kick a NO and access the NO's bond as needed.
+Enable Rocket Pool to kick a NO and access the NOs bond as needed.
 
 #### Proposals
 
-1. [Exit a validator when a NO's (total_leakage + debt) > 0.5 ETH](/Proposals/ForcedExits.md#1-exit-a-validator-when-a-nos-total_leakage--debt--05-eth)<sup>\*</sup>
+1. [Exit a validator when a NOs (total_leakage + debt) > 0.5 ETH](/Proposals/ForcedExits.md#1-exit-a-validator-when-a-nos-total_leakage--debt--05-eth)<sup>\*</sup>
 
 #### Required Support
 
@@ -218,9 +220,9 @@ Change RPL Inflation (proposals range from changing distribution eligibility to 
 
 #### Proposals
 
-1. [Change RPL Inflation to NO's to distribute by Borrowed ETH](/Proposals/RPLInflationRework.md#1-change-rpl-inflation-to-nos-to-distribute-by-borrowed-eth)
-2. [Scale Down RPL Inflation to NO's over time](/Proposals/RPLInflationRework.md#2-scale-down-rpl-inflation-to-nos-over-time)
-3. [Remove RPL Inflation to NO's](/Proposals/RPLInflationRework.md#3-remove-rpl-inflation-to-nos)
+1. [Change RPL Inflation to NOs to distribute by Borrowed ETH](/Proposals/RPLInflationRework.md#1-change-rpl-inflation-to-nos-to-distribute-by-borrowed-eth)
+2. [Scale Down RPL Inflation to NOs over time](/Proposals/RPLInflationRework.md#2-scale-down-rpl-inflation-to-nos-over-time)
+3. [Remove RPL Inflation to NOs](/Proposals/RPLInflationRework.md#3-remove-rpl-inflation-to-nos)
 4. [Remove RPL Inflation to oDAO & pDAO and replace with ETH commission](/Proposals/RPLInflationRework.md#4-remove-rpl-inflation-to-odao--pdao-and-replace-with-eth-commission)
 
 ---
