@@ -23,7 +23,3 @@ Commission variables can be universally changed by the protocol instead of each 
   - Stagnation/intervention:
     - If there is excess rETH demand we should not increase Target total rETH Commission Fee, but instead increase Base Commission to NO's to meet rETH demand (effectively squeezing the RPL Value Capture share, and instead incentivizing Node Operators to meet the demand)
     - If rETH demand dries up, we can decrease the total rETH Commission Fee to make rETH more attractive, and leave Base Commission alone (effectively squeezing the RPL Value Capture knob, and instead giving it to rETH holders)
-- Benefits:
-  - Rocket Pool maintains flexibility to adjust to market demands
-  - Rocket Pool can help support the health of the Ethereum Network by self-limiting as needed
-- Drawbacks:

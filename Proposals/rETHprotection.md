@@ -19,6 +19,3 @@ Outlier underperforming NO's pay restitution to rETH to meet an adequate number 
       - Note that this exit can be a forced exit.
       - (Optional) Forced exit: if performing badly routinely -- kick.
         - Note that this optional point would require [Forced Exits](/Proposals/ForcedExits.md) to be implemented.
-- Benefits:
-  - Allow rETH to provide a more competitve APR
-- Drawbacks:

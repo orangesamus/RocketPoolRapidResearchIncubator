@@ -10,9 +10,6 @@ Each Node can have all of their minipools under the same contract instead of req
 - Summary:
     - Each Node uses one megapool contract for all of their minipools.
     - Capital and rewards must be split appropriately between the Node Operator and rETH users.
-- Benefits:
-    - Massive improvements to gas efficiency when running more than one minipool.
-- Drawbacks:
 
 ### Required Support:
 

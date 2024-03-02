@@ -19,11 +19,6 @@ Enable Rocket Pool to kick a NO and access the NO's bond as needed.
         - If APIs are bad, we may need to remove them from allowlist
       - Security council should be able to remove penalties -- note they can be replaced by oDAO, so this is insufficient
       - pDAO guardian must remain in place to limit total penalties
-- Benefits:
-  - Increases effectiveness of the NO bond.
-  - Protects rETH under extreme scenarios.
-  - Protects NO under extreme scenarios.
-- Drawbacks:
 
 ### Required Support:
 
