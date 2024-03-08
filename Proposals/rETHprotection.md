@@ -8,7 +8,7 @@ Outlier underperforming NO's pay restitution to rETH to meet an adequate number 
 
 - Sources:
   - ArtDemocrat's [rETH Protection Proposal](https://dao.rocketpool.net/t/rapid-research-incubator-submission-reth-protection-through-rpl-rerouting-deflation/2599/3?u=samus)
-  - Valdorff's [Cohesive Proposal](https://github.com/Valdorff/rp-thoughts/blob/2024-02_strategy/2024_02_strategy/with_voter_share/readme_tier3.md)
+  - Valdorff's [Cohesive Proposal](https://github.com/Valdorff/rp-thoughts/blob/main/2024_02_strategy/readme_tier3.md#suggested-support)
 - Summary:
   - First restitution should be funded from ETH rewards flows
     - Per reward period: EL smoothie, RPL commission share -- both of these can be taken care of when making the merkl tree, so the underperformer never gains dominion over those funds

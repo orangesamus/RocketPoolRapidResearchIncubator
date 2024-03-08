@@ -26,14 +26,14 @@ Change RPL Inflation (proposals range from changing distribution eligibility to 
 #### 2. Scale Down RPL Inflation to NO's over time
 - Sources:
   - Samus' [Cohesive Proposal](https://github.com/orangesamus/RocketPoolRapidResearchIncubator/blob/main/CohesiveProposal.md)
-  - Valdorff's [Cohesive Proposal](https://github.com/Valdorff/rp-thoughts/blob/2024-02_strategy/2024_02_strategy/readme_tier3.md)
+  - Valdorff's [Cohesive Proposal](https://github.com/Valdorff/rp-thoughts/blob/main/2024_02_strategy/readme_tier3.md#suggested-support)
 - Summary:
   - Scale down "NO RPL Inflation" from present value (3.5%) to 0% as rETH market share grows from present day to it's soft-limits goal (soft-limit described in [RPIP17: Self-Limiting Rocket Pool](https://rpips.rocketpool.net/RPIPs/RPIP-17)).
   - Leave support for RPL rewards (set setting to zero). Eg, if we wanted to run a short term NO onboarding blitz, it might make sense to add RPL rewards.
 
 #### 3. Remove RPL Inflation to NO's
 
-- Source: Valdorff's [Cohesive Proposal](https://github.com/Valdorff/rp-thoughts/blob/2024-02_strategy/2024_02_strategy/readme_tier3.md)
+- Source: Valdorff's [Cohesive Proposal](https://github.com/Valdorff/rp-thoughts/blob/main/2024_02_strategy/readme_tier3.md#suggested-support)
 - Summary:
   - Set "NO RPL Inflation" to 0% ending all RPL rewards to NO's.
   - In this structure, we don't need to use RPL inflation to get more people staking RPL to meet rETH demand. Insofar as folks have unstaked, they're at least doing a service to RPL stakers by giving up their share. If they're doing something like LPing, then they're further serving RP.

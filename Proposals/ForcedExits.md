@@ -6,7 +6,7 @@ Enable Rocket Pool to kick a NO and access the NO's bond as needed.
 
 #### 1. Exit a validator when a NO's (total_leakage + debt) > 0.5 ETH
 
-- Source: Valdorff's [Cohesive Proposal](https://github.com/Valdorff/rp-thoughts/blob/2024-02_strategy/2024_02_strategy/readme.md)
+- Source: Valdorff's [Cohesive Proposal](https://github.com/Valdorff/rp-thoughts/blob/main/2024_02_strategy/readme.md#required-support)
 - Summary:
   - Exit a validator when a NO's (total_leakage + debt) >0.5 ETH; this is about enough for ~3 months covering leakage and debt to rETH at 4% apy: 32*.04*(6/12)\*1.645 = .526 ETH
     - The debt variable could be used for underperformance penalties from [rETH Protection](/Proposals/rETHprotection.md), as well as MEV penalties
