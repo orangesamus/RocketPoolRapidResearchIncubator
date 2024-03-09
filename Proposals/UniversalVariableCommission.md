@@ -21,5 +21,5 @@ Commission variables can be universally changed by the protocol instead of each 
     - RPL captures whatever is left while rETH maintains a competitive fee
     - If rETH exceeds it's self-limits the total rETH commission fee can be increased to make rETH less attractive and bring it back down to the self-limit
   - Stagnation/intervention:
-    - If there is excess rETH demand we should not increase Target total rETH Commission Fee, but instead increase Base Commission to NO's to meet rETH demand (effectively squeezing the RPL Value Capture share, and instead incentivizing Node Operators to meet the demand)
+    - If there is excess rETH demand we should not increase total rETH Commission Fee, but instead increase Base Commission to NO's to meet rETH demand (effectively squeezing the RPL Value Capture share, and instead incentivizing Node Operators to meet the demand)
     - If rETH demand dries up, we can decrease the total rETH Commission Fee to make rETH more attractive, and leave Base Commission alone (effectively squeezing the RPL Value Capture knob, and instead giving it to rETH holders)
