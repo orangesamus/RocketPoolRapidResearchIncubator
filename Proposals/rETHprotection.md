@@ -25,12 +25,12 @@ Outlier underperforming NO's pay restitution to rETH to meet an adequate number 
   - First restitution should be funded from ETH rewards flows
     - Per reward period: EL smoothie, RPL commission share -- both of these can be taken care of when making the merkl tree, so the underperformer never gains dominion over those funds
   - At this point, record any remaining unpaid restitution as debt, which can be repaid by:
+    - EL fee distributor distribution -- anyone can do this
+    - CL distribution -- anyone can do this
     - For NOs with RPL staked:
       - ETH from buy&burn pot "buys" first from underperforming NOs RPL stake:
         - Instead of "paying" underperforming NO, the ETH is routed to make rETH whole
         - RPL is still burnt
-    - EL fee distributor distribution -- anyone can do this
-    - CL distribution -- anyone can do this
     - CL distribution during exit -- only owner can do this without a long wait.
       - Note that this exit can be a forced exit.
       - (Optional) Forced exit: if performing badly routinely -- kick.
