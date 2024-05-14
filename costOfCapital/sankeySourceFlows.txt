@@ -1,0 +1,167 @@
+LEB8 Current Tokenomics……………………………………………………………
+Yield from NO ETH [0.334] NO ETH Balance\n(1 year later) #1f77b4
+Commission [0.14] NO ETH Balance\n(1 year later) #1f77b4
+Total Initial\nNO Capital [8] ETH from NO #1f77b4
+Total Initial\nNO Capital [2.4] RPL from NO 
+ETH from NO [8] Validator ETH Bond #1f77b4
+Validator ETH Bond [8] NO ETH Balance\n(1 year later) #1f77b4
+RPL from NO [2.4] RPL Staked to Node
+RPL Staked to Node [2.4] NO RPL Value\n(1 year later)
+
+NO ETH Balance\n(1 year later) [8.474] Total NO Capital\n(1 year later) #1f77b4
+NO RPL Value\n(1 year later) [2.442] Total NO Capital\n(1 year later)
+RPL Rewards [0.162] NO RPL Value\n(1 year later)
+NO RPL Value\n(1 year later) [0.036] Inflation to DAO
+NO RPL Value\n(1 year later) [0.084] Inflation to NOs
+
+:Total Initial\nNO Capital #2ca02c
+:RPL from NO #ff7f0e
+:RPL Staked to Node #ff7f0e
+:NO RPL Value\n(1 year later) #ff7f0e
+:RPL Rewards #ff7f0e
+:Inflation to DAO #ff7f0e
+:Inflation to NOs #ff7f0e
+:Total NO Capital\n(1 year later) #2ca02c
+
+
+
+
+
+
+
+LEB8 Current Tokenomics (undercollat)……………………………………………………
+Yield from NO ETH [0.334] NO ETH Balance\n(1 year later) #1f77b4
+Commission [0.14] NO ETH Balance\n(1 year later) #1f77b4
+Total Initial\nNO Capital [8] ETH from NO #1f77b4
+Total Initial\nNO Capital [2.4] RPL from NO 
+ETH from NO [8] Validator ETH Bond #1f77b4
+Validator ETH Bond [8] NO ETH Balance\n(1 year later) #1f77b4
+RPL from NO [2.4] RPL Staked to Node
+RPL Staked to Node [2.4] NO RPL Value\n(1 year later)
+
+NO ETH Balance\n(1 year later) [8.474] Total NO Capital\n(1 year later) #1f77b4
+NO RPL Value\n(1 year later) [2.28] Total NO Capital\n(1 year later)
+NO RPL Value\n(1 year later) [0.036] Inflation to DAO
+NO RPL Value\n(1 year later) [0.084] Inflation to NOs
+
+:Total Initial\nNO Capital #2ca02c
+:RPL from NO #ff7f0e
+:RPL Staked to Node #ff7f0e
+:NO RPL Value\n(1 year later) #ff7f0e
+:Inflation to DAO #ff7f0e
+:Inflation to NOs #ff7f0e
+:Total NO Capital\n(1 year later) #2ca02c
+
+
+
+
+
+LEB8 Current Tokenomics (maturity)………………………………………………………
+Yield from NO ETH [0.334] NO ETH Balance\n(1 year later) #1f77b4
+Commission [0.14] NO ETH Balance\n(1 year later) #1f77b4
+Total Initial\nNO Capital [8] ETH from NO #1f77b4
+Total Initial\nNO Capital [2.4] RPL from NO 
+ETH from NO [8] Validator ETH Bond #1f77b4
+Validator ETH Bond [8] NO ETH Balance\n(1 year later) #1f77b4
+RPL from NO [2.4] RPL Staked to Node
+RPL Staked to Node [2.4] NO RPL Value\n(1 year later)
+
+NO ETH Balance\n(1 year later) [8.474] Total NO Capital\n(1 year later) #1f77b4
+NO RPL Value\n(1 year later) [2.364] Total NO Capital\n(1 year later)
+RPL Rewards [0.084] NO RPL Value\n(1 year later)
+NO RPL Value\n(1 year later) [0.036] Inflation to DAO
+NO RPL Value\n(1 year later) [0.084] Inflation to NOs
+
+:Total Initial\nNO Capital #2ca02c
+:RPL from NO #ff7f0e
+:RPL Staked to Node #ff7f0e
+:NO RPL Value\n(1 year later) #ff7f0e
+:RPL Rewards #ff7f0e
+:Inflation to DAO #ff7f0e
+:Inflation to NOs #ff7f0e
+:Total NO Capital\n(1 year later) #2ca02c
+
+
+
+
+
+
+
+
+
+
+
+
+
+LEB8 ETH Only (new tokenomics)……………………………………………………………
+Yield from NO ETH [0.334] NO ETH Balance\n(1 year later) #1f77b4
+Commission [0.035] NO ETH Balance\n(1 year later) #1f77b4
+Total Initial\nNO Capital [8] ETH from NO #1f77b4
+ETH from NO [8] Validator ETH Bond #1f77b4
+Validator ETH Bond [8] NO ETH Balance\n(1 year later) #1f77b4
+
+NO ETH Balance\n(1 year later) [8.369] Total NO Capital\n(1 year later) #1f77b4
+
+:Total Initial\nNO Capital #2ca02c
+:Total NO Capital\n(1 year later) #2ca02c
+
+
+
+
+
+
+
+LEB8 ETH + RPL (new tokenomics)…………………………………………………
+Yield from NO ETH [0.334] NO ETH Balance\n(1 year later) #1f77b4
+Commission [0.035] NO ETH Balance\n(1 year later) #1f77b4
+Total Initial\nNO Capital [8] ETH from NO #1f77b4
+Total Initial\nNO Capital [2.4] RPL from NO 
+ETH from NO [8] Validator ETH Bond #1f77b4
+Validator ETH Bond [8] NO ETH Balance\n(1 year later) #1f77b4
+Voter Share [0.05] NO ETH Balance\n(1 year later) #1f77b4
+RPL from NO [2.4] RPL Staked to Node
+RPL Staked to Node [2.4] NO RPL Value\n(1 year later)
+
+NO ETH Balance\n(1 year later) [8.419] Total NO Capital\n(1 year later) #1f77b4
+NO RPL Value\n(1 year later) [2.393] Total NO Capital\n(1 year later)
+Surplus Share [0.029] NO RPL Value\n(1 year later)
+NO RPL Value\n(1 year later) [0.036] Inflation to DAO
+
+:Total Initial\nNO Capital #2ca02c
+:RPL from NO #ff7f0e
+:RPL Staked to Node #ff7f0e
+:NO RPL Value\n(1 year later) #ff7f0e
+:Surplus Share #ff7f0e
+:Inflation to DAO #ff7f0e
+:Total NO Capital\n(1 year later) #2ca02c
+
+
+
+
+
+
+LEB8 ETH + RPL (new tokenomics, 2x EO)………………………………………………
+Yield from NO ETH [0.334] NO ETH Balance\n(1 year later) #1f77b4
+Commission [0.035] NO ETH Balance\n(1 year later) #1f77b4
+Total Initial\nNO Capital [8] ETH from NO #1f77b4
+Total Initial\nNO Capital [2.4] RPL from NO 
+ETH from NO [8] Validator ETH Bond #1f77b4
+Validator ETH Bond [8] NO ETH Balance\n(1 year later) #1f77b4
+Voter Share [0.1] NO ETH Balance\n(1 year later) #1f77b4
+RPL from NO [2.4] RPL Staked to Node
+RPL Staked to Node [2.4] NO RPL Value\n(1 year later)
+
+NO ETH Balance\n(1 year later) [8.469] Total NO Capital\n(1 year later) #1f77b4
+NO RPL Value\n(1 year later) [2.393] Total NO Capital\n(1 year later)
+Surplus Share [0.029] NO RPL Value\n(1 year later)
+NO RPL Value\n(1 year later) [0.036] Inflation to DAO
+
+:Total Initial\nNO Capital #2ca02c
+:RPL from NO #ff7f0e
+:RPL Staked to Node #ff7f0e
+:NO RPL Value\n(1 year later) #ff7f0e
+:Surplus Share #ff7f0e
+:Inflation to DAO #ff7f0e
+:Total NO Capital\n(1 year later) #2ca02c
+
+
